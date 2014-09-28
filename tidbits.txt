@@ -1,0 +1,15 @@
+TWD|The Walking Dead
+TBL|The Big Lebowski
+BoP|Bride of Pinbot
+WPC|Williams Pinball Controller
+APPLE|Advanced Pinball Programming Logic Executive
+TAF|The Addams Family
+SDTM|Straight Down The Middle
+this|a test to show how it can go wrong
+why|my dick sore
+IFPA|International Flipper Pinball Association
+ECLE|Wizard of OZ Limited Edition for US customers only
+IFPA|for guys with little winkies
+Bags|Norway's Tommy
+WPC repair|http://pinwiki.com/wiki/index.php?title=Williams_Repair_Guides
+freeman|an indentured servant that was given a sock, so now he is free.
