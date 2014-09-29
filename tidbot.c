@@ -1,13 +1,17 @@
 //TODO:
 //Multiple definitions
 //ignore list of words (this, why, how, when, which etc)
-//Some way of deleting bad definitions
+//Help message
+//Change forget_tidbit() to use a memory buffer rather than a temp file
+//Use PM to control bot as well as main chan
+//use strcasecmp() instead
 
 #include "libircclient/libircclient.h"
 #include "libircclient/libirc_rfcnumeric.h"
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <strings.h>
 #include <getopt.h>
 
 #define DEFAULT_CFG_FILE  	"/.tidbot.cfg"
@@ -138,10 +142,6 @@ void event_connect (irc_session_t *session, const char *event, const char *origi
 	send_channel_connect_msg ();
 }
 
-void event_privmsg (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
-{
-	printf ("'%s' said to me (%s): %s\n", origin ? origin : "someone", params[0], params[1] );
-}
 
 void event_numeric (irc_session_t *session, unsigned int event, const char *origin, const char **params, unsigned int count)
 {
@@ -187,7 +187,7 @@ void recall_tidbit (const char *tidbit)
     while (fgets (lineread, 1024, tidbit_file) != NULL)
     {
         //Found the tidbit
-        if (strncmp (lineread, tidbit, strlen(tidbit)) == 0)
+        if (strncasecmp (lineread, tidbit, strlen(tidbit)) == 0)
         {
             //Find the | separator in the line
             for (i = 0; i < strlen (lineread); i++)
@@ -232,7 +232,8 @@ void forget_tidbit (const char *tidbit)
 {
     FILE *tidbit_file;
     FILE *temp_file;
-    char lineread[1024];
+    char lineread[1024], reply[1024];
+    int found_tidbit = 0;
 
     tidbit_file = fopen (DEFAULT_TIDBIT_FILE, "r");
     temp_file = fopen ("tmp.txt", "w+");
@@ -246,9 +247,10 @@ void forget_tidbit (const char *tidbit)
     while (fgets (lineread, 1024, tidbit_file) != NULL)
     {
         if (strncmp (lineread, tidbit, strlen(tidbit)) != 0)
-        {
             fputs (lineread, temp_file);
-        }
+        else
+            found_tidbit = 1;
+
     }
     
     //Close and reopen files r/w
@@ -265,8 +267,13 @@ void forget_tidbit (const char *tidbit)
     fclose (temp_file);
     fclose (tidbit_file);
     
-    printf ("Forgot %s\n", tidbit);
-    irc_cmd_msg (session, irc_cfg.channel, "Ok, forgetting");
+    if (found_tidbit == 1)
+    {
+        memset (reply, 0, sizeof(reply));
+        strcpy (reply, "Ok, forgetting ");
+        strcat (reply, tidbit);
+        irc_cmd_msg (session, irc_cfg.channel, reply);
+    }
 }
 
 void check_tidbit (const char **params)
@@ -310,7 +317,7 @@ void check_tidbit (const char **params)
     }
 
     //Check to see if we are being asked to forget something
-    if (strncmp (params[1], MAGIC_FORGET, strlen(MAGIC_FORGET)) == 0)
+    if (strncasecmp (params[1], MAGIC_FORGET, strlen(MAGIC_FORGET)) == 0)
     {
         strcpy (tidbit, params[1] + strlen(MAGIC_FORGET) + 1);
         forget_tidbit (tidbit);
@@ -319,6 +326,12 @@ void check_tidbit (const char **params)
 
 void event_channel (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
 {
+    check_tidbit (params);
+}
+
+void event_privmsg (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
+{
+	//printf ("'%s' said to me (%s): %s\n", origin ? origin : "someone", params[0], params[1] );
     check_tidbit (params);
 }
 
