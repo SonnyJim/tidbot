@@ -17,7 +17,7 @@
 #define DEFAULT_CFG_FILE  	"/.tidbot.cfg"
 #define DEFAULT_IRC_SERVER  	"irc.choopa.net"
 #define DEFAULT_IRC_PORT	"6667"
-#define DEFAULT_IRC_CHANNEL  	"#pinball"
+#define DEFAULT_IRC_CHANNEL  	"#pinball2"
 #define DEFAULT_IRC_NICK	"tidbot"
 #define DEFAULT_IRC_USERNAME 	"qircbot"
 #define DEFAULT_IRC_REALNAME 	"qircbot"
@@ -174,8 +174,8 @@ void event_numeric (irc_session_t *session, unsigned int event, const char *orig
 void recall_tidbit (const char *tidbit)
 {
     FILE *tidbit_file;
-    char lineread[1024], reply[1024];
-    int i;
+    char lineread[1024], reply[1024], msg[1024];
+    int i, tidbit_count = 0;
 
     tidbit_file = fopen (DEFAULT_TIDBIT_FILE, "r");
     if (tidbit_file == NULL)
@@ -183,6 +183,8 @@ void recall_tidbit (const char *tidbit)
         fprintf (stderr, "Error opening %s for reading\n", DEFAULT_TIDBIT_FILE);
         return;
     }
+
+    memset (msg, 0, strlen(msg));
 
     //Scan file for tidbit
     while (fgets (lineread, 1024, tidbit_file) != NULL)
@@ -195,15 +197,24 @@ void recall_tidbit (const char *tidbit)
             {
                 if (lineread[i] == '|')
                 {
-                    //Strip out and form reply
+                    tidbit_count++;
+                    //Strip out and form reply ( -1 to remove \n)
                     strncpy (reply, lineread + i + 1, strlen (lineread) - i);
-                    irc_cmd_msg (session, irc_cfg.channel, reply);
-                    fclose (tidbit_file);
-                    return;
+                    if (tidbit_count == 1)
+                        strncpy (msg, reply, strlen(reply) - 1);
+                    else
+                    {
+                        strcat (msg, " or ");
+                        strncat (msg, reply, strlen(reply) - 1);
+                    }
+                    memset (reply, 0, strlen(msg));
                 }
             }
         }
     }
+    printf ("Finished msg = %s", msg);
+    irc_cmd_msg (session, irc_cfg.channel, msg);
+    fclose (tidbit_file);
 }
 
 void store_tidbit (const char *tidbit, const char *bittid)
