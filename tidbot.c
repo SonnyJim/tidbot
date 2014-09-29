@@ -22,6 +22,7 @@
 #define DEFAULT_IRC_USERNAME 	"qircbot"
 #define DEFAULT_IRC_REALNAME 	"qircbot"
 #define DEFAULT_TIDBIT_FILE "tidbits.txt"
+#define DEFAULT_IGNORE_FILE "ignore.txt"
 
 struct cfg {
 	char cfg_file[1024];
@@ -207,10 +208,23 @@ void recall_tidbit (const char *tidbit)
 
 void store_tidbit (const char *tidbit, const char *bittid)
 {
-    char tidbit_store[1024];
-    FILE *tidbit_file;
+    char tidbit_store[1024], lineread[1024];
+    FILE *tidbit_file, *ignore_file;
+
+    //Check for tidbit in ignore file
+    ignore_file = fopen (DEFAULT_IGNORE_FILE, "r");
+    while (fgets (lineread, 1024, ignore_file) != NULL)
+    {
+        if (strncasecmp (lineread, tidbit, strlen(tidbit)) == 0)
+        {
+            fprintf (stdout, "Found %s in ignore file, ignoring\n", tidbit);
+            return;
+        }
+    }
+    fclose (ignore_file);
+   
     tidbit_file = fopen (DEFAULT_TIDBIT_FILE, "a");
-    
+
     if (tidbit_file == NULL)
     {
         fprintf (stderr, "Error opening %s for appending\n", DEFAULT_TIDBIT_FILE);
