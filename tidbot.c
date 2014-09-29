@@ -1,6 +1,7 @@
 //TODO:
 //Multiple definitions
-//ignore list of words (this, why etc)
+//ignore list of words (this, why, how, when, which etc)
+//Some way of deleting bad definitions
 
 #include "libircclient/libircclient.h"
 #include "libircclient/libirc_rfcnumeric.h"
@@ -9,7 +10,7 @@
 #include <string.h>
 #include <getopt.h>
 
-#define DEFAULT_CFG_FILE  	"/.ircbot.cfg"
+#define DEFAULT_CFG_FILE  	"/.tidbot.cfg"
 #define DEFAULT_IRC_SERVER  	"irc.choopa.net"
 #define DEFAULT_IRC_PORT	"6667"
 #define DEFAULT_IRC_CHANNEL  	"#pinball"
@@ -20,16 +21,16 @@
 
 struct cfg {
 	char cfg_file[1024];
-	char server[255];
+	char server[1024];
 	char port[16];
 	char channel[64];
 	char nick[64];
 	char username[16];
 	char realname[16];
-	char server_connect_msg[255];
+	char server_connect_msg[1024];
 	char server_connect_nick[16];
 	char server_connect_delay[6];
-	char channel_connect_msg[255];
+	char channel_connect_msg[1024];
 	char channel_connect_nick[16];
 	char channel_connect_delay[6];
 } irc_cfg = {
@@ -172,30 +173,28 @@ void event_numeric (irc_session_t *session, unsigned int event, const char *orig
 void recall_tidbit (const char *tidbit)
 {
     FILE *tidbit_file;
-    char lineread[255], reply[255];
+    char lineread[1024], reply[1024];
     int i;
 
-    printf ("%s\n", tidbit);
     tidbit_file = fopen (DEFAULT_TIDBIT_FILE, "r");
     if (tidbit_file == NULL)
     {
-        printf ("Error opening %s for reading\n", DEFAULT_TIDBIT_FILE);
+        fprintf (stderr, "Error opening %s for reading\n", DEFAULT_TIDBIT_FILE);
         return;
     }
 
     //Scan file for tidbit
-    while (fgets (lineread, 255, tidbit_file) != NULL)
+    while (fgets (lineread, 1024, tidbit_file) != NULL)
     {
         //Found the tidbit
-        if (strstr (lineread, tidbit) != NULL)
+        if (strncmp (lineread, tidbit, strlen(tidbit)) == 0)
         {
-            printf ("%s\n", lineread);
             //Find the | separator in the line
             for (i = 0; i < strlen (lineread); i++)
             {
                 if (lineread[i] == '|')
                 {
-                    //Strip it out and form reply
+                    //Strip out and form reply
                     strncpy (reply, lineread + i + 1, strlen (lineread) - i);
                     irc_cmd_msg (session, irc_cfg.channel, reply);
                     fclose (tidbit_file);
@@ -208,13 +207,13 @@ void recall_tidbit (const char *tidbit)
 
 void store_tidbit (const char *tidbit, const char *bittid)
 {
-    char tidbit_store[255];
+    char tidbit_store[1024];
     FILE *tidbit_file;
     tidbit_file = fopen (DEFAULT_TIDBIT_FILE, "a");
     
     if (tidbit_file == NULL)
     {
-        printf ("Error opening %s for appending\n", DEFAULT_TIDBIT_FILE);
+        fprintf (stderr, "Error opening %s for appending\n", DEFAULT_TIDBIT_FILE);
         return;
     }
 
@@ -229,16 +228,58 @@ void store_tidbit (const char *tidbit, const char *bittid)
     fclose (tidbit_file);
 }
 
+void forget_tidbit (const char *tidbit)
+{
+    FILE *tidbit_file;
+    FILE *temp_file;
+    char lineread[1024];
+
+    tidbit_file = fopen (DEFAULT_TIDBIT_FILE, "r");
+    temp_file = fopen ("tmp.txt", "w+");
+    if (tidbit_file == NULL)
+    {
+        fprintf (stderr, "Error opening %s for reading\n", DEFAULT_TIDBIT_FILE);
+        return;
+    }
+
+    //Copy all lines except tidbit line to temp file
+    while (fgets (lineread, 1024, tidbit_file) != NULL)
+    {
+        if (strncmp (lineread, tidbit, strlen(tidbit)) != 0)
+        {
+            fputs (lineread, temp_file);
+        }
+    }
+    
+    //Close and reopen files r/w
+    fclose (temp_file);
+    fclose (tidbit_file);
+    tidbit_file = fopen (DEFAULT_TIDBIT_FILE, "w+");
+    temp_file = fopen ("tmp.txt", "r");
+    
+    //Copy temp_file to tidbit_file
+    while (fgets (lineread, 1024, temp_file) != NULL)
+    {
+        fputs (lineread, tidbit_file);
+    }
+    fclose (temp_file);
+    fclose (tidbit_file);
+    
+    printf ("Forgot %s\n", tidbit);
+    irc_cmd_msg (session, irc_cfg.channel, "Ok, forgetting");
+}
+
 void check_tidbit (const char **params)
 {
     #define MAGIC_IS " is "
+    #define MAGIC_FORGET "forget"
     
-    char *ptr, tidbit[255], bittid[255];
+    char *ptr, tidbit[1024], bittid[1024];
     int pos1, pos2;
-    
+   
     //Clear vars
-    memset (tidbit, 0, 255);
-    memset (bittid, 0, 255);
+    memset (tidbit, 0, 1024);
+    memset (bittid, 0, 1024);
     
     //Check to see if we are being asked a question
     if (params[1][strlen(params[1]) - 1] == '?')
@@ -268,12 +309,16 @@ void check_tidbit (const char **params)
         store_tidbit (tidbit, bittid);
     }
 
-   
+    //Check to see if we are being asked to forget something
+    if (strncmp (params[1], MAGIC_FORGET, strlen(MAGIC_FORGET)) == 0)
+    {
+        strcpy (tidbit, params[1] + strlen(MAGIC_FORGET) + 1);
+        forget_tidbit (tidbit);
+    }
 }
 
 void event_channel (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
 {
-	printf ("'%s' said: %s\n", origin ? origin : "someone", params[1] );
     check_tidbit (params);
 }
 
