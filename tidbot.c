@@ -3,8 +3,9 @@
 //ignore list of words (this, why, how, when, which etc)
 //Help message
 //Change forget_tidbit() to use a memory buffer rather than a temp file
-//Use PM to control bot as well as main chan
-//use strcasecmp() instead
+//FIXME:
+//"WPC" matches both "WPC" and "WPC repair"
+//ignore is buggy, the will match There
 
 #include "libircclient/libircclient.h"
 #include "libircclient/libirc_rfcnumeric.h"
@@ -17,7 +18,7 @@
 #define DEFAULT_CFG_FILE  	"/.tidbot.cfg"
 #define DEFAULT_IRC_SERVER  	"irc.choopa.net"
 #define DEFAULT_IRC_PORT	"6667"
-#define DEFAULT_IRC_CHANNEL  	"#pinball2"
+#define DEFAULT_IRC_CHANNEL  	"#pinball"
 #define DEFAULT_IRC_NICK	"tidbot"
 #define DEFAULT_IRC_USERNAME 	"qircbot"
 #define DEFAULT_IRC_REALNAME 	"qircbot"
@@ -25,17 +26,17 @@
 #define DEFAULT_IGNORE_FILE "ignore.txt"
 
 struct cfg {
-	char cfg_file[1024];
-	char server[1024];
+	char cfg_file[2048];
+	char server[2048];
 	char port[16];
 	char channel[64];
 	char nick[64];
 	char username[16];
 	char realname[16];
-	char server_connect_msg[1024];
+	char server_connect_msg[2048];
 	char server_connect_nick[16];
 	char server_connect_delay[6];
-	char channel_connect_msg[1024];
+	char channel_connect_msg[2048];
 	char channel_connect_nick[16];
 	char channel_connect_delay[6];
 } irc_cfg = {
@@ -174,7 +175,7 @@ void event_numeric (irc_session_t *session, unsigned int event, const char *orig
 void recall_tidbit (const char *tidbit)
 {
     FILE *tidbit_file;
-    char lineread[1024], reply[1024], msg[1024];
+    char lineread[2048], reply[2048], msg[2048];
     int i, tidbit_count = 0;
 
     tidbit_file = fopen (DEFAULT_TIDBIT_FILE, "r");
@@ -187,7 +188,7 @@ void recall_tidbit (const char *tidbit)
     memset (msg, 0, strlen(msg));
 
     //Scan file for tidbit
-    while (fgets (lineread, 1024, tidbit_file) != NULL)
+    while (fgets (lineread, 2048, tidbit_file) != NULL)
     {
         //Found the tidbit
         if (strncasecmp (lineread, tidbit, strlen(tidbit)) == 0)
@@ -212,23 +213,23 @@ void recall_tidbit (const char *tidbit)
             }
         }
     }
-    printf ("Finished msg = %s", msg);
     irc_cmd_msg (session, irc_cfg.channel, msg);
     fclose (tidbit_file);
 }
 
 void store_tidbit (const char *tidbit, const char *bittid)
 {
-    char tidbit_store[1024], lineread[1024];
+    char tidbit_store[2048], lineread[2048];
     FILE *tidbit_file, *ignore_file;
 
     //Check for tidbit in ignore file
     ignore_file = fopen (DEFAULT_IGNORE_FILE, "r");
-    while (fgets (lineread, 1024, ignore_file) != NULL)
+    while (fgets (lineread, 2048, ignore_file) != NULL)
     {
         if (strncasecmp (lineread, tidbit, strlen(tidbit)) == 0)
         {
             fprintf (stdout, "Found %s in ignore file, ignoring\n", tidbit);
+            fclose (ignore_file);
             return;
         }
     }
@@ -257,7 +258,7 @@ void forget_tidbit (const char *tidbit)
 {
     FILE *tidbit_file;
     FILE *temp_file;
-    char lineread[1024], reply[1024];
+    char lineread[2048], reply[2048];
     int found_tidbit = 0;
 
     tidbit_file = fopen (DEFAULT_TIDBIT_FILE, "r");
@@ -269,7 +270,7 @@ void forget_tidbit (const char *tidbit)
     }
 
     //Copy all lines except tidbit line to temp file
-    while (fgets (lineread, 1024, tidbit_file) != NULL)
+    while (fgets (lineread, 2048, tidbit_file) != NULL)
     {
         if (strncmp (lineread, tidbit, strlen(tidbit)) != 0)
             fputs (lineread, temp_file);
@@ -285,7 +286,7 @@ void forget_tidbit (const char *tidbit)
     temp_file = fopen ("tmp.txt", "r");
     
     //Copy temp_file to tidbit_file
-    while (fgets (lineread, 1024, temp_file) != NULL)
+    while (fgets (lineread, 2048, temp_file) != NULL)
     {
         fputs (lineread, tidbit_file);
     }
@@ -306,18 +307,21 @@ void check_tidbit (const char **params)
     #define MAGIC_IS " is "
     #define MAGIC_FORGET "forget"
     
-    char *ptr, tidbit[1024], bittid[1024];
+    char *ptr, tidbit[2048], bittid[2048];
     int pos1, pos2;
    
     //Clear vars
-    memset (tidbit, 0, 1024);
-    memset (bittid, 0, 1024);
+    memset (tidbit, 0, 2048);
+    memset (bittid, 0, 2048);
     
     //Check to see if we are being asked a question
     if (params[1][strlen(params[1]) - 1] == '?')
     {
         //Copy question
         strncpy (tidbit, params[1], strlen (params[1]) - 1);
+        //Ignore tidbits of less than 2 chars
+        if (strlen(tidbit) < 2)
+             return;
         //Recall
         recall_tidbit (tidbit);
         return;
@@ -337,6 +341,10 @@ void check_tidbit (const char **params)
         //Copy vars
         strncpy (tidbit, params[1], pos1);
         strcpy (bittid, params[1] + pos2);
+
+        //Ignore if less than 2 chars
+        if (strlen(tidbit)  < 2|| strlen (bittid) < 2)
+            return;
         //Store
         store_tidbit (tidbit, bittid);
     }
