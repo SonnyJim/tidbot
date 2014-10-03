@@ -6,6 +6,8 @@
 //FIXME:
 //"WPC" matches both "WPC" and "WPC repair"
 //ignore is buggy, the will match There
+//forget isn't case insensitive
+//Sort out PMs going to channel
 
 #include "libircclient/libircclient.h"
 #include "libircclient/libirc_rfcnumeric.h"
@@ -24,6 +26,7 @@
 #define DEFAULT_IRC_REALNAME 	"qircbot"
 #define DEFAULT_TIDBIT_FILE "tidbits.txt"
 #define DEFAULT_IGNORE_FILE "ignore.txt"
+#define DEFAULT_MAX_TIDBIT_LENGTH 32
 
 struct cfg {
 	char cfg_file[2048];
@@ -172,7 +175,7 @@ void event_numeric (irc_session_t *session, unsigned int event, const char *orig
 	}
 }
 
-void recall_tidbit (const char *tidbit)
+void recall_tidbit (const char *tidbit, const char *target)
 {
     FILE *tidbit_file;
     char lineread[2048], reply[2048], msg[2048];
@@ -213,7 +216,7 @@ void recall_tidbit (const char *tidbit)
             }
         }
     }
-    irc_cmd_msg (session, irc_cfg.channel, msg);
+    irc_cmd_msg (session, target, msg);
     fclose (tidbit_file);
 }
 
@@ -254,7 +257,7 @@ void store_tidbit (const char *tidbit, const char *bittid)
     fclose (tidbit_file);
 }
 
-void forget_tidbit (const char *tidbit)
+void forget_tidbit (const char *tidbit, const char *target)
 {
     FILE *tidbit_file;
     FILE *temp_file;
@@ -272,7 +275,7 @@ void forget_tidbit (const char *tidbit)
     //Copy all lines except tidbit line to temp file
     while (fgets (lineread, 2048, tidbit_file) != NULL)
     {
-        if (strncmp (lineread, tidbit, strlen(tidbit)) != 0)
+        if (strncasecmp (lineread, tidbit, strlen(tidbit)) != 0)
             fputs (lineread, temp_file);
         else
             found_tidbit = 1;
@@ -298,11 +301,11 @@ void forget_tidbit (const char *tidbit)
         memset (reply, 0, sizeof(reply));
         strcpy (reply, "Ok, forgetting ");
         strcat (reply, tidbit);
-        irc_cmd_msg (session, irc_cfg.channel, reply);
+        irc_cmd_msg (session, target, reply);
     }
 }
 
-void check_tidbit (const char **params)
+void check_tidbit (const char **params, const char *target)
 {
     #define MAGIC_IS " is "
     #define MAGIC_FORGET "forget"
@@ -313,7 +316,12 @@ void check_tidbit (const char **params)
     //Clear vars
     memset (tidbit, 0, 2048);
     memset (bittid, 0, 2048);
-    
+   
+    if (strlen (tidbit) > DEFAULT_MAX_TIDBIT_LENGTH)
+    {
+        //Ignore, wasn't probably meant for me anyway
+        return;
+    }
     //Check to see if we are being asked a question
     if (params[1][strlen(params[1]) - 1] == '?')
     {
@@ -323,7 +331,7 @@ void check_tidbit (const char **params)
         if (strlen(tidbit) < 2)
              return;
         //Recall
-        recall_tidbit (tidbit);
+        recall_tidbit (tidbit, target);
         return;
     } 
     
@@ -353,19 +361,20 @@ void check_tidbit (const char **params)
     if (strncasecmp (params[1], MAGIC_FORGET, strlen(MAGIC_FORGET)) == 0)
     {
         strcpy (tidbit, params[1] + strlen(MAGIC_FORGET) + 1);
-        forget_tidbit (tidbit);
+        //Check to see which tidbit we are being asked to forget
+        forget_tidbit (tidbit, target);
     }
 }
 
 void event_channel (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
 {
-    check_tidbit (params);
+    check_tidbit (params, irc_cfg.channel);
 }
 
 void event_privmsg (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
 {
 	//printf ("'%s' said to me (%s): %s\n", origin ? origin : "someone", params[0], params[1] );
-    check_tidbit (params);
+    check_tidbit (params, origin);
 }
 
 void print_usage (void)
