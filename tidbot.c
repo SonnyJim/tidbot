@@ -15,7 +15,7 @@
 #define DEFAULT_CFG_FILE  	"/.tidbot.cfg"
 #define DEFAULT_IRC_SERVER  	"irc.choopa.net"
 #define DEFAULT_IRC_PORT	"6667"
-#define DEFAULT_IRC_CHANNEL  	"#pinball"
+#define DEFAULT_IRC_CHANNEL  	"#pinball2"
 #define DEFAULT_IRC_NICK	"tidbot"
 #define DEFAULT_IRC_USERNAME 	"qircbot"
 #define DEFAULT_IRC_REALNAME 	"qircbot"
@@ -306,29 +306,61 @@ void forget_tidbit (const char *tidbit, const char *target)
     }
 }
 
-void store_tell (const char *tidbit, const char *origin)
+void store_tell (const char *origin, const char *target, const char *msg)
 {
-    int i;
+    FILE *tell_file;
+    char tell_line[2048];
+
+    printf ("origin: %s target: %s msg: %s\n", origin, target, msg);
+    tell_file = fopen (DEFAULT_TELL_FILE, "a+");
+    if (tell_file == NULL)
+    {
+        fprintf (stderr, "Error opening %s for reading\n", DEFAULT_TELL_FILE);
+        return;
+    }
+
+    strcpy (tell_line, origin);
+    strcat (tell_line, "|");
+    strcat (tell_line, target);
+    strcat (tell_line, "|");
+    strcat (tell_line, msg);
+
+    printf ("tell_line: %s\n", tell_line);
+    fputs (tell_line, tell_file);
+    fclose (tell_file);
+}
+
+void tell_user (const char *tidbit, const char *origin)
+{
+    int i, j;
     char target[32];
     char msg[1024];
-   
-    printf ("tell spotted\n");
+  
     //scan tidbit for target to tell
     //for (i = strlen(MAGIC_TELL); i < (strlen (tidbit) - strlen (tidbit); i++))
     //
     memset (target, 0, 32);
     memset (msg, 0, 1024);
 
-    i = strlen (MAGIC_TELL);
-    while (tidbit[i] != ' ')
+    //Find the target nick
+    j = 0;
+    for (i = strlen (MAGIC_TELL); i < strlen (tidbit); i++)
     {
-        target[i - strlen (MAGIC_TELL)] = tidbit[i];
-        printf ("%s ", tidbit);
-        i++;
+        if (tidbit[i] == ' ')
+            break;
+        target[j] = tidbit[i];
+        j++;
     }
+    
+    //Copy the message
+    strcpy (msg, tidbit + (strlen (MAGIC_TELL) + strlen (target) + 1));
+
+    //Store the message for later
+    store_tell (origin, target, msg);
+    irc_cmd_msg (session, origin, "Ok, I'll tell them the next time I see them");
 }
 
-void check_tidbit (const char **params, const char *target)
+void check_tidbit (const char **params, const char *target, const char *channel)
 {
    
     char *ptr, tidbit[2048], bittid[2048];
@@ -337,24 +369,25 @@ void check_tidbit (const char **params, const char *target)
     //Clear vars
     memset (tidbit, 0, 2048);
     memset (bittid, 0, 2048);
-  
-    printf ("target = %s, tidbit = %s", target, tidbit);
-    if (strlen (tidbit) > DEFAULT_MAX_TIDBIT_LENGTH)
+ 
+    /*
+    if (strlen (params[1]) > DEFAULT_MAX_TIDBIT_LENGTH)
     {
         //Ignore, wasn't probably meant for me anyway
+        fprintf (stderr, "Error, line too long\n");
         return;
     }
-
-    if (strncasecmp (tidbit, MAGIC_TELL, strlen(MAGIC_TELL)) == 0)
+    */
+    if (strncasecmp (params[1], MAGIC_TELL, strlen(MAGIC_TELL)) == 0)
     {
-        store_tell (tidbit, target);
+        tell_user (params[1], target);
         return;
     }
 
     if (strlen (params[1]) == strlen (MAGIC_HELP)
             && strcasecmp (params[1], MAGIC_HELP) == 0
             //Don't respond to help in channel, only privmsg
-            && strcmp (target, irc_cfg.channel) != 0)
+            && channel == NULL)
     {
         //Print help text
         irc_cmd_msg (session, target, "How to use tidbot:");
@@ -373,7 +406,11 @@ void check_tidbit (const char **params, const char *target)
         if (strlen(tidbit) < 2)
              return;
         //Recall
-        recall_tidbit (tidbit, target);
+        if (channel != NULL)
+            recall_tidbit (tidbit, irc_cfg.channel);
+        else
+            recall_tidbit (tidbit, target);
+
         return;
     } 
     
@@ -410,19 +447,21 @@ void check_tidbit (const char **params, const char *target)
     {
         strcpy (tidbit, params[1] + strlen(MAGIC_FORGET) + 1);
         //Check to see which tidbit we are being asked to forget
+        if (channel != NULL)
+            target = irc_cfg.channel;
         forget_tidbit (tidbit, target);
     }
 }
 
 void event_channel (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
 {
-    check_tidbit (params, irc_cfg.channel);
+    check_tidbit (params, origin, irc_cfg.channel);
 }
 
 void event_privmsg (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
 {
 	//printf ("'%s' said to me (%s): %s\n", origin ? origin : "someone", params[0], params[1] );
-    check_tidbit (params, origin);
+    check_tidbit (params, origin, NULL);
 }
 
 void print_usage (void)
