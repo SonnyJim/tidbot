@@ -311,7 +311,7 @@ void store_tell (const char *origin, const char *target, const char *msg)
     FILE *tell_file;
     char tell_line[2048];
 
-    printf ("origin: %s target: %s msg: %s\n", origin, target, msg);
+   // printf ("origin: %s target: %s msg: %s\n", origin, target, msg);
     tell_file = fopen (DEFAULT_TELL_FILE, "a+");
     if (tell_file == NULL)
     {
@@ -319,18 +319,19 @@ void store_tell (const char *origin, const char *target, const char *msg)
         return;
     }
 
-    strcpy (tell_line, origin);
+    strcpy (tell_line, target);
     strcat (tell_line, "|");
-    strcat (tell_line, target);
+    strcat (tell_line, origin);
     strcat (tell_line, "|");
     strcat (tell_line, msg);
+    strcat (tell_line, "\n");
 
-    printf ("tell_line: %s\n", tell_line);
+   // printf ("tell_line: %s", tell_line);
     fputs (tell_line, tell_file);
     fclose (tell_file);
 }
 
-void tell_user (const char *tidbit, const char *origin)
+void tell_user (const char *tidbit, const char *origin, const char *channel)
 {
     int i, j;
     char target[32];
@@ -357,7 +358,81 @@ void tell_user (const char *tidbit, const char *origin)
 
     //Store the message for later
     store_tell (origin, target, msg);
-    irc_cmd_msg (session, origin, "Ok, I'll tell them the next time I see them");
+    if (channel == NULL)
+        irc_cmd_msg (session, origin, "Ok, I'll tell them the next time I see them");
+    else
+        irc_cmd_msg (session, irc_cfg.channel, "Ok, I'll tell them the next time I see them");
+}
+
+void check_tell_file (const char *target)
+{
+    FILE *tell_file, *temp_file;
+    char lineread[2048], reply[2048];
+    int found_tell = 0;
+    const char delimiter[] = "|";
+
+    memset (lineread, 0, 2048);
+    memset (reply, 0, 2048);
+    //Open file read-only, check for username
+    //If found, re-read the file to temporary file, give the user the message and remove the line
+    //We do this so we don't hammer the temp file on every message
+    tell_file = fopen (DEFAULT_TELL_FILE, "r");
+    if (tell_file == NULL)
+    {
+        fprintf (stderr, "Error opening %s for reading\n", DEFAULT_TELL_FILE);
+        return;
+    }
+
+    while (fgets (lineread, 2048, tell_file) != NULL)
+    {
+        if (strncasecmp (lineread, target, strlen(target)) == 0)
+            found_tell = 1;
+    }
+
+    fclose (tell_file);
+    if (!found_tell)
+        return;
+
+    tell_file = fopen (DEFAULT_TELL_FILE, "r");
+    temp_file = fopen ("tmp.txt", "w+");
+    if (tell_file == NULL)
+    {
+        fprintf (stderr, "Error opening %s for reading\n", DEFAULT_TELL_FILE);
+        return;
+    }
+
+    //Copy all lines except tidbit line to temp file
+    while (fgets (lineread, 2048, tell_file) != NULL)
+    {
+        if (strncasecmp (lineread, target, strlen(target)) != 0)
+            fputs (lineread, temp_file);
+        else
+        {
+            //Build reply
+            strcpy (reply, strtok (lineread, delimiter));
+            strcat (reply, ": ");
+            strcat (reply, strtok (NULL, delimiter));
+            strcat (reply, " wants you to know ");
+            strcat (reply, strtok (NULL, delimiter));
+
+            irc_cmd_msg (session, irc_cfg.channel, reply);
+        }
+
+    }
+    
+    //Close and reopen files r/w
+    fclose (temp_file);
+    fclose (tell_file);
+    tell_file = fopen (DEFAULT_TELL_FILE, "w+");
+    temp_file = fopen ("tmp.txt", "r");
+    
+    //Copy temp_file to tidbit_file
+    while (fgets (lineread, 2048, temp_file) != NULL)
+    {
+        fputs (lineread, tell_file);
+    }
+    fclose (temp_file);
+    fclose (tell_file);
 }
 
 void check_tidbit (const char **params, const char *target, const char *channel)
@@ -380,7 +455,7 @@ void check_tidbit (const char **params, const char *target, const char *channel)
     */
     if (strncasecmp (params[1], MAGIC_TELL, strlen(MAGIC_TELL)) == 0)
     {
-        tell_user (params[1], target);
+        tell_user (params[1], target, channel);
         return;
     }
 
@@ -394,6 +469,7 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         irc_cmd_msg (session, target, "Typing foo is bar will make tidbot respond to foo? with the answer bar");
         irc_cmd_msg (session, target, "tidbot can remember multiple definitions for foo");
         irc_cmd_msg (session, target, "forget foo will make tidbot forget all definitions for foo");
+        irc_cmd_msg (session, target, "tell foo message will make tidbot tell the user foo message next time they are around ");
         return;
     }
 
@@ -455,6 +531,7 @@ void check_tidbit (const char **params, const char *target, const char *channel)
 
 void event_channel (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
 {
+    check_tell_file (origin);
     check_tidbit (params, origin, irc_cfg.channel);
 }
 
