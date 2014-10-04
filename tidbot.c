@@ -1,13 +1,8 @@
 //TODO:
-//Multiple definitions
-//ignore list of words (this, why, how, when, which etc)
-//Help message
 //Change forget_tidbit() to use a memory buffer rather than a temp file
 //FIXME:
 //"WPC" matches both "WPC" and "WPC repair"
 //ignore is buggy, the will match There
-//forget isn't case insensitive
-//Sort out PMs going to channel
 
 #include "libircclient/libircclient.h"
 #include "libircclient/libirc_rfcnumeric.h"
@@ -26,8 +21,14 @@
 #define DEFAULT_IRC_REALNAME 	"qircbot"
 #define DEFAULT_TIDBIT_FILE "tidbits.txt"
 #define DEFAULT_IGNORE_FILE "ignore.txt"
+#define DEFAULT_TELL_FILE "tell.txt"
 #define DEFAULT_MAX_TIDBIT_LENGTH 32
 
+#define MAGIC_IS " is "
+#define MAGIC_FORGET "forget"
+#define MAGIC_HELP "help"
+#define MAGIC_TELL "tell "
+    
 struct cfg {
 	char cfg_file[2048];
 	char server[2048];
@@ -305,23 +306,64 @@ void forget_tidbit (const char *tidbit, const char *target)
     }
 }
 
+void store_tell (const char *tidbit, const char *origin)
+{
+    int i;
+    char target[32];
+    char msg[1024];
+   
+    printf ("tell spotted\n");
+    //scan tidbit for target to tell
+    //for (i = strlen(MAGIC_TELL); i < (strlen (tidbit) - strlen (tidbit); i++))
+    //
+    memset (target, 0, 32);
+    memset (msg, 0, 1024);
+
+    i = strlen (MAGIC_TELL);
+    while (tidbit[i] != ' ')
+    {
+        target[i - strlen (MAGIC_TELL)] = tidbit[i];
+        printf ("%s ", tidbit);
+        i++;
+    }
+}
+
 void check_tidbit (const char **params, const char *target)
 {
-    #define MAGIC_IS " is "
-    #define MAGIC_FORGET "forget"
-    
+   
     char *ptr, tidbit[2048], bittid[2048];
-    int pos1, pos2;
+    int pos1, pos2, i;
    
     //Clear vars
     memset (tidbit, 0, 2048);
     memset (bittid, 0, 2048);
-   
+  
+    printf ("target = %s, tidbit = %s", target, tidbit);
     if (strlen (tidbit) > DEFAULT_MAX_TIDBIT_LENGTH)
     {
         //Ignore, wasn't probably meant for me anyway
         return;
     }
+
+    if (strncasecmp (tidbit, MAGIC_TELL, strlen(MAGIC_TELL)) == 0)
+    {
+        store_tell (tidbit, target);
+        return;
+    }
+
+    if (strlen (params[1]) == strlen (MAGIC_HELP)
+            && strcasecmp (params[1], MAGIC_HELP) == 0
+            //Don't respond to help in channel, only privmsg
+            && strcmp (target, irc_cfg.channel) != 0)
+    {
+        //Print help text
+        irc_cmd_msg (session, target, "How to use tidbot:");
+        irc_cmd_msg (session, target, "Typing foo is bar will make tidbot respond to foo? with the answer bar");
+        irc_cmd_msg (session, target, "tidbot can remember multiple definitions for foo");
+        irc_cmd_msg (session, target, "forget foo will make tidbot forget all definitions for foo");
+        return;
+    }
+
     //Check to see if we are being asked a question
     if (params[1][strlen(params[1]) - 1] == '?')
     {
@@ -353,6 +395,12 @@ void check_tidbit (const char **params, const char *target)
         //Ignore if less than 2 chars
         if (strlen(tidbit)  < 2|| strlen (bittid) < 2)
             return;
+        //Check to see if the tidbit has "," in it, if so we can most likely ignore it
+        for (i = 0; i < strlen (tidbit); i++)
+        {
+            if (tidbit[i] == ',')
+                return;
+        }
         //Store
         store_tidbit (tidbit, bittid);
     }
