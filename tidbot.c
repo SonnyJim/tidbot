@@ -11,73 +11,13 @@
 #include <string.h>
 #include <strings.h>
 #include <getopt.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
 
-#define DEFAULT_CFG_FILE  	"/.tidbot.cfg"
-#define DEFAULT_IRC_SERVER  	"irc.choopa.net"
-#define DEFAULT_IRC_PORT	"6667"
-#define DEFAULT_IRC_CHANNEL  	"#pinball2"
-#define DEFAULT_IRC_NICK	"tidbot"
-#define DEFAULT_IRC_USERNAME 	"qircbot"
-#define DEFAULT_IRC_REALNAME 	"qircbot"
-#define DEFAULT_TIDBIT_FILE "tidbits.txt"
-#define DEFAULT_IGNORE_FILE "ignore.txt"
-#define DEFAULT_TELL_FILE "tell.txt"
-#define DEFAULT_MAX_TIDBIT_LENGTH 32
-
-#define MAGIC_IS " is "
-#define MAGIC_FORGET "forget"
-#define MAGIC_HELP "help"
-#define MAGIC_TELL "tell "
-    
-struct cfg {
-	char cfg_file[2048];
-	char server[2048];
-	char port[16];
-	char channel[64];
-	char nick[64];
-	char username[16];
-	char realname[16];
-	char server_connect_msg[2048];
-	char server_connect_nick[16];
-	char server_connect_delay[6];
-	char channel_connect_msg[2048];
-	char channel_connect_nick[16];
-	char channel_connect_delay[6];
-} irc_cfg = {
-	DEFAULT_CFG_FILE,
-	DEFAULT_IRC_SERVER,
-	DEFAULT_IRC_PORT,
-	DEFAULT_IRC_CHANNEL,
-	DEFAULT_IRC_NICK,
-	DEFAULT_IRC_USERNAME,
-	DEFAULT_IRC_REALNAME,
-	"",
-	"",
-	"",
-	"",
-	"",
-	""
-};
-
-#define NUM_CFG_OPTS 12
-
-const char *cfg_options[] = {
-	"server", "port", "channel", "nick", "username", "realname", 
-	"server_connect_msg", "server_connect_nick", "server_connect_delay",
-	"channel_connect_msg", "channel_connect_nick", "channel_connect_delay"
-};
-
-char *cfg_vars[] = {
-	irc_cfg.server, irc_cfg.port, irc_cfg.channel, irc_cfg.nick, irc_cfg.username, irc_cfg.realname,
-		irc_cfg.server_connect_msg, irc_cfg.server_connect_nick, irc_cfg.server_connect_delay,
-		irc_cfg.channel_connect_msg, irc_cfg.channel_connect_nick, irc_cfg.channel_connect_delay
-};
-
-int verbose = 0;
-int use_default_cfg = 1;
-
-irc_session_t *session;
-
+#include "tidbot.h"
 //Sent on successful connection to server, useful for NickServ
 static void send_server_connect_msg (void)
 {
@@ -148,9 +88,40 @@ void event_connect (irc_session_t *session, const char *event, const char *origi
 	send_channel_connect_msg ();
 }
 
+void whereis_user (const char *target, const char *hostname)
+{
+    int error;
+    struct addrinfo *result;
+    struct in_addr address;
+
+    printf ("whereis %s: found hostname %s\n", target, hostname);
+    
+    //Convert to an IP address
+    error = getaddrinfo (hostname, NULL, NULL, &result);
+    if (error != 0)
+    {
+        fprintf (stderr, "Error trying to resolve %s\n", hostname);
+        return;
+    }
+
+    address.s_addr = ((struct sockaddr_in *)(result->ai_addr))->sin_addr.s_addr;
+    printf ("ip = %s\n", inet_ntoa (address));
+    freeaddrinfo (result);
+
+    geoip_find (inet_ntoa (address));
+    printf ("Location = %s\n", location);
+    irc_cmd_msg (session, irc_cfg.channel, location);
+}
 
 void event_numeric (irc_session_t *session, unsigned int event, const char *origin, const char **params, unsigned int count)
 {
+    if (event == LIBIRC_RFC_RPL_WHOISUSER)
+    {
+        //params[1] == nick associated with WHOIS
+        //params[3] == hostname returned from WHOIS
+        whereis_user (params[1], params[3]);
+    }
+
 	if (!verbose)
 		return;
 
@@ -412,7 +383,7 @@ void check_tell_file (const char *target)
             strcpy (reply, strtok (lineread, delimiter));
             strcat (reply, ": ");
             strcat (reply, strtok (NULL, delimiter));
-            strcat (reply, " wants you to know ");
+            strcat (reply, " wants you to know; ");
             strcat (reply, strtok (NULL, delimiter));
 
             irc_cmd_msg (session, irc_cfg.channel, reply);
@@ -445,7 +416,7 @@ void check_tidbit (const char **params, const char *target, const char *channel)
     memset (tidbit, 0, 2048);
     memset (bittid, 0, 2048);
  
-    /*
+    /* TODO Broken
     if (strlen (params[1]) > DEFAULT_MAX_TIDBIT_LENGTH)
     {
         //Ignore, wasn't probably meant for me anyway
@@ -459,6 +430,16 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         return;
     }
 
+    if (strncasecmp (params[1], MAGIC_WHEREIS, strlen(MAGIC_WHEREIS)) == 0)
+    {
+       //Get the WHOIS information for username
+       strcpy (bittid, params[1]);
+       strtok (bittid, " ");
+       strcpy (tidbit, strtok (NULL, " "));
+       irc_cmd_whois (session, tidbit);
+       return;
+    }
+
     if (strlen (params[1]) == strlen (MAGIC_HELP)
             && strcasecmp (params[1], MAGIC_HELP) == 0
             //Don't respond to help in channel, only privmsg
@@ -470,6 +451,7 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         irc_cmd_msg (session, target, "tidbot can remember multiple definitions for foo");
         irc_cmd_msg (session, target, "forget foo will make tidbot forget all definitions for foo");
         irc_cmd_msg (session, target, "tell foo message will make tidbot tell the user foo message next time they are around ");
+        irc_cmd_msg (session, target, "whereis nick will use my crappy database to see whre the user lives ");
         return;
     }
 
