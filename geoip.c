@@ -41,7 +41,7 @@ void geoip_find (const char *ipaddr)
    
     if (MMDB_get_value(&result.entry, &entry_data, "country", "iso_code", NULL) != MMDB_SUCCESS)
     {
-        fprintf (stderr, "Error fetching country code\n");
+        fprintf (stderr, "whereis: Error fetching country code for %s\n", ipaddr);
         strcpy (location, "Unknown");
     }
     else
@@ -50,7 +50,7 @@ void geoip_find (const char *ipaddr)
     strcat (location, "/");
     if (MMDB_get_value(&result.entry, &entry_data, "city", "names", "en", NULL) != MMDB_SUCCESS)
     {
-        fprintf (stderr, "Error fetching city\n");
+        fprintf (stderr, "whereis: Error fetching city for %s\n", ipaddr);
         strcat (location, "Unknown");
     }
     else

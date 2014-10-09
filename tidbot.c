@@ -93,8 +93,6 @@ void whereis_user (const char *target, const char *hostname)
     int error;
     struct addrinfo *result;
     struct in_addr address;
-
-    printf ("whereis %s: found hostname %s\n", target, hostname);
     
     //Convert to an IP address
     error = getaddrinfo (hostname, NULL, NULL, &result);
@@ -105,11 +103,9 @@ void whereis_user (const char *target, const char *hostname)
     }
 
     address.s_addr = ((struct sockaddr_in *)(result->ai_addr))->sin_addr.s_addr;
-    printf ("ip = %s\n", inet_ntoa (address));
     freeaddrinfo (result);
 
     geoip_find (inet_ntoa (address));
-    printf ("Location = %s\n", location);
     irc_cmd_msg (session, irc_cfg.channel, location);
 }
 
@@ -440,6 +436,32 @@ void check_tidbit (const char **params, const char *target, const char *channel)
        return;
     }
 
+    if (strncasecmp (params[1], MAGIC_IPDB, strlen(MAGIC_IPDB)) == 0)
+    {
+        strcpy (tidbit, MAGIC_IPDB_URL);
+        strcpy (bittid, params[1] + strlen(MAGIC_IPDB) + 1);
+
+        //Change spaces to %20
+        pos2 = 0;
+        for (pos1 = 0; pos1 < strlen (bittid); pos1++)
+        {
+            if (bittid[pos1] == ' ')
+            {
+                strcat (tidbit, "%20");
+                pos2 = pos2 + 2;
+            }
+            else
+                tidbit[pos2 + strlen(MAGIC_IPDB_URL)] = bittid[pos1];
+            pos2++;
+        }
+    
+        if (channel == NULL)
+            irc_cmd_msg (session, target, tidbit);
+        else
+            irc_cmd_msg (session, channel, tidbit);
+        return;
+    }
+
     if (strlen (params[1]) == strlen (MAGIC_HELP)
             && strcasecmp (params[1], MAGIC_HELP) == 0
             //Don't respond to help in channel, only privmsg
@@ -447,11 +469,12 @@ void check_tidbit (const char **params, const char *target, const char *channel)
     {
         //Print help text
         irc_cmd_msg (session, target, "How to use tidbot:");
-        irc_cmd_msg (session, target, "Typing foo is bar will make tidbot respond to foo? with the answer bar");
-        irc_cmd_msg (session, target, "tidbot can remember multiple definitions for foo");
-        irc_cmd_msg (session, target, "forget foo will make tidbot forget all definitions for foo");
-        irc_cmd_msg (session, target, "tell foo message will make tidbot tell the user foo message next time they are around ");
-        irc_cmd_msg (session, target, "whereis nick will use my crappy database to see whre the user lives ");
+        irc_cmd_msg (session, target, "Typing 'foo is bar' will make tidbot respond to foo? with the answer 'bar'");
+        irc_cmd_msg (session, target, "(tidbot can remember multiple definitions for foo)");
+        irc_cmd_msg (session, target, "'forget foo' will make tidbot forget *all* definitions for foo");
+        irc_cmd_msg (session, target, "'tell foo message' will make tidbot tell the user foo message next time they are around ");
+        irc_cmd_msg (session, target, "'whereis user' will use my crappy database to see where the user lives ");
+        irc_cmd_msg (session, target, "'ipdb foo' will provide the link for ipdb foo ");
         return;
     }
 
