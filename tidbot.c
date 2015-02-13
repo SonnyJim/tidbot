@@ -188,7 +188,7 @@ void recall_tidbit (const char *tidbit, const char *target)
                         strncpy (msg, reply, strlen(reply) - 1);
                     else
                     {
-                        strcat (msg, " or ");
+                        strcat (msg, " |*or*| ");
                         strncat (msg, reply, strlen(reply) - 1);
                     }
                     memset (reply, 0, strlen(msg));
@@ -420,14 +420,6 @@ void check_tidbit (const char **params, const char *target, const char *channel)
     memset (tidbit, 0, 2048);
     memset (bittid, 0, 2048);
  
-    /* TODO Broken
-    if (strlen (params[1]) > DEFAULT_MAX_TIDBIT_LENGTH)
-    {
-        //Ignore, wasn't probably meant for me anyway
-        fprintf (stderr, "Error, line too long\n");
-        return;
-    }
-    */
     if (strncasecmp (params[1], MAGIC_TELL, strlen(MAGIC_TELL)) == 0)
     {
         tell_user (params[1], target, channel);
@@ -497,7 +489,7 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         //Copy question
         strncpy (tidbit, params[1], strlen (params[1]) - 1);
         //Ignore tidbits of less than 2 chars or more than 32
-        if (strlen(tidbit) < 2 || strlen(tidbit) > 32)
+        if (strlen(tidbit) < 2 || strlen(tidbit) > MAX_TIDBIT_LENGTH)
              return;
 
         
@@ -518,6 +510,13 @@ void check_tidbit (const char **params, const char *target, const char *channel)
     {
         //Length of tidbit
         pos1 = ptr - params[1];
+        if (pos1 > MAX_TIDBIT_LENGTH)
+        {
+            if (verbose)
+                fprintf (stderr, "tidbit %s\n too long, ignoring\n", params[1]);
+            return;
+        }
+
         //position of bittid
         pos2 = pos1 + strlen(MAGIC_IS);
 
@@ -551,14 +550,19 @@ void check_tidbit (const char **params, const char *target, const char *channel)
 
 void event_channel (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
 {
-    check_tell_file (origin);
-    check_tidbit (params, origin, irc_cfg.channel);
+    if (strlen (origin) < MAX_TIDBIT_LENGTH)
+    {
+        check_tell_file (origin);
+        check_tidbit (params, origin, irc_cfg.channel);
+    }
 }
 
 void event_privmsg (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
 {
-	//printf ("'%s' said to me (%s): %s\n", origin ? origin : "someone", params[0], params[1] );
-    check_tidbit (params, origin, NULL);
+    if (strlen (origin) < MAX_TIDBIT_LENGTH)
+    {
+        check_tidbit (params, origin, NULL);
+    }
 }
 
 void print_usage (void)

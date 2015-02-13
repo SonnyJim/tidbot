@@ -3,20 +3,22 @@
 #define DEFAULT_IRC_PORT	"6667"
 #define DEFAULT_IRC_CHANNEL  	"#pinball"
 #define DEFAULT_IRC_NICK	"tidbot"
-#define DEFAULT_IRC_USERNAME 	"qircbot"
-#define DEFAULT_IRC_REALNAME 	"qircbot"
+#define DEFAULT_IRC_USERNAME 	"tidbot"
+#define DEFAULT_IRC_REALNAME 	"tidbot"
 #define DEFAULT_TIDBIT_FILE "tidbits.txt"
 #define DEFAULT_IGNORE_FILE "ignore.txt"
 #define DEFAULT_TELL_FILE "tell.txt"
 #define DEFAULT_MAX_TIDBIT_LENGTH 32
 
 #define MAGIC_IS " is "
-#define MAGIC_FORGET "forget"
+#define MAGIC_FORGET "!forget"
 #define MAGIC_HELP "help"
-#define MAGIC_TELL "tell "
-#define MAGIC_WHEREIS "whereis"
-#define MAGIC_IPDB "ipdb"
+#define MAGIC_TELL "!tell "
+#define MAGIC_WHEREIS "!whereis"
+#define MAGIC_IPDB "!ipdb"
 #define MAGIC_IPDB_URL "http://www.ipdb.org/search.pl?any="
+
+#define MAX_TIDBIT_LENGTH 16
 
 struct cfg {
 	char cfg_file[2048];
