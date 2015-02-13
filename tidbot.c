@@ -95,6 +95,7 @@ void whereis_user (const char *target, const char *hostname)
     int error;
     struct addrinfo *result;
     struct in_addr address;
+    char whereis_reply[255];
     
     //Convert to an IP address
     error = getaddrinfo (hostname, NULL, NULL, &result);
@@ -108,7 +109,11 @@ void whereis_user (const char *target, const char *hostname)
     freeaddrinfo (result);
 
     geoip_find (inet_ntoa (address));
-    irc_cmd_msg (session, irc_cfg.channel, location);
+
+    strcpy (whereis_reply, target);
+    strcat (whereis_reply, " is in ");
+    strcat (whereis_reply, location);
+    irc_cmd_msg (session, irc_cfg.channel, whereis_reply);
 }
 
 void event_numeric (irc_session_t *session, unsigned int event, const char *origin, const char **params, unsigned int count)
@@ -431,12 +436,17 @@ void check_tidbit (const char **params, const char *target, const char *channel)
 
     if (strncasecmp (params[1], MAGIC_WHEREIS, strlen(MAGIC_WHEREIS)) == 0)
     {
-       //Get the WHOIS information for username
-       strcpy (bittid, params[1]);
-       strtok (bittid, " ");
-       strcpy (tidbit, strtok (NULL, " "));
-       irc_cmd_whois (session, tidbit);
-       return;
+        if (channel == NULL)
+            irc_cmd_msg (session, target, "I only respond to !whereis in channel");
+        else
+        {
+          //Get the WHOIS information for username
+            strcpy (bittid, params[1]);
+            strtok (bittid, " ");
+            strcpy (tidbit, strtok (NULL, " "));
+            irc_cmd_whois (session, tidbit);
+            return;
+        }
     }
 
     if (strncasecmp (params[1], MAGIC_IPDB, strlen(MAGIC_IPDB)) == 0)
