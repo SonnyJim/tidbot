@@ -3,6 +3,8 @@
 //FIXME:
 //"WPC" matches both "WPC" and "WPC repair"
 //ignore is buggy, the will match There
+//ignore tell you, as "tell you what" matches
+//cfg file selection is broken
 
 #include "libircclient/libircclient.h"
 #include "libircclient/libirc_rfcnumeric.h"
@@ -146,7 +148,7 @@ void event_numeric (irc_session_t *session, unsigned int event, const char *orig
 void recall_tidbit (const char *tidbit, const char *target)
 {
     FILE *tidbit_file;
-    char lineread[2048], reply[2048], msg[2048];
+    char lineread[2048], reply[2048], msg[2048], tidbit_tmp[255];
     int i, tidbit_count = 0;
 
     tidbit_file = fopen (DEFAULT_TIDBIT_FILE, "r");
@@ -158,11 +160,16 @@ void recall_tidbit (const char *tidbit, const char *target)
 
     memset (msg, 0, strlen(msg));
 
+    //Copy tidbit to temp var
+    strcpy (tidbit_tmp, tidbit);
+    //Add on the terminator, otherwise we match things we don't want
+    strcat (tidbit_tmp, "|");
+    
     //Scan file for tidbit
     while (fgets (lineread, 2048, tidbit_file) != NULL)
     {
         //Found the tidbit
-        if (strncasecmp (lineread, tidbit, strlen(tidbit)) == 0)
+        if (strncasecmp (lineread, tidbit_tmp, strlen(tidbit_tmp)) == 0)
         {
             //Find the | separator in the line
             for (i = 0; i < strlen (lineread); i++)
@@ -278,7 +285,6 @@ void store_tell (const char *origin, const char *target, const char *msg)
     FILE *tell_file;
     char tell_line[2048];
 
-   // printf ("origin: %s target: %s msg: %s\n", origin, target, msg);
     tell_file = fopen (DEFAULT_TELL_FILE, "a+");
     if (tell_file == NULL)
     {
@@ -304,9 +310,6 @@ void tell_user (const char *tidbit, const char *origin, const char *channel)
     char target[32];
     char msg[1024];
   
-    //scan tidbit for target to tell
-    //for (i = strlen(MAGIC_TELL); i < (strlen (tidbit) - strlen (tidbit); i++))
-    //
     memset (target, 0, 32);
     memset (msg, 0, 1024);
 
@@ -471,10 +474,10 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         irc_cmd_msg (session, target, "How to use tidbot:");
         irc_cmd_msg (session, target, "Typing 'foo is bar' will make tidbot respond to foo? with the answer 'bar'");
         irc_cmd_msg (session, target, "(tidbot can remember multiple definitions for foo)");
-        irc_cmd_msg (session, target, "'forget foo' will make tidbot forget *all* definitions for foo");
-        irc_cmd_msg (session, target, "'tell foo message' will make tidbot tell the user foo message next time they are around ");
-        irc_cmd_msg (session, target, "'whereis user' will use my crappy database to see where the user lives ");
-        irc_cmd_msg (session, target, "'ipdb foo' will provide the link for ipdb foo ");
+        irc_cmd_msg (session, target, "'!forget foo' will make tidbot forget *all* definitions for foo");
+        irc_cmd_msg (session, target, "'!tell foo message' will make tidbot tell the user foo message next time they are around ");
+        irc_cmd_msg (session, target, "'!whereis user' will use my crappy database to see where the user lives ");
+        irc_cmd_msg (session, target, "'!ipdb foo' will provide the link for ipdb foo ");
         return;
     }
 
@@ -483,9 +486,11 @@ void check_tidbit (const char **params, const char *target, const char *channel)
     {
         //Copy question
         strncpy (tidbit, params[1], strlen (params[1]) - 1);
-        //Ignore tidbits of less than 2 chars
-        if (strlen(tidbit) < 2)
+        //Ignore tidbits of less than 2 chars or more than 32
+        if (strlen(tidbit) < 2 || strlen(tidbit) > 32)
              return;
+
+        
         //Recall
         if (channel != NULL)
             recall_tidbit (tidbit, irc_cfg.channel);
