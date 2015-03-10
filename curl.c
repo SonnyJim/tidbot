@@ -63,6 +63,11 @@ char* get_title (const char *url)
   CURLcode res;
 
   struct MemoryStruct chunk;
+  
+  char *p1, *p2;
+  char title_open[] = "<title>";
+  char title_close[] = "</title>";
+  int len;
 
   chunk.memory = malloc(1);  /* will be grown as needed by the realloc above */
   chunk.size = 0;    /* no data at this point */
@@ -85,8 +90,12 @@ char* get_title (const char *url)
      field, so we provide one */
   curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "libcurl-agent/1.0");
 
+  /* Don't verify https links */
   curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYPEER, 0L);
   curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYHOST, 0L);
+
+  /* Follow redirects */
+  curl_easy_setopt(curl_handle, CURLOPT_FOLLOWLOCATION, 1L);
   /* get it! */
   res = curl_easy_perform(curl_handle);
 
@@ -96,17 +105,7 @@ char* get_title (const char *url)
             curl_easy_strerror(res));
   }
   else {
-    /*
-     * Now, our chunk.memory points to a memory block that is chunk.size
-     * bytes big and contains the remote file.
-     *
-     * Do something nice with it!
-     */
-    char *p1, *p2;
-    char title_open[] = "<title>";
-    char title_close[] = "</title>";
-    int len;
-
+    
     p1 = strcasestr (chunk.memory, title_open);
     p2 = strcasestr (chunk.memory, title_close);
     p1 += strlen (title_open);
