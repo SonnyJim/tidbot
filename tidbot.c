@@ -5,23 +5,9 @@
 //ignore is buggy, the will match There
 //ignore tell you, as "tell you what" matches
 //cfg file selection is broken
-
-#include "libircclient/libircclient.h"
-#include "libircclient/libirc_rfcnumeric.h"
-#include <stdio.h>
-#include <unistd.h>
-//for strcasestr
-#define _GNU_SOURCE
-#include <string.h>
-#include <strings.h>
-#include <getopt.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netdb.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-
 #include "tidbot.h"
+#include "cfg.h"
+
 //Sent on successful connection to server, useful for NickServ
 static void send_server_connect_msg (void)
 {
@@ -562,7 +548,8 @@ void event_channel (irc_session_t *session, const char *event, const char *origi
         else
             fprintf (stderr, "Error fetching title from %s\n", params[1]);
     }
-    else if (strlen (params[1]) < MAX_TIDBIT_LENGTH)
+    else
+        //if (strlen (params[1]) < MAX_TIDBIT_LENGTH)
     {
         check_tell_file (origin);
         check_tidbit (params, origin, irc_cfg.channel);
@@ -583,62 +570,6 @@ void print_usage (void)
 	fprintf (stdout, "Options:\n");
 	fprintf (stdout, "-c		Specify config file location, default %s\n", DEFAULT_CFG_FILE);
 	fprintf (stdout, "-h		This help text\n");
-}
-
-static int cfg_load (void)
-{
-	FILE *in_file;
-	char cfg_buff[64];
-	int i;
-	
-
-	//If no config file was specified on the command line, look in the users home directory for one
-	if (use_default_cfg)
-	{
-		strcpy (cfg_buff, getenv("HOME"));
-		strcat (cfg_buff, irc_cfg.cfg_file);
-		strcpy (irc_cfg.cfg_file, cfg_buff);
-	}
-	
-	if (verbose)
-	{
-		fprintf (stdout, "IRC: Attempting to Load config file %s\n", irc_cfg.cfg_file);
-	}
-
-	in_file = fopen (irc_cfg.cfg_file, "r");
-
-	if (in_file == NULL && !use_default_cfg)
-		return 2;
-	else if (in_file == NULL && use_default_cfg)
-		return 1;
-
-	//Copy a line from cfg file into cfg_buff
-	while (fgets (cfg_buff, 64, in_file) != NULL)
-	{
-		//Cycle through the different options
-		for (i = 0; i < NUM_CFG_OPTS; i++)
-		{
-			//Look for a match and make sure there's a = after it
-			if (strncmp (cfg_buff, cfg_options[i], strlen(cfg_options[i])) == 0 &&
-					strncmp (cfg_buff + strlen (cfg_options[i]), "=", 1) == 0)
-			{
-				//Copy to variable
-				strcpy (cfg_vars[i], cfg_buff + strlen (cfg_options[i]) + 1);
-				//Strip newline
-				strtok (cfg_vars[i], "\n");
-				//Check if empty var
-				if (strcmp (cfg_vars[i], "\n") == 0)
-				{
-					fprintf (stderr, "IRC: Empty cfg option %s\n", cfg_options[i]);
-					fclose (in_file);
-					return 1;
-				}
-			}
-		}
-	}
-	fclose (in_file);
-	return 0;
-
 }
 
 int main (int argc, char **argv)
