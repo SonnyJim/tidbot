@@ -578,6 +578,9 @@ int main (int argc, char **argv)
 	int c;
 	int ret;
 
+    verbose = 0;
+    use_default_cfg = 1;
+
 	// Read command line options
 	while ((c = getopt (argc, argv, "c:vh")) != -1)
 	{
@@ -616,6 +619,11 @@ int main (int argc, char **argv)
 	{
 		fprintf (stdout, "No configuration file found, using defaults\n");
 	}
+    else
+    {
+        fprintf (stderr, "cfg_load returned %i\n", ret);
+        return 1;
+    }
 
 	if (verbose)
 	{

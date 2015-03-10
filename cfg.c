@@ -34,8 +34,8 @@ int cfg_load (void)
 	char cfg_buff[128];
 	int i;
     
-    verbose = 0;
-    use_default_cfg = 1;
+    //verbose = 0;
+    //use_default_cfg = 1;
 	
 
 	//If no config file was specified on the command line, look in the users home directory for one
