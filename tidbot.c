@@ -10,6 +10,8 @@
 #include "libircclient/libirc_rfcnumeric.h"
 #include <stdio.h>
 #include <unistd.h>
+//for strcasestr
+#define _GNU_SOURCE
 #include <string.h>
 #include <strings.h>
 #include <getopt.h>
@@ -550,7 +552,17 @@ void check_tidbit (const char **params, const char *target, const char *channel)
 
 void event_channel (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
 {
-    if (strlen (origin) < MAX_TIDBIT_LENGTH)
+    if (strncasecmp (params[1], MAGIC_HTTP, strlen (MAGIC_HTTP)) == 0)
+    {
+        fprintf (stdout, "Saw URL %s\n", params[1]);
+        char *string;
+        string = get_title (params[1]);
+        if (string != NULL)
+            irc_cmd_msg (session, irc_cfg.channel, string);
+        else
+            fprintf (stderr, "Error fetching title from %s\n", params[1]);
+    }
+    else if (strlen (params[1]) < MAX_TIDBIT_LENGTH)
     {
         check_tell_file (origin);
         check_tidbit (params, origin, irc_cfg.channel);
