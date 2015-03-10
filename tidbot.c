@@ -178,6 +178,7 @@ void recall_tidbit (const char *tidbit, const char *target)
                     {
                         strcat (msg, " |*or*| ");
                         strncat (msg, reply, strlen(reply) - 1);
+                        msg[strlen(msg)] = '\0';
                     }
                     memset (reply, 0, strlen(msg));
                 }
@@ -270,6 +271,7 @@ void forget_tidbit (const char *tidbit, const char *target)
         strcpy (reply, "Ok, forgetting ");
         strcat (reply, tidbit);
         irc_cmd_msg (session, target, reply);
+        memset (reply, 0, sizeof(reply));
     }
 }
 
@@ -619,28 +621,12 @@ int main (int argc, char **argv)
 	{
 		fprintf (stdout, "No configuration file found, using defaults\n");
 	}
-    else
+    else if (ret != 0)
     {
         fprintf (stderr, "cfg_load returned %i\n", ret);
         return 1;
     }
 
-	if (verbose)
-	{
-		fprintf (stdout, "Configuration options:\n");
-		fprintf (stdout, "server = %s\n", irc_cfg.server);
-		fprintf (stdout, "port = %s\n", irc_cfg.port);
-		fprintf (stdout, "channel = %s\n", irc_cfg.channel);
-		fprintf (stdout, "nick = %s\n", irc_cfg.nick);
-		fprintf (stdout, "username = %s\n", irc_cfg.username);
-		fprintf (stdout, "realname = %s\n", irc_cfg.realname);
-		fprintf (stdout, "server_connect_msg = %s\n", irc_cfg.server_connect_msg);
-		fprintf (stdout, "server_connect_nick = %s\n", irc_cfg.server_connect_nick);
-		fprintf (stdout, "server_connect_delay = %s\n", irc_cfg.server_connect_delay);
-		fprintf (stdout, "channel_connect_msg = %s\n", irc_cfg.channel_connect_msg);
-		fprintf (stdout, "channel_connect_nick = %s\n", irc_cfg.channel_connect_nick);
-		fprintf (stdout, "channel_connect_delay = %s\n\n", irc_cfg.channel_connect_delay);
-	}
 	fprintf (stdout, "IRC: Bot initilising\n");
 
 	memset (&callbacks, 0, sizeof(callbacks));
