@@ -18,6 +18,8 @@
 #define MAGIC_IPDB "!ipdb"
 #define MAGIC_IPDB_URL "http://www.ipdb.org/search.pl?any="
 
+#define MAGIC_HTTP "http"
+
 #define MAX_TIDBIT_LENGTH 16
 
 struct cfg {
@@ -71,3 +73,7 @@ irc_session_t *session;
 
 extern char location[255];
 extern void geoip_find (const char *ipaddr);
+
+//Curl get title
+char* get_title (const char *url);
+    
