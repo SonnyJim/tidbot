@@ -1,6 +1,7 @@
 #include "tidbot.h"
 #include "cfg.h"
 #include "tell.h"
+#include "manual.h"
 
 void recall_tidbit (const char *tidbit, const char *target)
 {
@@ -16,6 +17,7 @@ void recall_tidbit (const char *tidbit, const char *target)
     }
 
     memset (msg, 0, strlen(msg));
+    memset (reply, 0, strlen(reply));
 
     //Copy tidbit to temp var
     strcpy (tidbit_tmp, tidbit);
@@ -44,7 +46,6 @@ void recall_tidbit (const char *tidbit, const char *target)
                         strncat (msg, reply, strlen(reply) - 1);
                         msg[strlen(msg)] = '\0';
                     }
-                    memset (reply, 0, strlen(msg));
                 }
             }
         }
@@ -209,7 +210,21 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         irc_cmd_msg (session, target, "'!tell foo message' will make tidbot tell the user foo message next time they are around ");
         irc_cmd_msg (session, target, "'!whereis user' will use my crappy database to see where the user lives ");
         irc_cmd_msg (session, target, "'!ipdb foo' will provide the link for ipdb foo ");
+        irc_cmd_msg (session, target, "'!manual foo' will show the link for the foo manual (if I have it) ");
+        irc_cmd_msg (session, target, "'!add_manual foo url' will add the manual link for foo");
         return;
+    }
+    
+    if (strncasecmp (params[1], MAGIC_MANUAL, strlen(MAGIC_MANUAL)) == 0)
+    {
+       check_manual (params[1]); 
+       return;
+    }
+
+    if (strncasecmp (params[1], MAGIC_MANUAL_ADD, strlen(MAGIC_MANUAL_ADD)) == 0)
+    {
+       add_manual (params[1]); 
+       return;
     }
 
     //Check to see if we are being asked a question
