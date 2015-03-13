@@ -8,6 +8,7 @@
 #define DEFAULT_TIDBIT_FILE "tidbits.txt"
 #define DEFAULT_IGNORE_FILE "ignore.txt"
 #define DEFAULT_TELL_FILE "tell.txt"
+#define DEFAULT_MANUAL_FILE "manuals.txt"
 #define DEFAULT_MAX_TIDBIT_LENGTH 32
 
 #define MAGIC_IS " is "
@@ -17,6 +18,8 @@
 #define MAGIC_WHEREIS "!whereis"
 #define MAGIC_IPDB "!ipdb"
 #define MAGIC_IPDB_URL "http://www.ipdb.org/search.pl?any="
+#define MAGIC_MANUAL "!manual"
+#define MAGIC_MANUAL_ADD "!add_manual"
 
 #define MAGIC_HTTP "http"
 
