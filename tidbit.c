@@ -2,6 +2,7 @@
 #include "cfg.h"
 #include "tell.h"
 #include "manual.h"
+#include "8ball.h"
 
 void recall_tidbit (const char *tidbit, const char *target)
 {
@@ -212,6 +213,7 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         irc_cmd_msg (session, target, "'!ipdb foo' will provide the link for ipdb foo ");
         irc_cmd_msg (session, target, "'!manual foo' will show the link for the foo manual (if I have it) ");
         irc_cmd_msg (session, target, "'!add_manual foo url' will add the manual link for foo");
+        irc_cmd_msg (session, target, "'!8ball Answer a question using the power of the magic 8ball");
         return;
     }
     
@@ -225,6 +227,12 @@ void check_tidbit (const char **params, const char *target, const char *channel)
     {
        add_manual (params[1]); 
        return;
+    }
+    
+    if (strncasecmp (params[1], MAGIC_8BALL, strlen(MAGIC_8BALL)) == 0)
+    {
+        eightball_reply ();
+        return;
     }
 
     //Check to see if we are being asked a question

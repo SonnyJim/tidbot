@@ -3,7 +3,7 @@ INCLUDE	= -I/usr/include -I/usr/local/include
 CFLAGS	= $(DEBUG) -Wall $(INCLUDE) -Winline -pipe -std=gnu99 -O3
 LDFLAGS	= -L/usr/lib 
 LDLIBS	= -lircclient -lmaxminddb -lcurl
-OBJ = geoip.o tidbot.o curl.o cfg.o tidbot.h cfg.h tell.o tell.h tidbit.o tidbit.h
+OBJ = geoip.o tidbot.o curl.o cfg.o tell.o tidbit.o manual.o 8ball.o
 
 all: tidbot
 

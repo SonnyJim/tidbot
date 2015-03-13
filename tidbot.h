@@ -23,6 +23,8 @@
 
 #define MAGIC_HTTP "http"
 
+#define MAGIC_8BALL "!8ball"
+
 #define MAX_TIDBIT_LENGTH 16
 
 #include "libircclient/libircclient.h"
