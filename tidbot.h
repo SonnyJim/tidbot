@@ -9,6 +9,7 @@
 #define DEFAULT_IGNORE_FILE "ignore.txt"
 #define DEFAULT_TELL_FILE "tell.txt"
 #define DEFAULT_MANUAL_FILE "manuals.txt"
+#define DEFAULT_HISCORE_FILE "hiscore.bin"
 #define DEFAULT_MAX_TIDBIT_LENGTH 32
 
 #define MAGIC_IS " is "

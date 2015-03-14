@@ -251,7 +251,19 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         hiscore_print_scores (target, channel);
         return;
     }
-
+    
+    if ((strncasecmp (params[1], MAGIC_HTTP, strlen (MAGIC_HTTP)) == 0) && cfg_url_title)
+    {
+        char *string;
+        if (verbose)
+            fprintf (stdout, "Saw URL %s\n", params[1]);
+        string = get_title (params[1]);
+        if (string != NULL)
+            irc_cmd_msg (session, irc_cfg.channel, string);
+        else
+            fprintf (stderr, "Error fetching title from %s\n", params[1]);
+        return;
+    }
 
     //Check to see if we are being asked a question
     if (params[1][strlen(params[1]) - 1] == '?')

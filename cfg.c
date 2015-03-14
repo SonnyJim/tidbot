@@ -3,9 +3,10 @@
 const char *cfg_options[] = {
 	"server", "port", "channel", "nick", "username", "realname", 
 	"server_connect_msg", "server_connect_nick", "server_connect_delay",
-	"channel_connect_msg", "channel_connect_nick", "channel_connect_delay"
+	"channel_connect_msg", "channel_connect_nick", "channel_connect_delay", "hiscore_file"
 };
 
+//Set defaults
 cfg irc_cfg  = {
 	DEFAULT_CFG_FILE,
 	DEFAULT_IRC_SERVER,
@@ -19,13 +20,14 @@ cfg irc_cfg  = {
 	"",
 	"",
 	"",
-	""
+    "",
+	DEFAULT_HISCORE_FILE
 };
 
 char *cfg_vars[] = {
 	irc_cfg.server, irc_cfg.port, irc_cfg.channel, irc_cfg.nick, irc_cfg.username, irc_cfg.realname,
 		irc_cfg.server_connect_msg, irc_cfg.server_connect_nick, irc_cfg.server_connect_delay,
-		irc_cfg.channel_connect_msg, irc_cfg.channel_connect_nick, irc_cfg.channel_connect_delay
+		irc_cfg.channel_connect_msg, irc_cfg.channel_connect_nick, irc_cfg.channel_connect_delay, irc_cfg.hiscore_file
 };
 
 int cfg_load (void)
@@ -98,7 +100,8 @@ int cfg_load (void)
 		fprintf (stdout, "server_connect_delay = %s\n", irc_cfg.server_connect_delay);
 		fprintf (stdout, "channel_connect_msg = %s\n", irc_cfg.channel_connect_msg);
 		fprintf (stdout, "channel_connect_nick = %s\n", irc_cfg.channel_connect_nick);
-		fprintf (stdout, "channel_connect_delay = %s\n\n", irc_cfg.channel_connect_delay);
+		fprintf (stdout, "channel_connect_delay = %s\n", irc_cfg.channel_connect_delay);
+        fprintf (stdout, "hiscore_file = %s\n\n", irc_cfg.hiscore_file);
 	}
 
 	return 0;

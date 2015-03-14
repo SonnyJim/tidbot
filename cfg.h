@@ -1,5 +1,5 @@
 #include "tidbot.h"
-#define NUM_CFG_OPTS 12
+#define NUM_CFG_OPTS 13
 
 typedef struct{
 	char cfg_file[2048];
@@ -15,12 +15,13 @@ typedef struct{
 	char channel_connect_msg[2048];
 	char channel_connect_nick[16];
 	char channel_connect_delay[6];
+    char hiscore_file[1024];
 } cfg ; 
 
 cfg irc_cfg;
 
 int verbose;
 int use_default_cfg;
-
+int cfg_url_title;
 int cfg_load (void);
 

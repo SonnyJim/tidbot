@@ -150,22 +150,8 @@ void event_numeric (irc_session_t *session, unsigned int event, const char *orig
 void event_channel (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
 {
     hiscore_add_score (origin, strlen (params[1]));
-    if (strncasecmp (params[1], MAGIC_HTTP, strlen (MAGIC_HTTP)) == 0)
-    {
-        fprintf (stdout, "Saw URL %s\n", params[1]);
-        char *string;
-        string = get_title (params[1]);
-        if (string != NULL)
-            irc_cmd_msg (session, irc_cfg.channel, string);
-        else
-            fprintf (stderr, "Error fetching title from %s\n", params[1]);
-    }
-    else
-        //if (strlen (params[1]) < MAX_TIDBIT_LENGTH)
-    {
-        check_tell_file (origin);
-        check_tidbit (params, origin, irc_cfg.channel);
-    }
+    check_tell_file (origin);
+    check_tidbit (params, origin, irc_cfg.channel);
 }
 
 void event_privmsg (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
@@ -192,9 +178,10 @@ int main (int argc, char **argv)
 
     verbose = 0;
     use_default_cfg = 1;
+    cfg_url_title = 1;
 
 	// Read command line options
-	while ((c = getopt (argc, argv, "c:vh")) != -1)
+	while ((c = getopt (argc, argv, "c:vhu")) != -1)
 	{
 		switch (c)
 		{
@@ -210,6 +197,9 @@ int main (int argc, char **argv)
 				strcpy (irc_cfg.cfg_file, optarg);
 				use_default_cfg = 0;
 				break;
+            case 'u':
+                cfg_url_title = 0;
+                break;
 			case '?':
 				if (optopt == 'c')
 					fprintf (stderr, "Option -c requires an argument\n");

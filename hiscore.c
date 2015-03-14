@@ -1,8 +1,10 @@
 #include "tidbot.h"
 #include "cfg.h"
 
+#define MAX_NICKLEN 32
+
 struct score {
-    char *nick;
+    char nick[MAX_NICKLEN];
     long int score;
     struct score *next;
 };
@@ -13,17 +15,17 @@ struct score *current;
 //Strip @ or + off start of nick
 static char * hiscore_strip_nick (const char *nick)
 {
-    char *nick_strip = malloc(sizeof(char) * 32);
+    char *nick_strip = malloc(sizeof(char) * MAX_NICKLEN);
     if (strncmp (nick, "@", 1) == 0 || strncmp (nick, "+", 1) == 0)
         strcpy (nick_strip, nick + 1);
     else
         strcpy (nick_strip, nick);
     return nick_strip;
 }
-
 static void hiscore_print (void)
 {
     fprintf (stdout, "Hiscore print\n");
+    current = head;
     while (current)
     {
         if (current->next != NULL)
@@ -31,7 +33,6 @@ static void hiscore_print (void)
         current = current->next;
     }
 }
-
 static void hiscore_insert_nick (char *nick)
 {
     current = head;
@@ -57,7 +58,7 @@ static void hiscore_insert_nick (char *nick)
         fprintf (stderr, "Error mallocing current for hiscore\n");
         return;
     }
-    current->nick = nick;
+    strcpy (current->nick, nick);
     current->score = 0;
     current->next = head;
     head = current;
@@ -74,7 +75,7 @@ void hiscore_init (void)
     }
     
     head->next = NULL;
-    head->nick = "";
+    strcpy (head->nick, "");
     head->score = 0;
 }
 
@@ -142,13 +143,13 @@ void hiscore_save (const char *target)
 {
     FILE *hiscore_file;
 
-    hiscore_file = fopen ("scores.bin", "wb");
+    hiscore_file = fopen (irc_cfg.hiscore_file, "wb");
     
     if (hiscore_file == NULL)
     {
         if (target != NULL)
-            irc_cmd_msg (session, target, "Error opening scores.bin for writing");
-        fprintf (stderr, "Error opening scores.bin for writing\n");
+            irc_cmd_msg (session, target, "Error opening hiscore file for writing");
+        fprintf (stderr, "Error opening %s for writing\n", irc_cfg.hiscore_file);
         return;
     }
 
@@ -158,7 +159,7 @@ void hiscore_save (const char *target)
         if (current->score > 0)
         {
             fwrite (current->nick, sizeof(current->nick), 1, hiscore_file);
-            fwrite (current->score, sizeof(current->score), 1, hiscore_file);
+            fwrite (&current->score, sizeof(current->score), 1, hiscore_file);
         }
         current = current->next;
     }
@@ -171,27 +172,30 @@ void hiscore_load (const char *target)
 {
     FILE *hiscore_file;
     int fread_ret;
-    char *nick;
-    long int score;
+    char *nick = "";
+    long int score = 0;
 
-    hiscore_file = fopen ("scores,bin", "rb");
+    hiscore_file = fopen (irc_cfg.hiscore_file, "rb");
 
     if (hiscore_file == NULL)
     {
         if (target != NULL)
             irc_cmd_msg (session, target, "Error opening scores.bin for reading");
-        fprintf (stderr, "Error opening scores.bin for reading\n");
+        fprintf (stderr, "Error opening %s for reading\n", irc_cfg.hiscore_file);
         return;
     }
     
+    hiscore_init ();
     while (fread_ret > 0)
     {
         fread_ret = fread (nick, sizeof(nick), 1, hiscore_file);
+        fprintf (stdout, "fread nick %s\n", nick);
         if (fread_ret > 0)
-            fread_ret = fread (score, sizeof(score), 1, hiscore_file);
+            fread_ret = fread (&score, sizeof(score), 1, hiscore_file);
         if (fread_ret > 0)
             hiscore_add_score (nick, score);
     }
     fclose (hiscore_file);
     irc_cmd_msg (session, target, "Loaded scores");
+    hiscore_print ();
 }
