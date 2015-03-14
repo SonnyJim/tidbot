@@ -25,6 +25,10 @@
 
 #define MAGIC_8BALL "!8ball"
 
+#define MAGIC_SCORES "!scores"
+#define MAGIC_SCORES_LOAD "!scores_load"
+#define MAGIC_SCORES_SAVE "!scores_save"
+
 #define MAX_TIDBIT_LENGTH 16
 
 #include "libircclient/libircclient.h"

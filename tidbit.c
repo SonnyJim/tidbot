@@ -3,6 +3,7 @@
 #include "tell.h"
 #include "manual.h"
 #include "8ball.h"
+#include "hiscore.h"
 
 void recall_tidbit (const char *tidbit, const char *target)
 {
@@ -198,10 +199,7 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         return;
     }
 
-    if (strlen (params[1]) == strlen (MAGIC_HELP)
-            && strcasecmp (params[1], MAGIC_HELP) == 0
-            //Don't respond to help in channel, only privmsg
-            && channel == NULL)
+    if ((strncasecmp (params[1], MAGIC_HELP, strlen(MAGIC_HELP)) == 0) && (channel != NULL))
     {
         //Print help text
         irc_cmd_msg (session, target, "How to use tidbot:");
@@ -234,6 +232,26 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         eightball_reply ();
         return;
     }
+    
+        if ((strncasecmp (params[1], MAGIC_SCORES_LOAD, strlen(MAGIC_SCORES_LOAD)) == 0) && (channel == NULL))
+    {
+        hiscore_load (target);
+        return;
+    }
+
+
+    if ((strncasecmp (params[1], MAGIC_SCORES_SAVE, strlen(MAGIC_SCORES_SAVE)) == 0) && (channel == NULL))
+    {
+        hiscore_save (target);
+        return;
+    }
+
+    if (strncasecmp (params[1], MAGIC_SCORES, strlen(MAGIC_SCORES)) == 0)
+    {
+        hiscore_print_scores (target, channel);
+        return;
+    }
+
 
     //Check to see if we are being asked a question
     if (params[1][strlen(params[1]) - 1] == '?')

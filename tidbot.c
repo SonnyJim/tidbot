@@ -9,6 +9,7 @@
 #include "cfg.h"
 #include "tell.h"
 #include "tidbit.h"
+#include "hiscore.h"
 
 //Sent on successful connection to server, useful for NickServ
 static void send_server_connect_msg (void)
@@ -106,6 +107,11 @@ void whereis_user (const char *target, const char *hostname)
     irc_cmd_msg (session, irc_cfg.channel, whereis_reply);
 }
 
+void event_join (irc_session_t * session, const char * event, const char * origin, const char ** params, unsigned int count)
+{
+    hiscore_add_nick (origin);
+}
+
 void event_numeric (irc_session_t *session, unsigned int event, const char *origin, const char **params, unsigned int count)
 {
     if (event == LIBIRC_RFC_RPL_WHOISUSER)
@@ -122,6 +128,7 @@ void event_numeric (irc_session_t *session, unsigned int event, const char *orig
 	{
 		case LIBIRC_RFC_RPL_NAMREPLY:
 		      fprintf (stdout, "IRC: User list: %s\n", params[3]);
+              hiscore_initialise_nicks (params[3]);
 		      break;
 		case LIBIRC_RFC_RPL_WELCOME:
 		      fprintf (stdout, "IRC: %s\n", params[1]);
@@ -142,6 +149,7 @@ void event_numeric (irc_session_t *session, unsigned int event, const char *orig
 
 void event_channel (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
 {
+    hiscore_add_score (origin, strlen (params[1]));
     if (strncasecmp (params[1], MAGIC_HTTP, strlen (MAGIC_HTTP)) == 0)
     {
         fprintf (stdout, "Saw URL %s\n", params[1]);
@@ -237,6 +245,7 @@ int main (int argc, char **argv)
 	callbacks.event_numeric = event_numeric;
 	callbacks.event_privmsg = event_privmsg;
 	callbacks.event_channel = event_channel;
+    callbacks.event_join = event_join;
 	
 	session = irc_create_session(&callbacks);
 
@@ -258,7 +267,8 @@ int main (int argc, char **argv)
 	{
 		fprintf (stderr, "IRC: ERROR %s\n", irc_strerror(irc_errno (session)));
 	}
-
+    
+    hiscore_init ();
 	//Enter main loop
 	if (irc_run (session))
 	{
