@@ -246,6 +246,12 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         return;
     }
 
+    if (strncasecmp (params[1], MAGIC_SCORES_INIT, strlen(MAGIC_SCORES_INIT)) == 0)
+    {
+        hiscore_init ();
+        return;
+    }
+    
     if (strncasecmp (params[1], MAGIC_SCORES, strlen(MAGIC_SCORES)) == 0)
     {
         hiscore_print_scores (target, channel);

@@ -29,6 +29,7 @@
 #define MAGIC_SCORES "!scores"
 #define MAGIC_SCORES_LOAD "!scores_load"
 #define MAGIC_SCORES_SAVE "!scores_save"
+#define MAGIC_SCORES_INIT "!scores_init"
 
 #define MAX_TIDBIT_LENGTH 16
 

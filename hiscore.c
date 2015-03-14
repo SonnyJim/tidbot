@@ -1,5 +1,6 @@
 #include "tidbot.h"
 #include "cfg.h"
+#include "hiscore.h"
 
 #define MAX_NICKLEN 32
 
@@ -77,6 +78,7 @@ void hiscore_init (void)
     head->next = NULL;
     strcpy (head->nick, "");
     head->score = 0;
+
 }
 
 //Called on channel join
@@ -84,6 +86,8 @@ void hiscore_initialise_nicks (const char *nicks)
 {
     char *token;
     const char delim[] = " ";
+    FILE *hiscore_file;
+    
     //Split nicks into separate entities
     token = strtok (nicks, delim);
     while (token != NULL)
@@ -91,6 +95,17 @@ void hiscore_initialise_nicks (const char *nicks)
         //Add nick to score struct
         hiscore_insert_nick (hiscore_strip_nick(token));
         token = strtok (NULL, delim);
+    }
+    
+    //Load hiscores
+    hiscore_file = fopen (irc_cfg.hiscore_file, "r");
+    if (hiscore_file != NULL)
+    {
+        if (verbose)
+            fprintf (stdout, "Loading scores from %s\n", irc_cfg.hiscore_file);
+        //Close file before reopening it
+        fclose (hiscore_file);
+        hiscore_load (NULL);
     }
 }
 
@@ -171,8 +186,8 @@ void hiscore_save (const char *target)
 void hiscore_load (const char *target)
 {
     FILE *hiscore_file;
-    int fread_ret;
-    char *nick = "";
+    int fread_ret = 1;
+    char nick[MAX_NICKLEN] = "";
     long int score = 0;
 
     hiscore_file = fopen (irc_cfg.hiscore_file, "rb");
@@ -189,11 +204,11 @@ void hiscore_load (const char *target)
     while (fread_ret > 0)
     {
         fread_ret = fread (nick, sizeof(nick), 1, hiscore_file);
-        fprintf (stdout, "fread nick %s\n", nick);
         if (fread_ret > 0)
             fread_ret = fread (&score, sizeof(score), 1, hiscore_file);
         if (fread_ret > 0)
             hiscore_add_score (nick, score);
+        fprintf (stdout, "Loading score: %s %lu\n", nick, score);
     }
     fclose (hiscore_file);
     irc_cmd_msg (session, target, "Loaded scores");

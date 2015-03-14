@@ -258,6 +258,7 @@ int main (int argc, char **argv)
 		fprintf (stderr, "IRC: ERROR %s\n", irc_strerror(irc_errno (session)));
 	}
     
+    //Initialise hiscore table
     hiscore_init ();
 	//Enter main loop
 	if (irc_run (session))
