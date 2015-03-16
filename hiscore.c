@@ -13,16 +13,6 @@ struct score {
 struct score *head;
 struct score *current;
 
-//Strip @ or + off start of nick
-static char * hiscore_strip_nick (const char *nick)
-{
-    char *nick_strip = malloc(sizeof(char) * MAX_NICKLEN);
-    if (strncmp (nick, "@", 1) == 0 || strncmp (nick, "+", 1) == 0)
-        strcpy (nick_strip, nick + 1);
-    else
-        strcpy (nick_strip, nick);
-    return nick_strip;
-}
 static void hiscore_print (void)
 {
     fprintf (stdout, "Hiscore print\n");
@@ -34,6 +24,69 @@ static void hiscore_print (void)
         current = current->next;
     }
 }
+
+static int hiscore_count_nicks (void)
+{
+    int count = 0;
+
+    current = head;
+    while (current)
+    {
+        count++;
+        current = current->next;
+    }
+    return count - 1;
+}
+
+static void hiscore_sort (void) 
+{
+    int i;
+    char temp_nick[32];
+    long int temp_score;
+    struct score *next;
+
+    // Don't try to sort empty or single-node lists
+    if (head == NULL || (head)->next == NULL) 
+    {
+        fprintf (stdout, "Empty head\n");
+        return;
+    }
+
+    for (i = 0; i < hiscore_count_nicks(); i++)
+    {
+        swapped = 0;
+        current = head;
+        next = current->next;
+        while (current->next != NULL)
+        {
+            if (current->score < next->score)
+            {
+                temp_score = current->score;
+                strcpy (temp_nick, current->nick);
+                
+                strcpy (current->nick, next->nick);
+                current->score = next->score;
+                
+                next->score = temp_score;
+                strcpy (next->nick, temp_nick);
+            }
+            current = current->next;
+            next = current->next;
+        }
+    }
+}
+
+//Strip @ or + off start of nick
+static char * hiscore_strip_nick (const char *nick)
+{
+    char *nick_strip = malloc(sizeof(char) * MAX_NICKLEN);
+    if (strncmp (nick, "@", 1) == 0 || strncmp (nick, "+", 1) == 0)
+        strcpy (nick_strip, nick + 1);
+    else
+        strcpy (nick_strip, nick);
+    return nick_strip;
+}
+
 static void hiscore_insert_nick (char *nick)
 {
     current = head;
@@ -63,7 +116,6 @@ static void hiscore_insert_nick (char *nick)
     current->score = 0;
     current->next = head;
     head = current;
-    //hiscore_print ();
 }
 
 void hiscore_init (void)
@@ -76,8 +128,8 @@ void hiscore_init (void)
     }
     
     head->next = NULL;
-    strcpy (head->nick, "");
-    head->score = 0;
+    //strcpy (head->nick, "");
+    //head->score = 0;
 
 }
 
@@ -139,19 +191,24 @@ void hiscore_add_score (const char *nick, long score)
 void hiscore_print_scores (const char *target, const char *channel)
 {
     char reply[1024] = "";
+
+    //Only respond to PM to avoid spamming channel
+    if (channel != NULL)
+        return;
+    hiscore_sort ();
     current = head;
     while (current)
     {
         if (current->next != NULL && current->score > 0)
         {
             sprintf (reply, "%s %lu", current->nick, current->score);
-            if (channel == NULL)
-                irc_cmd_msg (session, target, reply);
-            else
-                irc_cmd_msg (session, channel, reply);
+            irc_cmd_msg (session, target, reply);
         }
         current = current->next;
     }
+
+    sprintf (reply, "Nick count: %i\n", hiscore_count_nicks());
+    irc_cmd_msg (session, target, reply);
 }
 
 void hiscore_save (const char *target)
