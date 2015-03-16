@@ -5,6 +5,7 @@
 #include "8ball.h"
 #include "hiscore.h"
 #include "ctcptime.h"
+#include "hangman.h"
 
 void recall_tidbit (const char *tidbit, const char *target)
 {
@@ -167,9 +168,19 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         {
             //Get the WHOIS information for username
             strcpy (tidbit, params[1] + strlen(MAGIC_WHEREIS));
+            if (verbose)
+                fprintf (stdout, "Looking up whereis for %s\n", tidbit);
             irc_cmd_whois (session, tidbit);
             return;
         }
+    }
+
+    if (strncasecmp (params[1], MAGIC_HANGMAN, strlen(MAGIC_HANGMAN)) == 0)
+    {
+        if (channel != NULL)
+            return;
+        hangman_start (params[1], target);
+        return;
     }
 
     if (strncasecmp (params[1], MAGIC_IPDB, strlen(MAGIC_IPDB)) == 0)
@@ -213,6 +224,7 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         irc_cmd_msg (session, target, "'!8ball' Answer a question using the power of the magic 8ball");
         irc_cmd_msg (session, target, "'!time foo' Will query foo's client for their localtime");
         irc_cmd_msg (session, target, "'!scores' Will print the current scores (only via PM)");
+        irc_cmd_msg (session, target, "'!hangman phrase' Will start a game of hangman using the word phrase (only via PM)");
         return;
     }
     

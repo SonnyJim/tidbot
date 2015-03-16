@@ -1,5 +1,6 @@
 //TODO:
 //Change forget_tidbit() to use a memory buffer rather than a temp file
+//Numeric 433 = name in use, so pick anotheR
 //FIXME:
 //"WPC" matches both "WPC" and "WPC repair"
 //ignore is buggy, the will match There
@@ -11,6 +12,7 @@
 #include "tidbit.h"
 #include "hiscore.h"
 #include "ctcptime.h"
+#include "hangman.h"
 
 //Sent on successful connection to server, useful for NickServ
 static void send_server_connect_msg (void)
@@ -150,6 +152,14 @@ void event_numeric (irc_session_t *session, unsigned int event, const char *orig
 
 void event_channel (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
 {
+    if (hangman_running)
+    {
+        if (strlen (params[1]) == 1)
+            hangman_guess (params[1][0], origin);
+        else
+            hangman_solve (params[1], origin);
+        return;
+    }
     hiscore_add_score (origin, strlen (params[1]));
     check_tell_file (origin);
     check_tidbit (params, origin, irc_cfg.channel);
