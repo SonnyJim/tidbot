@@ -11,5 +11,5 @@ void ctcp_time_req (const char *nick)
 
 void ctcp_time_rep (const char *params)
 {
-   irc_cmd_msg (session, irc_cfg.channel, params); 
+   irc_cmd_msg (session, irc_cfg.channel, params + strlen ("TIME ")); 
 }
