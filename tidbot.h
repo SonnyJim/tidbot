@@ -31,6 +31,8 @@
 #define MAGIC_SCORES_SAVE "!scores_save"
 #define MAGIC_SCORES_INIT "!scores_init"
 
+#define MAGIC_TIME "!time"
+
 #define MAX_TIDBIT_LENGTH 16
 
 #include "libircclient/libircclient.h"

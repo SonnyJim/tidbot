@@ -4,6 +4,7 @@
 #include "manual.h"
 #include "8ball.h"
 #include "hiscore.h"
+#include "ctcptime.h"
 
 void recall_tidbit (const char *tidbit, const char *target)
 {
@@ -164,10 +165,8 @@ void check_tidbit (const char **params, const char *target, const char *channel)
             irc_cmd_msg (session, target, "I only respond to !whereis in channel");
         else
         {
-          //Get the WHOIS information for username
-            strcpy (bittid, params[1]);
-            strtok (bittid, " ");
-            strcpy (tidbit, strtok (NULL, " "));
+            //Get the WHOIS information for username
+            strcpy (tidbit, params[1] + strlen(MAGIC_WHEREIS));
             irc_cmd_whois (session, tidbit);
             return;
         }
@@ -258,6 +257,20 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         return;
     }
     
+    if (strncasecmp (params[1], MAGIC_TIME, strlen(MAGIC_TIME)) == 0)
+    {
+        if (channel == NULL)
+        {
+            irc_cmd_msg (session, target, "I only respond to !time in channel");
+            return;
+        }
+
+        //Store target nick into tidbit
+        strcpy (tidbit, params[1] + strlen(MAGIC_TIME));
+        ctcp_time_req (tidbit);
+        return;
+    }
+
     if ((strncasecmp (params[1], MAGIC_HTTP, strlen (MAGIC_HTTP)) == 0) && cfg_url_title)
     {
         char *string;

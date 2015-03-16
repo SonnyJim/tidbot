@@ -10,6 +10,7 @@
 #include "tell.h"
 #include "tidbit.h"
 #include "hiscore.h"
+#include "ctcptime.h"
 
 //Sent on successful connection to server, useful for NickServ
 static void send_server_connect_msg (void)
@@ -162,6 +163,13 @@ void event_privmsg (irc_session_t *session, const char *event, const char *origi
     }
 }
 
+void event_ctcp_rep (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
+{
+    if (verbose)
+        fprintf (stdout, "CTCP REPLY origin %s reply: %s\n", origin, params[0]);
+    ctcp_time_rep (params[0]);
+}
+
 void print_usage (void)
 {
 	fprintf (stdout, "tidbot\n");
@@ -236,6 +244,7 @@ int main (int argc, char **argv)
 	callbacks.event_privmsg = event_privmsg;
 	callbacks.event_channel = event_channel;
     callbacks.event_join = event_join;
+    callbacks.event_ctcp_rep = event_ctcp_rep;
 	
 	session = irc_create_session(&callbacks);
 
