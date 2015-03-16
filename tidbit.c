@@ -198,7 +198,7 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         return;
     }
 
-    if ((strncasecmp (params[1], MAGIC_HELP, strlen(MAGIC_HELP)) == 0) && (channel != NULL))
+    if ((strncasecmp (params[1], MAGIC_HELP, strlen(MAGIC_HELP)) == 0) && (channel == NULL))
     {
         //Print help text
         irc_cmd_msg (session, target, "How to use tidbot:");
