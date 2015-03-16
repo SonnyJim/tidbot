@@ -54,7 +54,6 @@ static void hiscore_sort (void)
 
     for (i = 0; i < hiscore_count_nicks(); i++)
     {
-        swapped = 0;
         current = head;
         next = current->next;
         while (current->next != NULL)
