@@ -210,7 +210,9 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         irc_cmd_msg (session, target, "'!ipdb foo' will provide the link for ipdb foo ");
         irc_cmd_msg (session, target, "'!manual foo' will show the link for the foo manual (if I have it) ");
         irc_cmd_msg (session, target, "'!add_manual foo url' will add the manual link for foo");
-        irc_cmd_msg (session, target, "'!8ball Answer a question using the power of the magic 8ball");
+        irc_cmd_msg (session, target, "'!8ball' Answer a question using the power of the magic 8ball");
+        irc_cmd_msg (session, target, "'!time foo' Will query foo's client for their localtime");
+        irc_cmd_msg (session, target, "'!scores' Will print the current scores (only via PM)");
         return;
     }
     
