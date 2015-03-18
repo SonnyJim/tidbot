@@ -158,7 +158,6 @@ void event_channel (irc_session_t *session, const char *event, const char *origi
             hangman_guess (params[1][0], origin);
         else
             hangman_solve (params[1], origin);
-        return;
     }
     hiscore_add_score (origin, strlen (params[1]));
     check_tell_file (origin);
@@ -280,9 +279,12 @@ int main (int argc, char **argv)
     //Initialise hiscore table
     hiscore_init ();
 	//Enter main loop
-	if (irc_run (session))
+	//if (irc_run (session))
+    while (1)
 	{
+        irc_run (session);
 		fprintf (stderr, "IRC: ERROR %s\n", irc_strerror(irc_errno (session)));
+        //hiscore_save (NULL);
 		return 1;
 	}
 	return 0;

@@ -18,8 +18,11 @@ static void hangman_print_hint (void)
 
 static int hangman_build_hint (void)
 {
-    int i, j, guessed = 0, present = 0, complete = 1;
-    
+    int i, j, present, complete;
+   
+    complete = 1;
+    present = 0;
+
     for (i = 0; i < strlen (hangman_phrase); i++)
     {
         present = 0;
@@ -28,7 +31,6 @@ static int hangman_build_hint (void)
             if (hangman_phrase[i] == hangman_guessed[j])
             {
                 present += 1;
-                guessed = 1;
                 hangman_hint[i] = hangman_guessed[j];
                 break;
             }
@@ -44,9 +46,7 @@ static int hangman_build_hint (void)
             }
         }
     }
-    if (complete)
-        guessed = 2;
-    return guessed;
+    return complete;
 }
 
 
@@ -86,14 +86,21 @@ void hangman_start (const char *params, const char *target)
     //Convert to all lower case
     for (i = 0; i < strlen (hangman_phrase); i++)
     {
-        if (!isalpha (hangman_phrase[i]) && hangman_phrase[i] != ' ')
+        if (!isalnum (hangman_phrase[i]) && hangman_phrase[i] != ' ')
         {
             irc_cmd_msg (session, target, "Phrase must only be numbers or letters");
             return;
         }
         hangman_phrase[i] = tolower(hangman_phrase[i]);
     }
-
+    
+    //Limit phrase length to 30 chars
+    if (strlen (hangman_phrase) > 30)
+    {
+        irc_cmd_msg (session, target, "Phrase must be shorter than 30 characters");
+        return;
+    }
+        
     if (verbose)
         fprintf (stdout, "Hangman phrase set to '%s'\n", hangman_phrase);
     hangman_running = 1;
@@ -103,6 +110,16 @@ void hangman_start (const char *params, const char *target)
     irc_cmd_msg (session, irc_cfg.channel, reply);
     hangman_build_hint ();
     hangman_print_hint ();
+}
+
+void hangman_stop (void)
+{
+    char reply[1024] = "";
+    if (!hangman_running)
+        return;
+    sprintf (reply, "The phrase was '%s', stopped game early because it was boring everyone", hangman_phrase);
+    irc_cmd_msg (session, irc_cfg.channel, reply);
+    hangman_running = 0;
 }
 
 void hangman_solve (const char *params, const char *origin)
@@ -130,7 +147,7 @@ void hangman_guess (const char guess, const char *origin)
 {
     char guess_letter;
     char reply[1024] = "";
-    int len, ret;
+    int len;
 
     len = strlen(hangman_guessed);
 
@@ -142,31 +159,24 @@ void hangman_guess (const char guess, const char *origin)
     {
         irc_cmd_msg (session, irc_cfg.channel, "Someone has already guessed that letter");
     }
-    else if (!isalpha (guess_letter))
+    else if (!isalnum (guess_letter))
     {
-        irc_cmd_msg (session, irc_cfg.channel, "Alphanumberics only!");
+        irc_cmd_msg (session, irc_cfg.channel, "Alphanumerics only!");
     }
     else
     {
         hangman_guessed[len] = guess_letter;
         hangman_guessed[len + 1] = '\0';
         hangman_guesses++;
-        ret = hangman_build_hint ();
-        //They got a letter right
-        if (ret == 1)
-            hangman_print_hint ();
         //They got the last letter
-        else if (ret == 2)
-        {
+        if (hangman_build_hint())
             hangman_solve (hangman_phrase, origin);
-        }
         else
         {
-            sprintf (reply, "Nope, no %c.  Already guessed: %s\n", guess_letter, hangman_guessed);
-            irc_cmd_msg (session, irc_cfg.channel, reply);
             hangman_print_hint ();
+            sprintf (reply, "Already guessed: %s\n", hangman_guessed);
+            irc_cmd_msg (session, irc_cfg.channel, reply);
         }
-        //fprintf (stdout, "Guesses so far: %s %i\n", hangman_guessed, hangman_guesses);
     }
 }
 

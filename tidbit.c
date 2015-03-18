@@ -175,6 +175,12 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         }
     }
 
+    if (strncasecmp (params[1], MAGIC_HANGMAN_STOP, strlen(MAGIC_HANGMAN_STOP)) == 0)
+    {
+        hangman_stop ();
+        return;
+    }
+
     if (strncasecmp (params[1], MAGIC_HANGMAN, strlen(MAGIC_HANGMAN)) == 0)
     {
         if (channel != NULL)

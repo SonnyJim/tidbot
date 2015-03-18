@@ -1,5 +1,5 @@
 #define DEFAULT_CFG_FILE  	"/.tidbot.cfg"
-#define DEFAULT_IRC_SERVER  	"irc.choopa.net"
+#define DEFAULT_IRC_SERVER  	"irc.efnet.org"
 #define DEFAULT_IRC_PORT	"6667"
 #define DEFAULT_IRC_CHANNEL  	"#pinball"
 #define DEFAULT_IRC_NICK	"tidbot"
@@ -34,6 +34,7 @@
 #define MAGIC_TIME "!time"
 
 #define MAGIC_HANGMAN "!hangman"
+#define MAGIC_HANGMAN_STOP "!hangman_stop"
 
 #define MAX_TIDBIT_LENGTH 16
 
