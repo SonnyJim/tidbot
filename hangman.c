@@ -16,25 +16,36 @@ static void hangman_print_hint (void)
     irc_cmd_msg (session, irc_cfg.channel, hangman_hint);
 }
 
+
+static int hangman_check_guess (const char guess)
+{
+    int present = 0;
+
+    if (strchr (hangman_phrase, guess) != NULL)
+        present = 1;
+    return present;
+}
+
 static int hangman_build_hint (void)
 {
-    int i, j, present, complete;
+    int i, j, complete, present;
    
     complete = 1;
-    present = 0;
 
     for (i = 0; i < strlen (hangman_phrase); i++)
     {
         present = 0;
+        
         for (j = 0; j < strlen (hangman_guessed); j++)
         {
             if (hangman_phrase[i] == hangman_guessed[j])
             {
-                present += 1;
                 hangman_hint[i] = hangman_guessed[j];
-                break;
+                present = 1;
             }
+                
         }
+        
         if (!present)
         {
             if (hangman_phrase[i] == ' ')
@@ -158,25 +169,33 @@ void hangman_guess (const char guess, const char *origin)
     if (strchr (hangman_guessed, guess_letter))
     {
         irc_cmd_msg (session, irc_cfg.channel, "Someone has already guessed that letter");
+        return;
     }
-    else if (!isalnum (guess_letter))
+    
+    if (!isalnum (guess_letter))
     {
         irc_cmd_msg (session, irc_cfg.channel, "Alphanumerics only!");
+        return;
     }
-    else
+
+    //Add guess to list of already guessed letters
+    hangman_guessed[len] = guess_letter;
+    hangman_guessed[len + 1] = '\0';
+    hangman_guesses++;
+    
+    //They got a letter
+    if (hangman_check_guess(guess_letter))
     {
-        hangman_guessed[len] = guess_letter;
-        hangman_guessed[len + 1] = '\0';
-        hangman_guesses++;
         //They got the last letter
         if (hangman_build_hint())
             hangman_solve (hangman_phrase, origin);
         else
-        {
             hangman_print_hint ();
-            sprintf (reply, "Already guessed: %s\n", hangman_guessed);
-            irc_cmd_msg (session, irc_cfg.channel, reply);
-        }
+    }
+    else
+    {
+        sprintf (reply, "Nope, no %c's.  Guesses so far: %s\n", guess_letter, hangman_guessed);
+        irc_cmd_msg (session, irc_cfg.channel, reply);
     }
 }
 
