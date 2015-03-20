@@ -86,7 +86,7 @@ void seen_check (const char *params, const char *targetnick, const char *channel
     for (i = 0; i < seen_record_count; i++)
     {
         strcpy (seen_record.nick, seen_mem + (i * CHUNKSIZE));
-        if (strcmp (nick, seen_record.nick) == 0)
+        if (strcasecmp (nick, seen_record.nick) == 0)
         {
             memcpy (&seen_record.time, seen_mem + (i * CHUNKSIZE) + (sizeof (char) * 32), sizeof (time_t));
             time_diff = difftime (time(NULL), seen_record.time);
@@ -141,7 +141,7 @@ void seen_store (char *origin)
             fprintf (stdout, "seen: Searching nick=%s time=%s\n", seen_record.nick, ctime(&seen_record.time));
         }
 
-        if (strcmp (origin, seen_record.nick) == 0)
+        if (strcasecmp (origin, seen_record.nick) == 0)
         {
             //If so, modify the last seen time
             if (verbose)
