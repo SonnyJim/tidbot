@@ -30,7 +30,7 @@ void seen_init (void)
 static void seen_mem_add (void)
 {
     seen_record_count++;
-    seen_mem = realloc (seen_mem, sizeof (struct seen_t) * seen_record_count);
+    seen_mem = realloc (seen_mem, sizeof (struct seen_t) * (seen_record_count + 1));
 }
 
 static char * seen_strip_nick (const char *cmd, const char *params)
