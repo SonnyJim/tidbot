@@ -30,6 +30,7 @@ void seen_init (void)
 static void seen_mem_add (void)
 {
     seen_record_count++;
+    //seen_record_count starts from 0, hence the + 1
     seen_mem = realloc (seen_mem, sizeof (struct seen_t) * (seen_record_count + 1));
 }
 
@@ -64,16 +65,18 @@ void seen_check (const char *params, const char *targetnick, const char *channel
     char nick[32] = "";
     char reply[1024] = "";
     char target[32] = "";
+    time_t time_diff;
+    struct tm *time_data;
+    int d, h, m, s = 0;
     
-    strcpy (nick, seen_strip_nick (MAGIC_SEEN, params)); 
         
     if (channel == NULL)
         strcpy (target, targetnick);
     else
         strcpy (target, channel);
-    fprintf (stdout, "target = %s\n", target);
-
-    if (nick[0] == ' ' || strlen (nick) == 0)
+    
+    strcpy (nick, seen_strip_nick (MAGIC_SEEN, params)); 
+    if (strlen (nick) == 0)
     {
         fprintf (stderr, "seen: empty nick\n");
         irc_cmd_msg (session, target, "Have I seen who? (hint: !seen username)");
@@ -86,7 +89,28 @@ void seen_check (const char *params, const char *targetnick, const char *channel
         if (strcmp (nick, seen_record.nick) == 0)
         {
             memcpy (&seen_record.time, seen_mem + (i * CHUNKSIZE) + (sizeof (char) * 32), sizeof (time_t));
-            sprintf (reply, "Saw %s at %s (UTC)", seen_record.nick, ctime(&seen_record.time));
+            time_diff = difftime (time(NULL), seen_record.time);
+            time_data = gmtime (&time_diff);
+            d = time_data->tm_yday;
+            h = time_data->tm_hour;
+            m = time_data->tm_min;
+            s = time_data->tm_sec;
+           
+            if (d == 1)
+                sprintf (reply, "Saw %s %d Day, %d Hours and %d Minutes ago", seen_record.nick, d, h, m);
+            else if (d > 1)
+                sprintf (reply, "Saw %s %d Days, %d Hours and %d Minutes ago", seen_record.nick, d, h, m);
+            else if (h == 1)
+                sprintf (reply, "Saw %s %d Hour and %d Minutes ago", seen_record.nick, h, m);
+            else if (h > 1)
+                sprintf (reply, "Saw %s %d Hours and %d Minutes ago", seen_record.nick, h, m);
+            else if (m > 1)
+                sprintf (reply, "Saw %s %d Minutes %d Seconds ago", seen_record.nick, m, s);
+            else if (s > 1)
+                sprintf (reply, "Saw %s %d Seconds ago", seen_record.nick, s);
+            else
+                sprintf (reply, "Err?  Check yourself before you wreck yourself");
+            //sprintf (reply, "Saw %s at %s (UTC)", seen_record.nick, ctime(&seen_record.time));
             irc_cmd_msg (session, target, reply); 
             return;
         }
