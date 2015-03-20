@@ -71,7 +71,8 @@ void event_connect (irc_session_t *session, const char *event, const char *origi
 {
     //Initialise hiscore table
     hiscore_init ();
-    seen_init ();
+    if (!seen_load ())
+        seen_init ();
     connection_retries = 0;
 	fprintf (stdout, "IRC: Successfully connected to server %s\n", irc_cfg.server);
 

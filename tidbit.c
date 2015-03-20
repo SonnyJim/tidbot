@@ -279,6 +279,12 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         return;
     }
     
+    if (strncasecmp (params[1], MAGIC_SEEN_SAVE, strlen(MAGIC_SEEN_SAVE)) == 0)
+    {
+        seen_save ();
+        return;
+    }
+
     if (strncasecmp (params[1], MAGIC_SEEN, strlen(MAGIC_SEEN)) == 0)
     {
         seen_check (params[1], target, channel);
