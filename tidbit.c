@@ -6,6 +6,7 @@
 #include "hiscore.h"
 #include "ctcptime.h"
 #include "hangman.h"
+#include "seen.h"
 
 void recall_tidbit (const char *tidbit, const char *target)
 {
@@ -231,6 +232,7 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         irc_cmd_msg (session, target, "'!time foo' Will query foo's client for their localtime");
         irc_cmd_msg (session, target, "'!scores' Will print the current scores (only via PM)");
         irc_cmd_msg (session, target, "'!hangman phrase' Will start a game of hangman using the word phrase (only via PM)");
+        irc_cmd_msg (session, target, "'!seen nick' will tell you the last time I saw nick speaking");
         return;
     }
     
@@ -277,6 +279,12 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         return;
     }
     
+    if (strncasecmp (params[1], MAGIC_SEEN, strlen(MAGIC_SEEN)) == 0)
+    {
+        seen_check (params[1], target, channel);
+        return;
+    }
+
     if (strncasecmp (params[1], MAGIC_TIME, strlen(MAGIC_TIME)) == 0)
     {
         if (channel == NULL)

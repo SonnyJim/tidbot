@@ -13,6 +13,9 @@
 #include "hiscore.h"
 #include "ctcptime.h"
 #include "hangman.h"
+#include "seen.h"
+
+int connection_retries;
 
 //Sent on successful connection to server, useful for NickServ
 static void send_server_connect_msg (void)
@@ -66,6 +69,10 @@ static void send_channel_connect_msg (void)
 //Called when successfully connected to a server
 void event_connect (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
 {
+    //Initialise hiscore table
+    hiscore_init ();
+    seen_init ();
+    connection_retries = 0;
 	fprintf (stdout, "IRC: Successfully connected to server %s\n", irc_cfg.server);
 
 	send_server_connect_msg ();
@@ -152,6 +159,7 @@ void event_numeric (irc_session_t *session, unsigned int event, const char *orig
 
 void event_channel (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
 {
+    seen_store (origin);
     if (hangman_running)
     {
         if (strlen (params[1]) == 1)
@@ -166,10 +174,8 @@ void event_channel (irc_session_t *session, const char *event, const char *origi
 
 void event_privmsg (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
 {
-    if (strlen (origin) < MAX_TIDBIT_LENGTH)
-    {
-        check_tidbit (params, origin, NULL);
-    }
+    seen_store (origin);
+    check_tidbit (params, origin, NULL);
 }
 
 void event_ctcp_rep (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
@@ -276,16 +282,16 @@ int main (int argc, char **argv)
 		fprintf (stderr, "IRC: ERROR %s\n", irc_strerror(irc_errno (session)));
 	}
     
-    //Initialise hiscore table
-    hiscore_init ();
 	//Enter main loop
 	//if (irc_run (session))
-    while (1)
+    while (connection_retries < 3)
 	{
-        irc_run (session);
-		fprintf (stderr, "IRC: ERROR %s\n", irc_strerror(irc_errno (session)));
-        //hiscore_save (NULL);
-		return 1;
+        int ret;
+        connection_retries++;
+        ret = irc_run (session);
+		fprintf (stderr, "IRC: ERROR %i %s\n", ret, irc_strerror(ret));
+        fprintf (stdout, "Sleeping 5 seconds between connection attempt #%i\n", connection_retries);
+        sleep (5);
 	}
 	return 0;
 }

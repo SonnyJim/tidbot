@@ -36,6 +36,8 @@
 #define MAGIC_HANGMAN "!hangman"
 #define MAGIC_HANGMAN_STOP "!hangman_stop"
 
+#define MAGIC_SEEN "!seen"
+
 #define MAX_TIDBIT_LENGTH 16
 
 #include "libircclient/libircclient.h"
