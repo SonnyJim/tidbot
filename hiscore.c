@@ -190,7 +190,7 @@ void hiscore_add_score (const char *nick, long score)
 void hiscore_print_scores (const char *target, const char *channel)
 {
     char reply[1024] = "";
-
+    int i = 0;
     //Only respond to PM to avoid spamming channel
     if (channel != NULL)
         return;
@@ -204,6 +204,11 @@ void hiscore_print_scores (const char *target, const char *channel)
             irc_cmd_msg (session, target, reply);
         }
         current = current->next;
+        if (++i % 4 == 0)
+        {
+            fprintf (stdout, "Sleeping to avoid flood\n");
+            sleep (1);
+        }
     }
 
     sprintf (reply, "Nick count: %i\n", hiscore_count_nicks());
