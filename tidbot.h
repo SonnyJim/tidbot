@@ -37,6 +37,7 @@
 #define MAGIC_HANGMAN_STOP "!hangman_stop"
 
 #define MAGIC_SEEN "!seen"
+#define MAGIC_SEEN_SAVE "!seen_save"
 
 #define MAX_TIDBIT_LENGTH 16
 
@@ -62,5 +63,5 @@ extern void geoip_find (const char *ipaddr);
 
 //Curl get title
 char* get_title (const char *url);
-    
+char* get_url (const char *string);    
 //cfg.c

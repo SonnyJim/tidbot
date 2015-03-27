@@ -28,6 +28,7 @@
 #include <string.h>
 
 #include <curl/curl.h>
+#include "tidbot.h"
 
 struct MemoryStruct {
   char *memory;
@@ -56,6 +57,21 @@ WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *userp)
   return realsize;
 }
 
+char* get_url (const char* msg)
+{
+    char *start, *end;
+    int len = 0;
+
+    start = strstr (msg, MAGIC_HTTP);
+    end = strstr (start, " ");
+    if (end == NULL)
+        len = strlen (start);
+    else
+        len = end - start;
+
+    strncpy (string, start, len);
+    return string;
+}
 
 char* get_title (const char *url)
 {

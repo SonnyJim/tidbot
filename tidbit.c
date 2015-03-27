@@ -287,7 +287,7 @@ void check_tidbit (const char **params, const char *target, const char *channel)
 
     if (strncasecmp (params[1], MAGIC_SEEN, strlen(MAGIC_SEEN)) == 0)
     {
-        seen_check (params[1], target, channel);
+        //seen_check (params[1], target, channel);
         return;
     }
 
@@ -305,12 +305,13 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         return;
     }
 
-    if ((strncasecmp (params[1], MAGIC_HTTP, strlen (MAGIC_HTTP)) == 0) && cfg_url_title)
+    if ((strstr (params[1], MAGIC_HTTP) != NULL) && cfg_url_title)
     {
         char *string;
+        string = get_url (params[1]);
         if (verbose)
-            fprintf (stdout, "Saw URL %s\n", params[1]);
-        string = get_title (params[1]);
+            fprintf (stdout, "Saw URL %s\n", string);
+        string = get_title (string);
         if (string != NULL)
             irc_cmd_msg (session, irc_cfg.channel, string);
         else
