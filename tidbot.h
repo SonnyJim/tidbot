@@ -39,6 +39,8 @@
 #define MAGIC_SEEN "!seen"
 #define MAGIC_SEEN_SAVE "!seen_save"
 
+#define MAGIC_RANDOM "!spin"
+
 #define MAX_TIDBIT_LENGTH 16
 
 #include "libircclient/libircclient.h"

@@ -206,8 +206,8 @@ void hiscore_print_scores (const char *target, const char *channel)
         current = current->next;
         if (++i % 4 == 0)
         {
-            fprintf (stdout, "Sleeping to avoid flood\n");
-            sleep (1);
+            fprintf (stdout, "Sleeping to avoid excess flood\n");
+            sleep (2);
         }
     }
 

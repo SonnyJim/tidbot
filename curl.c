@@ -70,6 +70,7 @@ char* get_url (const char* msg)
         len = end - start;
 
     strncpy (string, start, len);
+    string[len] = '\0';
     return string;
 }
 

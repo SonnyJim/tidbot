@@ -1,4 +1,5 @@
 #include "tidbot.h"
+#include "tidbit.h"
 #include "cfg.h"
 #include "tell.h"
 #include "manual.h"
@@ -232,6 +233,8 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         irc_cmd_msg (session, target, "'!time foo' Will query foo's client for their localtime");
         irc_cmd_msg (session, target, "'!scores' Will print the current scores (only via PM)");
         irc_cmd_msg (session, target, "'!hangman phrase' Will start a game of hangman using the word phrase (only via PM)");
+        irc_cmd_msg (session, target, "'!hangman' Will start a game of hangman using a randomly selected machine name (only via PM)");
+        irc_cmd_msg (session, target, "'!spin' Will pick a random game and print some info");
         irc_cmd_msg (session, target, "'!seen nick' will tell you the last time I saw nick speaking");
         return;
     }
@@ -287,7 +290,7 @@ void check_tidbit (const char **params, const char *target, const char *channel)
 
     if (strncasecmp (params[1], MAGIC_SEEN, strlen(MAGIC_SEEN)) == 0)
     {
-        //seen_check (params[1], target, channel);
+        seen_check (params[1], target, channel);
         return;
     }
 
@@ -304,6 +307,12 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         ctcp_time_req (tidbit);
         return;
     }
+    
+    if (strncasecmp (params[1], MAGIC_RANDOM, strlen(MAGIC_RANDOM)) == 0 )
+    {
+        random_machine (target, channel);
+        return;
+    }
 
     if ((strstr (params[1], MAGIC_HTTP) != NULL) && cfg_url_title)
     {
@@ -316,7 +325,6 @@ void check_tidbit (const char **params, const char *target, const char *channel)
             irc_cmd_msg (session, irc_cfg.channel, string);
         else
             fprintf (stderr, "Error fetching title from %s\n", params[1]);
-        return;
     }
 
     //Check to see if we are being asked a question

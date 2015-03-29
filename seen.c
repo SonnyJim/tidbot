@@ -187,7 +187,7 @@ void seen_store (char *origin)
         strcpy (seen_record.nick, seen_mem + (i * CHUNKSIZE));
         if (verbose)
         {
-            memcpy (&seen_record.time, seen_mem + (i * CHUNKSIZE) + (sizeof (char) * 32), sizeof (time_t));
+            memcpy (&seen_record.time, seen_mem + (i * CHUNKSIZE) + (sizeof (seen_record.nick)), sizeof (time_t));
             fprintf (stdout, "seen: Searching nick=%s time=%s\n", seen_record.nick, ctime(&seen_record.time));
         }
 

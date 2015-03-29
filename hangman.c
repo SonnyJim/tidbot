@@ -1,4 +1,5 @@
 #include "tidbot.h"
+#include "tidbit.h"
 #include "cfg.h"
 #include <ctype.h> //tolower()
 
@@ -78,7 +79,7 @@ void hangman_start (const char *params, const char *target)
     memset (hangman_hint, 0, sizeof (hangman_hint));
     memset (hangman_phrase, 0, sizeof (hangman_phrase));
     hangman_guesses = 0;
-    
+      
     //Copy hangman phrase and strip off leading whitespace
     start = strlen (MAGIC_HANGMAN) + 1;
     while (params[start] == ' ')
@@ -90,9 +91,14 @@ void hangman_start (const char *params, const char *target)
     {
         end--;
     }
-
-    strncpy (hangman_phrase, params + start, end - start + 1);
-    hangman_phrase[strlen(hangman_phrase)] = '\0';
+    
+    if (start > end)
+        strcpy (hangman_phrase, random_machine ("tidbot", NULL));
+    else
+    {
+        strncpy (hangman_phrase, params + start, end - start + 1);
+        hangman_phrase[strlen(hangman_phrase)] = '\0';
+    }
 
     //Convert to all lower case
     for (i = 0; i < strlen (hangman_phrase); i++)
@@ -149,7 +155,7 @@ void hangman_solve (const char *params, const char *origin)
     {
         sprintf (reply, "The phrase was '%s'.  Correctly guessed by %s after %i guesses\n", hangman_phrase, origin, hangman_guesses);
         irc_cmd_msg (session, irc_cfg.channel, reply); 
-        irc_cmd_msg (session, irc_cfg.channel, "PM me with !hangman phrase to start a new game");
+        irc_cmd_msg (session, irc_cfg.channel, "PM me with !hangman phrase to start a new game or just !hangman to pick a random machine");
         hangman_running = 0;
     }
 }
