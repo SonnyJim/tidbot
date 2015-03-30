@@ -12,8 +12,9 @@
 void recall_tidbit (const char *tidbit, const char *target)
 {
     FILE *tidbit_file;
-    char lineread[2048], reply[2048], msg[2048], tidbit_tmp[255];
-    int i, tidbit_count = 0;
+    char lineread[2048], msg[2048], tidbit_tmp[255];
+    char *reply;
+    int tidbit_count = 0;
 
     tidbit_file = fopen (DEFAULT_TIDBIT_FILE, "r");
     if (tidbit_file == NULL)
@@ -23,36 +24,32 @@ void recall_tidbit (const char *tidbit, const char *target)
     }
 
     memset (msg, 0, strlen(msg));
-    memset (reply, 0, strlen(reply));
 
     //Copy tidbit to temp var
     strcpy (tidbit_tmp, tidbit);
     //Add on the terminator, otherwise we match things we don't want
     strcat (tidbit_tmp, "|");
     
+    tidbit_count = 0;
     //Scan file for tidbit
     while (fgets (lineread, 2048, tidbit_file) != NULL)
     {
         //Found the tidbit
         if (strncasecmp (lineread, tidbit_tmp, strlen(tidbit_tmp)) == 0)
         {
-            //Find the | separator in the line
-            for (i = 0; i < strlen (lineread); i++)
+            tidbit_count++;
+            
+            reply = strtok (lineread, "|");
+            reply = strtok (NULL, "|");
+            //Remove the \n from end of string
+            reply[strlen(reply) - 1 ] = '\0';
+
+            if (tidbit_count == 1)
+                strcpy (msg, reply);
+            else if (tidbit_count > 1)
             {
-                if (lineread[i] == '|')
-                {
-                    tidbit_count++;
-                    //Strip out and form reply ( -1 to remove \n)
-                    strncpy (reply, lineread + i + 1, strlen (lineread) - i);
-                    if (tidbit_count == 1)
-                        strncpy (msg, reply, strlen(reply) - 1);
-                    else
-                    {
-                        strcat (msg, " |*or*| ");
-                        strncat (msg, reply, strlen(reply) - 1);
-                        msg[strlen(msg)] = '\0';
-                    }
-                }
+                strcat (msg, " |*or*| ");
+                strcat (msg, reply);
             }
         }
     }
@@ -224,14 +221,17 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         irc_cmd_msg (session, target, "Typing 'foo is bar' will make tidbot respond to foo? with the answer 'bar'");
         irc_cmd_msg (session, target, "(tidbot can remember multiple definitions for foo)");
         irc_cmd_msg (session, target, "'!forget foo' will make tidbot forget *all* definitions for foo");
+        sleep (1);
         irc_cmd_msg (session, target, "'!tell foo message' will make tidbot tell the user foo message next time they are around ");
         irc_cmd_msg (session, target, "'!whereis user' will use my crappy database to see where the user lives ");
         irc_cmd_msg (session, target, "'!ipdb foo' will provide the link for ipdb foo ");
         irc_cmd_msg (session, target, "'!manual foo' will show the link for the foo manual (if I have it) ");
+        sleep (1);
         irc_cmd_msg (session, target, "'!add_manual foo url' will add the manual link for foo");
         irc_cmd_msg (session, target, "'!8ball' Answer a question using the power of the magic 8ball");
         irc_cmd_msg (session, target, "'!time foo' Will query foo's client for their localtime");
         irc_cmd_msg (session, target, "'!scores' Will print the current scores (only via PM)");
+        sleep (1);
         irc_cmd_msg (session, target, "'!hangman phrase' Will start a game of hangman using the word phrase (only via PM)");
         irc_cmd_msg (session, target, "'!hangman' Will start a game of hangman using a randomly selected machine name (only via PM)");
         irc_cmd_msg (session, target, "'!spin' Will pick a random game and print some info");
