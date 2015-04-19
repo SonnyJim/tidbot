@@ -14,6 +14,7 @@
 #include "ctcptime.h"
 #include "hangman.h"
 #include "seen.h"
+#include "hiscore.h"
 
 int connection_retries;
 
@@ -160,7 +161,7 @@ void event_numeric (irc_session_t *session, unsigned int event, const char *orig
 
 void event_channel (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
 {
-    seen_store (origin);
+    //seen_store (origin);
     if (hangman_running)
     {
         if (strlen (params[1]) == 1)
@@ -175,7 +176,7 @@ void event_channel (irc_session_t *session, const char *event, const char *origi
 
 void event_privmsg (irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
 {
-    seen_store (origin);
+    //seen_store (origin);
     check_tidbit (params, origin, NULL);
 }
 
@@ -293,6 +294,7 @@ int main (int argc, char **argv)
 		fprintf (stderr, "IRC: ERROR %i %s\n", ret, irc_strerror(ret));
         fprintf (stdout, "Sleeping 5 seconds between connection attempt #%i\n", connection_retries);
         sleep (5);
+        hiscore_save (NULL);
 	}
 	return 0;
 }

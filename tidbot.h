@@ -40,6 +40,10 @@
 #define MAGIC_SEEN_SAVE "!seen_save"
 
 #define MAGIC_RANDOM "!spin"
+#define MAGIC_FLIP "!flip"
+#define MAGIC_LOCK "!lock"
+#define MAGIC_MB "!multiball"
+#define MAGIC_SKILL "!skillshot"
 
 #define MAX_TIDBIT_LENGTH 16
 

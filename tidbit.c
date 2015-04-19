@@ -221,21 +221,21 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         irc_cmd_msg (session, target, "Typing 'foo is bar' will make tidbot respond to foo? with the answer 'bar'");
         irc_cmd_msg (session, target, "(tidbot can remember multiple definitions for foo)");
         irc_cmd_msg (session, target, "'!forget foo' will make tidbot forget *all* definitions for foo");
-        sleep (1);
+        sleep (2);
+        irc_cmd_msg (session, target, "'!hangman phrase' Will start a game of hangman using the word phrase (only via PM)");
+        irc_cmd_msg (session, target, "'!hangman' Will start a game of hangman using a randomly selected machine name (only via PM)");
+        irc_cmd_msg (session, target, "'!spin' Will pick a random game and print some info");
+        sleep (2);
+        irc_cmd_msg (session, target, "'!seen nick' will tell you the last time I saw nick speaking");
         irc_cmd_msg (session, target, "'!tell foo message' will make tidbot tell the user foo message next time they are around ");
         irc_cmd_msg (session, target, "'!whereis user' will use my crappy database to see where the user lives ");
         irc_cmd_msg (session, target, "'!ipdb foo' will provide the link for ipdb foo ");
         irc_cmd_msg (session, target, "'!manual foo' will show the link for the foo manual (if I have it) ");
-        sleep (1);
+        sleep (2);
         irc_cmd_msg (session, target, "'!add_manual foo url' will add the manual link for foo");
         irc_cmd_msg (session, target, "'!8ball' Answer a question using the power of the magic 8ball");
         irc_cmd_msg (session, target, "'!time foo' Will query foo's client for their localtime");
         irc_cmd_msg (session, target, "'!scores' Will print the current scores (only via PM)");
-        sleep (1);
-        irc_cmd_msg (session, target, "'!hangman phrase' Will start a game of hangman using the word phrase (only via PM)");
-        irc_cmd_msg (session, target, "'!hangman' Will start a game of hangman using a randomly selected machine name (only via PM)");
-        irc_cmd_msg (session, target, "'!spin' Will pick a random game and print some info");
-        irc_cmd_msg (session, target, "'!seen nick' will tell you the last time I saw nick speaking");
         return;
     }
     
@@ -281,7 +281,7 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         hiscore_print_scores (target, channel);
         return;
     }
-    
+   /* 
     if (strncasecmp (params[1], MAGIC_SEEN_SAVE, strlen(MAGIC_SEEN_SAVE)) == 0)
     {
         seen_save ();
@@ -293,7 +293,7 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         seen_check (params[1], target, channel);
         return;
     }
-
+*/
     if (strncasecmp (params[1], MAGIC_TIME, strlen(MAGIC_TIME)) == 0)
     {
         if (channel == NULL)
@@ -313,6 +313,43 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         random_machine (target, channel);
         return;
     }
+
+    if (strncasecmp (params[1], MAGIC_FLIP, strlen(MAGIC_FLIP)) == 0 )
+    {
+        if (channel != NULL)
+        {
+            flip (channel);
+            return;
+        }
+    }
+
+    if (strncasecmp (params[1], MAGIC_LOCK, strlen(MAGIC_LOCK)) == 0 )
+    {
+        if (channel != NULL)
+        {
+            lock (channel);
+            return;
+        }
+    }
+
+    if (strncasecmp (params[1], MAGIC_MB, strlen(MAGIC_MB)) == 0 )
+    {
+        if (channel != NULL)
+        {
+            multiball (channel);
+            return;
+        }
+    }
+
+    if (strncasecmp (params[1], MAGIC_SKILL, strlen(MAGIC_SKILL)) == 0 )
+    {
+        if (channel != NULL)
+        {
+            skillshot (channel);
+            return;
+        }
+    }
+
 
     if ((strstr (params[1], MAGIC_HTTP) != NULL) && cfg_url_title)
     {

@@ -105,7 +105,7 @@ char* get_title (const char *url)
 
   /* some servers don't like requests that are made without a user-agent
      field, so we provide one */
-  curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "libcurl-agent/1.0");
+  curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0");
 
   /* Don't verify https links */
   curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYPEER, 0L);

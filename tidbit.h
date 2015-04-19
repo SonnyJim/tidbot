@@ -4,3 +4,7 @@ void forget_tidbit (const char *tidbit, const char *target);
 void check_tidbit (const char **params, const char *target, const char *channel);
 
 char* random_machine (const char *target, const char *channel);
+void flip (const char *channel);
+void lock (const char *channel);
+void multiball (const char *channel);
+void skillshot (const char *channel);

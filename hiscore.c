@@ -191,9 +191,7 @@ void hiscore_print_scores (const char *target, const char *channel)
 {
     char reply[1024] = "";
     int i = 0;
-    //Only respond to PM to avoid spamming channel
-    if (channel != NULL)
-        return;
+    
     hiscore_sort ();
     current = head;
     while (current)
@@ -201,18 +199,27 @@ void hiscore_print_scores (const char *target, const char *channel)
         if (current->next != NULL && current->score > 0)
         {
             sprintf (reply, "%s %lu", current->nick, current->score);
-            irc_cmd_msg (session, target, reply);
+            if (channel == NULL)
+                irc_cmd_msg (session, target, reply);
+            else if (i < 4)
+                irc_cmd_msg (session, channel, reply);
+
         }
         current = current->next;
-        if (++i % 4 == 0)
+        if (++i % 4 == 0 && channel == NULL)
         {
             fprintf (stdout, "Sleeping to avoid excess flood\n");
             sleep (2);
         }
     }
-
-    sprintf (reply, "Nick count: %i\n", hiscore_count_nicks());
-    irc_cmd_msg (session, target, reply);
+    
+    if (channel == NULL)
+    {
+        sprintf (reply, "Nick count: %i\n", hiscore_count_nicks());
+        irc_cmd_msg (session, target, reply);
+    }
+    else
+        irc_cmd_msg (session, channel, "PM me !scores for the full list");
 }
 
 void hiscore_save (const char *target)
