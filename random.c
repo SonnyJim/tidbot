@@ -3,8 +3,6 @@
 #include "time.h"
 
 #define MACHINE_FILE "machine_list.txt"
-#define FLIP_FILE   "flip.txt"
-
 int balls_locked = 0;
 char* random_machine (const char *target, const char *channel)
 {
@@ -21,7 +19,6 @@ char* random_machine (const char *target, const char *channel)
     int machine_count = 0;
     int random_pick = 0;
     
-    srand(time(NULL));
 
     machine_file = fopen (MACHINE_FILE, "r");
     if (machine_file == NULL)
@@ -68,43 +65,6 @@ char* random_machine (const char *target, const char *channel)
     return NULL;
 }
 
-void flip (const char *channel)
-{
-    FILE *flip_file;
-    char lineread[1024] = ""; 
-    int flip_count = 0;
-    int random_pick = 0;
-    
-    srand(time(NULL));
-
-    flip_file = fopen (FLIP_FILE, "r");
-    if (flip_file == NULL)
-    {
-        fprintf (stderr, "Error opening %s for reading\n", FLIP_FILE);
-        return;
-    }
-    
-    while (fgets (lineread, 1024, flip_file) != NULL)
-        flip_count++;
-
-    rewind (flip_file);
-    
-    random_pick = rand () % flip_count;
-   
-    flip_count = 0;
-    while (fgets (lineread, 1024, flip_file) != NULL)
-    {
-        if (flip_count == random_pick)
-        {
-            irc_cmd_msg (session, channel, lineread);
-            break;
-        }
-        flip_count++;
-    }
-    fclose (flip_file);
-    return;
-}
-
 void multiball (const char *channel)
 {
     if (balls_locked == 3)
@@ -144,7 +104,6 @@ void lock (const char *channel)
 void skillshot (const char *channel)
 {
 
-    srand(time(NULL));
     switch (rand () % 3)
     {
         case 0:

@@ -314,6 +314,12 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         return;
     }
 
+    if (strncasecmp (params[1], MAGIC_FLIP_ADD, strlen(MAGIC_FLIP_ADD)) == 0 )
+    {
+        flip_add (params[1]);
+        return;
+    }
+
     if (strncasecmp (params[1], MAGIC_FLIP, strlen(MAGIC_FLIP)) == 0 )
     {
         if (channel != NULL)
@@ -346,6 +352,15 @@ void check_tidbit (const char **params, const char *target, const char *channel)
         if (channel != NULL)
         {
             skillshot (channel);
+            return;
+        }
+    }
+
+    if (strncasecmp (params[1], MAGIC_CHOOSE, strlen(MAGIC_CHOOSE)) == 0 )
+    {
+        if (channel != NULL)
+        {
+            choose (params[1], channel);
             return;
         }
     }

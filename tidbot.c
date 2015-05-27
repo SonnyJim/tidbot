@@ -15,6 +15,7 @@
 #include "hangman.h"
 #include "seen.h"
 #include "hiscore.h"
+#include <time.h>
 
 int connection_retries;
 
@@ -200,6 +201,9 @@ int main (int argc, char **argv)
 	irc_callbacks_t callbacks;
 	int c;
 	int ret;
+
+    //Seed the RNG
+    srand (time(NULL));
 
     verbose = 0;
     use_default_cfg = 1;
