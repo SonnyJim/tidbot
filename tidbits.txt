@@ -1,3 +1,4 @@
+KS|kickstarter
 TWD|The Walking Dead
 TBL|The Big Lebowski
 BoP|Bride of Pinbot
@@ -5,11 +6,2303 @@ WPC|Williams Pinball Controller
 APPLE|Advanced Pinball Programming Logic Executive
 TAF|The Addams Family
 SDTM|Straight Down The Middle
-this|a test to show how it can go wrong
-why|my dick sore
-IFPA|International Flipper Pinball Association
 ECLE|Wizard of OZ Limited Edition for US customers only
-IFPA|for guys with little winkies
 Bags|Norway's Tommy
 WPC repair|http://pinwiki.com/wiki/index.php?title=Williams_Repair_Guides
 freeman|an indentured servant that was given a sock, so now he is free.
+SS|Scared Stiff
+SS|Silver Slugger
+SS|Solid State
+SS|SlingShot
+STDM|Dyslexic version of STDM 
+WH2O|Whitewater by Williams
+WPT|an amazing game designed by Steve Ritchie, and Keith Johnson; with a ton of drop targets, and display on the playfield
+TRS|a terrible game
+BoP|a one shot game
+IPDB|where you should look for pinball machine information before asking a question here.  not really. we don't mind.
+AAB|Add-a-ball -- Allows the player to add additional balls by achieving a specific task 
+EM|A pinball machine design that relies on relays, motors and switches to run. This design was phased out in the late 1970s. EM machines are easily recognized by their scoring displays that have mechanical score reels that spin to show the score. Newer machines are referred to as solid state (SS).
+Special|Some machines allow to earn a free game (called a special in that context) by achieving a specific task.  or what you are if you ride a short bus.
+tubgirl|what has been seen, cannot be unseen
+Woodrail|Pinball machines manufactured prior to appr. 1961 that used wood to frame the playfield glass
+VUK|a vertical up-kicker.  also known as a popper.  if you are playing South Park, that is where the ball is stuck.
+SVUK|Super Vertical Up-Kicker;   for when a regular up-kicker just cannot do the job.
+Drain|The common term used to refer to the area beneath the flippers. If the ball rolls into the drain, it will be lost. The game ends when all of your balls are lost.   or what you are, after a happy ending.
+Life|like a box of chocolates
+mode|A configuration of the table where specific goals must be met in a limited time to score points, hitting specific lanes or dropping specific targets, sometimes combined with multiball.  Pat Lawlor takes credit for these.
+Magic post|A post which can rise up between the flipper fingers and completely block the middle drain. Sometimes also called Recovery Post or Up post.   or your 'Johnson'.
+Popeye|actually pretty good
+Spinner|A rotating target, mostly placed at the entrance to a loop/orbit or ramp,   or a petite woman.
+Vari-target|A target that can be moved by the ball by a varying amount. Normally this directly corresponds to the amount of points received, as it is usually risky trying to shoot the narrow target with full force.  Pat Lawlor put one in RBION.
+GI|not gastrointestinal,   but rather an acronym of General Illumination, this refers to the lights on the playfield used simply to make the playfield visible in a dark room.
+BBH|Big Buck Hunter.  And it's crap
+rapid fire ejector|a sadistic device that ejects balls at lightning speed toward your flippers, or SDTM
+AITH|Ace In The Hole - the coolest ball lock that puts a ball in jail, while you bash on it to set it free,  or give it a sock
+tidbit|a small and particularly interesting item of gossip or information
+tidbot|a bot for small and particulary intersting items of gossip or information
+lospat|keeping pinball alive in South Africa
+Bags|Mr Moneybags
+ES|Earthshaker
+RBION|Ripleys: Believe it or Not
+FT|Fishtales
+FT|Full Throttle
+EATPM|Elvira and the Party Monsters
+EATPM|Better than SS
+eatpm|fuckin crazy expensive
+SF2|Streetfighter 2
+danger|my middle name
+Timed mode|Allegedly first introduced by Pat Lawlor on Funhouse, with the Superdog mode
+koi|https://www.youtube.com/watch?v=0tH4rsbtuZk
+I'm excited to see how they can make a good machine from a film that|about nothing.
+FTZ|FreeWPC Twilight Zone
+Met|an easy one to understand also
+Mustang|the new Avatar / Xmen / NBA / Playboy 
+cincy league|scheduled for convenience .. 8 sessions, 6 kept, drop lowest two.  Many will use those to skip sessions when they're out of town, etc
+FP|firepower
+FP|a lot of fun
+spoon|a knife
+knife|a fork
+fork|a spoon
+wpc repair|http://techniek.flipperwinkel.nl/wpc/index2.htm
+wpc repair|http://www.beerorkid.com/pin/System%20WPC/WPC%20part1/index1.htm
+wpc schematic|http://arcarc.xmission.com/Pinball/PDF%20Pinball%20Misc/
+topcast|http://www.pinrepair.com/topcast/past.php
+pinside|full of wankers talking bollocks
+DPL|Michigan's prominate Drama Pinball League,    guys in it think they have pinball skillz, but they act like little girls
+pinlicious|a guy still looking for his spoon
+MPF|Mission Pinball Framework
+AMH|Americas Most Haunted, a stupid TV show and a stupid theme to pick.  Ben Heck really does pick weird themes
+Ben Heck|pretty weird :P
+TWD|The Wanking Douche
+Dr Pixfin|http://www.pinwiki.com/wiki/index.php?title=What_is_a_%22Hack%22%3F
+scarface pinball|https://www.youtube.com/watch?v=gHw_YJCDehM
+CP|Champion Pub
+CP|Checkpoint
+CP|CardioPulmonary or something else.  
+Nordman|not amused -- http://www.pinballnews.com/shows/expo2013/35.jpg
+WOO|Wrath of Olympus
+MOO|GravitaR being dyslexic
+DOHO|Dorothy Ho
+373|a great score
+totan|Tales of the Arabian Nights
+CFTBL|Creature From the Black Lagoon
+CFTBL|In every single goddamn container I've ever opened
+WoZ|my biatch now.   Finally getting good at the game and having a few 500K+ scores each session I spend on it.
+tcpl|The league where the Chili, Booze, and the Fun flows.
+PB|Playboy
+#pinball|all about ice hockey; occasionally, things get off topic, and pinball is discussed
+KSP|Kerbal Space Program
+whitewater|kinda rare down here cause well the 2 he has is the only 2 i have ever seen for sale
+Funhouse|Pat Lawlor, so it's just a dull recycled loop design
+rfm|too cheap
+RFM|the Porsche 928 of the pinball world
+monster bash|crazy expensive
+woz|http://www.ipdb.org/machine.cgi?id=5967
+JAMMA|Japanese Arcade Machine Manufacturers Association, a standard for video games back in the late 80s/early 90s
+biltong|hard to find even for me 
+TYFF-ASI|Take Your Fucking Flippers and Shove It
+youtube|almost worse than tv... forced ads and real crummy content is the norm it seems
+noscript|better overall than adblock.. it nukes annoying ads, but also blocks all kinds of tracking and other bullshit
+pinsound|basically a custumized small PC or arduino type board)
+FIRQ|a DMD signal for page advance
+papatv|http://www.twitch.tv/papatvpinball
+Voltan|another game with beautiful artwork but suck gameplay
+Air Aces|awesome
+WW|Whirlwind
+P-ROC|something that's been wanted for a long time: a generic platform not tied to any particular manuf.
+TWD|far better then TFTC, Frankenstein(DE), but that poor to have to compare to them.
+WOZ|a home table, TWD is an op table, so obviously TWD is going to work better in a show environment
+Forbidden planet|Forbidden to Play-it
+twd|Something that Sonny_Jim didn't immediately hate, which is good for a Stern
+hp|Harry Potter our Quidditch savior who was schooled at Hogsworth; and should never be confused with Heighway Pinballl the douche canoe who is noticabley absent from Play Expo 2014
+Gary Stern|Easier to get on with now he's an alcoholic
+Gary Stern|he's gary fuckin stern
+Sonny_Jim|A Hipster Stern Hater
+TBL|$8,500
+sys11|http://www.pinwiki.com/wiki/index.php?title=Williams_System_9_-_11
+BK|Black Knight
+IRC|Older than WWW by about 6 months
+WOOLY|Wrath of Olympus
+HEP|High End Pins, or "How much did you spend on that pinball table, honey?  I want a divorce"
+ppl|Pittsburgh Pinball League
+PPS|Planetary Pinball Supplies
+
+MPF|a Python-based pinball software framework that�s used to run real pinball machines with the goalto allow hard-core programmers and casual builders to be able to create pinball software�whether you want to write new game code for existing pinball machines or whether you want to build your own totally custom pinball machine from scratch.
+fixpin|http://www.pinwiki.com/wiki/index.php?title=What_is_a_%22Hack%22%3F
+Space Jam|Not completely terrible, Sonny_Jim likes it, for some odd reason
+dod|Do or die on Iron Man
+PF|playfield
+PF|Police Force
+FEMA|Federal Emergency Management Agency (USA)
+SJ|Space Jam, the finest table ever made by Sega
+Sega|http://www.ipdb.org/search.pl?searchtype=advanced&mfgid=280
+NBA|Not half the game that it was ripped off from, the great, great Space Jam
+pisound|the sound that a pie makes
+SP|South Park
+WWFRR|WWF Royal Rumble, by Data East
+WWE|WWE Wrestlemania by Stern
+WM|Wrestlemania, by Stern
+C-11844|the 5 bank dr tgt Opto Board
+Licensing|obviously a big deal, and while these types of things have simply been accepted in the past, indie pinball (yes, I'm going to keep calling it that) is potentially a completely different beast altogether. Gathering copyright and likeness permissions is a huge, daunting process, but is very rewarding in the end. That being said, this is something you need to have reasonably taken care of before making any major an
+MSF|Mary Shellys Frankenstein
+easter eggs|http://hem.bredband.net/b257182/Cows&Easter.htm
+IM|boring as shite
+IJ|fun, great quotes, good theme
+wpt|good
+65 inches|a total you usually hear referred to as the base at a ski resort.
+apparently the plan|dump it in the harbor.
+only other choice|load it on railroad hopper cars and send it south.
+there|no more rio to drain
+snow|1/10th density as water, if you're going to ship to CA you want it liquid the whole way
+snow|also wayu more volume
+The game|popular and the movie will be a big hit
+skitb|Some Kids In The Basement, apparently
+FTHR|Vapourware
+camera|cake
+sttng|going for less here
+IM|huge right now
+circus voltaire|only ok too imo
+CV|Circus Voltaire
+BOP2.0|Costs a fortune, may actually be vapourware, but apart from that, pretty good
+bop|meh
+It certainly|a handsome game
+instead the new music basically sucks and|not anywhere near as cool as the original
+The original BOP music|pretty good, gotta admit that
+PB|Pin:Bot
+aussie|just a deathtrap anyway
+BBB|Big Bang Bar, seriously not worth it's price tag
+Sonny_Jim|a nerd!
+Ramp|a bit fucked thugh
+NASCAR|pretty good fun
+AUD|in the toilet at the moment, don't forget
+yeah that|low
+WoZ|like, super gay to your average Australian bloke
+fire station|next door
+23mph|damned good fuel economy on a 7,000 lb vehicle.
+Mustang|Mus(turd), lol
+yea the topper|there but not in the best shape... will have to take it to some plastic guy :(
+but yea the game|not really playable as of right now... 
+the left flipper|broken lol first time i seen that 
+Either flipper|pretty much just as likely to break as the other
+the bat|broken
+My guess|that the rubber broke and fell off, they played it for a bit with no rubber and cracked it
+But the gist|that WWF no longer care about them showing archive footage with the old logo
+Yeah no bell|kinda lame
+then if switch|defective   LOL
+COTS PC|cheap, but not designed for anything longer than a 3 year life cycle
+haha this|funny
+Pinball|a rich mans hobby now
+Jackpot|only 8mill at the most as well
+the tech|a different approach
+that|i guess if it axtually gets made
+labor|a LOT cheaper here in the south.
+but there|a chart in the manual just kinda in a shitty spot lol 
+well gi|lights sonny lol
+that shit|already available
+fun|a conditional response
+comedy|always good
+the ship|indeed a cool toy
+gameplay|fine
+next|MMR's  :D
+rumor|build 250 then Stern moves and building resumes of MMR
+My guess|that it'll be a SR licensed game
+767|about 4/5 times the mass of a 707
+and 707|what the building design criteria considered
+his brain|weird
+what im saying|that pinball was never big for me wish it was 
+7-Eleven|probably a bigger brand globally than in the US
+The seesaw bit|lame, the joker toy is lame
+SM|Spiderman
+LIS|Lost In Space
+LIS|"Hey, I put the ball into the jets, multiball.  Hey, I hit some targets, multiball.  Hey, I sneezed, multiball"
+Jerry Buckner|a successful songwriter, producer, artist, and premier voice talent. As part of “Buckner & Garcia,” Jerry co-created a song that some would consider the soundtrack of a generation. “Pac-Man Fever” sold 1.2 Million copies in the U.S. and rose to the #9 spot on the Billboard Top 100 in 1982. As a keyboardist and arranger, Jerry has scored original music for television and motion picture soundtracks along w
+PSA level|a little high so they did the exam.
+canada dental|stupid
+dentistry|outside of that relm
+this taf|so cheap too 
+the whirlwind|stripped topside busy cleaning etc 
+but the other|tight like superman had at it
+that|what michigan ops were doing for years.  
+weak flipper|one thing but if u cant make a rampshop its just awfull
+this bubble|gonna bust
+papa|growing because there are less places to play in the wild
+257|the name of the place i believe 
+hopefully there|a TWD code update right before it
+WWE|still tbd
+not everything|a home run but don't sleep on some of these titles
+so there|a "gap' in the market for such a site then
+Yes it|suprising that WWE didn't include a real bell that rings
+local news|all a ga-ga over the winter storm warning
+all i know|pin shit is expensive holy crap
+black|harder, deadens the ball more
+white|springier
+my preference|whatever WMS (or whomever) made the game with.
+marco for me|just too high priced
+basically what|going on right now is an intense winter/early spring rainstorm, only it isn't raining.
+owning new pins|way over rated.
+I guess there|a reason why both are used, I've never thought about it though
+okay so fiber|the order then 
+what madness|this... 
+The cat|out of the bag:S
+surely this|not a good diea
+so our ECHL team|playing Orlando's tonight, in orlando ...
+so what u saying|find one and stick a game or two in ? lol
+the store space|climate controlled, so shouldn't have much humidity.
+that|a flooded market down here like crazy 
+and a goalie|one of those game misconducts ... (when's the last time you heard of THAT?)
+Orlando|currently sitting on 97 pin ... just for them.
+Artwork fpr FTHR|in the process of being finalised, so my guess is that they'll start building the 15 or so that were ordered in the next week or so
+the subject|greater.  Con men of Pinball
+Skitb|just the usual
+joke|money paid for predator can be converted to Experts of Dangerous :D
+EOD|Experts of Dangerous
+since JJP|building/assembling
+JY|better than a shit-ton of games
+The comedy|well done.
+PM|Pinball Magic
+JY|one game I'm pretty good at
+my timing|pretty good still, but my stamina is no longer that great
+all I know|that takes skill
+The good thing|that the work I'm doing is dual use, so Pisound now has a semi-usable graphics engine
+The artwork|a disgrace at best
+Kerins|funny, when he misses he claims it's close.
+lol bags that|crazy priced
+The gumball|your game ball, and if you flip it into the top gobble hole, you win, and not only do you get that ball dispensed to you, it drops one more.
+Zen|a school of Mahayana Buddhism that developed in China during the 6th century as Chán. From China, Zen spread south to Vietnam, northeast to Korea and east to Japan.
+My guess|on that part is that they got stung with a C&D a few months ago and have been trying to work out what to do
+that|pretty much the issue-right there
+brian|a good guy...  if he fucks you over, he'll use lube
+metallica|fun to play.  waiting for them to make more in May (Rumored) then I'll have one
+score wise 500M+|my high
+the coffin|surprisingly not as much of a drain shot as it looks
+the grave|probably the most dangerous of the major shots
+kiss|a toss up, the rest you've played enough
+i think the met|one of the new met pros
+%lu|looks like
+gcc|typically llu
+AW4|supposed to be just ridiculous inside to get it all back together right.
+suh|the best lineman in the league tho
+guy|mean
+I guess that|a pretty big downside
+not eating meat|probably best
+tz|Twilight Zone
+STTNG|the opposite, didn't like it when I first played it, had a good couple of sessions on it and quite like it now
+sttng|Star Trek: The Next Generation
+jy|Junkyard
+afm|Attack From Mars
+rfm|Revenge From Mars
+rfm|pretty fun
+Layout|boring
+CCC|Cactus Canyon Cremated
+CC|Cactus Canyon
+woz|also half a million lines of code
+looks like amh|16K
+the Pro|basically the "don't actually buy this" edition
+Tron Pro|alright!
+met pro|very good
+the glass|frosted so you do see a shadow near the flippers
+Now that|strange
+GBP|about £1 = $1.4 iirc
+but kmath|likely to have endurance on its side
+900p|better than anything the old consoles got and the new consoles are quickly dropping below that
+only thing lost|money and that's negligible so long as it doesn't fall apart and become unusable in months
+MFT|a plugin that relies on MM patches to impart its configuration changes to the parts
+MFT|not realfuels
+Realfuels|MFT with real fuels, basically
+60FPS|/fast/
+Izaya what|the most graphically intense games you own
+Someone|working on a realism ISRU config as well
+5ms|200fps
+BBB|a joke, but 2) customers also say their Service sucks
+Watch Dogs|a hacking magic bs game
+watch dogs|GTA with c0mput3rz
+and this|why ill probably buy the nexus 7 until they stop producing them
+Hydrazine|generally used for ACS/RCS corky
+MMH/NTO|better than UDMH, but UDMH is more common
+hydrazine|used as a monopropellant, but it also works as a bipropellant
+Akihabara|like 80% weeaboos
+free|free
+Ben Stiller|awesome
+What the heck|Facbook doing
+Mac|fine if you like buying a new PC to upgrade anything
+School IT dept|near-useless.
+Elon Musk|just one accident away from being a villain
+ula|clearly microsoft though
+finder|horrible trash
+navigation|a pain.
+Kountdown|gaining sentience slowly
+Pi day|2 months after Christmas
+Mountain Dew|not available in my country :(
+Now Dr Pepper|the nectar of the gods.
+The dollar|weak, but the keona is extremely weak.
+WWE|gay to most beer-drinkin', wife slappin' aussie blokes
+Nikola Tesla|an engineer and an inventor who demonstrated that wireless energy transfer to power electronic energy devices was possible in as early as the year 1893. He even proposed a global system that would use the earth to convey energy from transmitter to receiver
+But the energy|unlimited and free
+The world|a horrible place. Instead of spending the resources to the best possible the corporations manufacture and sell junk based on planned obsolescence that will soon turn into wast so you have to buy the next model. Instead of providing washing machines to humanity they provide it to 2 billion reselling them every 5 years. ALso we are dependant on exponential economic growth but at 
+3% growth|at the edge of a recession, they want at least 5-7%
+guy|crazy
+Today|Setting Orange, the 2nd day of Discord in the YOLD 3181
+The Moon|Waning Crescent (18% of Full)
+JPM|MIA
+2 player|legit because you do swap machines and take the average.
+CPL|Chicago Pinball League
+too bad our game|wrapped up in the basement, in the middle of a relocation
+under 200 wppr|one.
+actually ST|the biiggest title upgraded, but more were updated with bug fixes likely since it included CSI
+my TZ|set to be papa-tough, except ball 1 has a saver because that's just mean
+My money|on "Hey Mike, you are the new guy, do all the boring stuff"
+wayno|the worst of the worst
+new software|awesome
+Only shite|you will wear out the mechs like I did
+If you table|as flat as a pancake, sure
+crowdfunding|bad, crowdfunding pins is worse
+crowd funding|bad when the ppl have no idea how much poriduction costs
+i said this|cool
+Pinside|impressively coded
+OR Dev kit II|$250?  Plus another $1000 or so for a PC and monitor to run it
+matthew|a dumbass
+anything pinball|good :)
+that video|solid 
+whatever it|lol
+wayno|as bad as they come
+The point|about sample size.  If the sample size is big enough then it's reasonable to extrapolate that to all pins outside of that sample
+manufacturing|a BUSINESS ... and that means you maximize profits.
+All I know|that there's more engineering that goes into making the lockdown bars fit your hands than you realise
+their|probably not much labor that goes into making a pinball leg 
+No.  The cost|the same.
+stern's setup|nowhere as "clean"
+dont think there|a JJP assembly line vid out, could be wrong
+but FH|a system 11!
+Xina (The Pin2k)|allegedly backronymed "Xina Is Not APPLE"
+ps2|the smaller plug that all the non-usb connections today use.
+heh  utube|a google property
+where|it announced?  haven't seen it yet
+ss|fun but after owning one for 10 years i was done with it
+WPT|another and it's dirt cheap
+Road Show|a strange game indeed
+price|kinda CRAZY
+that tiny board|so sexy
+slow version|totallly incompatible with today's ADHD kids
+work|just not as fun
+The bonus|that MPF supports P-ROC
+making pins|hard and costly
+If stern|smart, the will use their new Sprite system
+spike|cool so is Jersey Jack
+Kevin|quite the accomplished Smash Brothers player
+WN|Whoa Nellie!
+wonder wha|so valuable to spend all them $'s on
+My guess|Kevin thought he had what he needed, when in fact all he could use was the logo
+fomoco|very specific about the usage of its logo, with its partners.  i was in the middle of that discussion a few times.
+This one|the one with the clips:
+building 1|easy, build dozen plus is a diff story
+gabby|friends with Fotherby, et al
+that vid1900|awesome 
+Martin|copping a load of flak from the UK guys, should have told them as soon as he found out there was no license back in Jan
+god Neo|being a douche
+matrix|not as under the radar as they think.
+oh he|I'm sure
+I think the idea|that if issues refunds it shows remorse to the court or something
+Sonny_Jim:|there a cliff notes/synopsis on this whole predator thing
+this article|informative as fuck
+40K|alot on cyclone
+that game|beyonf amazing
+yea V|easy until you do online heists
+if there|money to be made
+I guess cert|a lot easier when you say "Well, you tested this part before, it has X amount of RFI blah blh"
+aus|like crazy when it comes to that sort of pest control shit
+My guess|that he saw all these other guys making unlicensed mods etc that he honestly thought he could get away with it
+That excitement|loooong gone for me
+Reciprocal|in New York?   rent is very high
+ebay|a scam
+their site|right there
+No one|two words, btw
+the patent|one page and it says "Use a computer to control a pinball machine"
+My guess|that it's supposed to have a circlip on the back of the washer and it's fallen out in transit
+another issue|the correct sized clock case screws DO NOT EXIST so I think litz put 4 long screws through the entire housing
+(escalade|a bigass caddy)
+Well there|an url but nothing streaming yet.
+My guess|that a lot of sites block Curl useragents
+haha   tht|funny
+Twitch|weird: you can do some stuff only on PC, other stuff only on mobile
+not that this|a good thing
+Stanford|the gold standard wrt password recommendations for users, note the rather cool poster: http://arstechnica.com/security/2014/04/stanfords-password-policy-shuns-one-size-fits-all-security/ 
+if something|LGPL and it's statically linked, then your whole program is now under LGPL
+GPL|just a license virus
+wait... LGPL|more permissive than GPL (GPL is viral but LGPL is not)
+GPL software|deliberately underpriced (free) in monetary cost, but has a price to pay in the form of this very big string attached to it, that you must agree to in order to legally use it.
+So there|an actual lawsuit from the Nucore guys?  I was about to ask how they managed to track down the Pinbox guy but iirc the twat tried selling it
+pin2k os|http://webcache.googleusercontent.com/search?q=cache:sIAJGbpPEBgJ:www.videopenny.com/pinball/pinrepair/pin2000/xina.htm+&cd=11&hl=en&ct=clnk&gl=us
+That wire|a hell of a lot thicker than a thermistor leg and doesn't vibrate ;-)
+TAG|Thunderbirds Are Go
+the WMS stuff|all in the rom images
+mpg123|in there as well
+all it takes|ONE reference ...
+but the base|XINU
+XINU|not UNIX
+XINA:  XINA|not APPLE
+gpl|worse than lgpl
+here|a factory tour of stern i havent seen myself yet . figured ill share
+hobbit|untouchable till it ships
+hint - phrase|on the backglass
+* AC/DC|DONE - no remakes, license is expired
+The chance stuff|mine.
+VE|Vault Edition, or "We found a way to make it even cheaper"
+That ipdb search|kinda cheap, I could do it properly but meh
+Hence why TAF|the most successful machine of the *modern* era
+fwtg|a big scam
+fwtg|Flippin' With The Greats
+8Bit flip|coming up this weekend, should be good
+Plus London|expensive/far
+limited herb|pretty nice.
+plus the ipdb|way bottom heavy
+pinburgh|sounding like a crazy good time
+WWind lock|tough, you have to fight for control off the plunge, then get it on left flipper and shoot the right ramp
+The problem|that IPDB listings page doesn't give the PUID of each machine
+Best you can do|feed the name into !ipdb
+Everyone|going to be buying Aliens
+Jersey Jack|Been a naughty boy and took something out of Elauts cookie jar
+skeptical|the only state of mind when it comes to boutique games being massly produced
+AMH|yawn also
+WWE|gay x 10 billion
+The hardest bit|ramps and metal guides, as long as you aren't trying to make crazy mechanisms
+wayne-o|the pin devil? from the land down under...
+"While this|not quite as exciting or in depth as Chicago Expo, there are some nuggets to look forward to including the widely anticipated announcement of AFM-R from PPS."
+so|jpop trying to get sued by google now?  
+most mail|trash
+And when|GoT shipping so I can get some early orders in
+1) there|no chance whatsoever any judgement in this action will tie to JJP ... if anything, jack personally, but not JJP
+that said 8k|crazy cause the game is not that complex to begin with.. 
+8k|Woz populated PF territory
+TNT|pushing YWD now :p
+Avatar|fairly good
+Kickback|typically steve ritchie
+factory line|not playtesting for playability
+wow ... this|a mugshot, check kid on the right ... http://cdn.patch.com/users/2213323/2015/03/T800x600/201503551975b26f10f.png
+warmth|coming to you
+38 now|a heat wavew
+ok this location|like seriously impossible:  https://www.google.com/maps/@37.2276237,-80.4233741,18z/data=!1e3
+Maybe the market|saturated with classic hard rock bands
+that game|fine but i dunno seems like a stretch to use
+Medusa|another game that comes to mind
+cyclopes|the plurlal of cyclops
+problem|not really finding locations its just pins are expensive and im not rich
+thing i found|that pinball seems hard for the casual player
+bobby 10+|a fortune.... geez
+damn when|texas pinball festival videos coming
+10|a good number
+freeman|served, lasagna again
+liverty st|a bitch when you try to change lanes
+hahaha scoregasm|a well done afj
+holy shit|it nice out
+on topic ass|different than off topic ass
+Bloodborne|killer 
+suspend/resume|also solid finally
+so cali|turning to desert and fla will be eaten alive by termites..  
+lol  what|bot'
+Pinball|simpler, just rewrite the rom and be happy
+the funniest|amazon's button.
+wrigley|he only stadium in the country where the neighbors can actually sue to prevent stadium renovations
+freeman|awaiting Arya Stark.
+"Occulus rift|crap, looks really blocky, needs better resolution screens"
+ipdb|a mess of data lol
+10|notthe new 25
+Nor|Predator, Big Lebowski, Full Throttle, Captain Nemo etc
+The full list|5,700 odd
+yes it|single player
+where|the kaboom??   spose to be an earth shattering kaboom
+reset|the symptom,  us giving you the silver bullet,  uggg..
+the Scott|strong with this one
+half the fun|working on them thats what they say
+boondocks|great imo
+freeman here|a pin for sale real cheapo
+only way out|either wait 'til it melts, or bring out the bucket scooper
+Gollum|so funny in the 1977 cartoon ;)
+gollum|hilarious.
+freeman|sleepless now waiting for Arya.
+TJ |trying that
+Paying by phone|cool until you have a login issue...  Then you lost your wallet
+coin-op|competiting with all the gaming choices on smart phones.  those phones are charged.
+the first hit|free
+Waterfox|sporatically grabbing 25% of my CPU, and a GB of space.  i guess they want me to switch to chrome.
+exception|something like Golden Tee Fore!, which has an actual card reader integrated into the game system, for reading player cards, and allowing credit card sales for tournament entries.
+i guess he|close, with exhange.
+msrp|5995 (Stern)
+rgp2|dying the same death rgp is it seems
+distribution|skewed 
+Norway|a shit hole and a beehive, fuck this land of milk and honey
+The industry|down and people aren't creating value, they are just providing services to eachother and paying tax.
+All that|left is warehouses outside town and hairdressers
+Even if the box|hardwired into the ignition I could see people bypassing it
+man the alien|all u need 
+Although he|saying that "We don't want to show anything that the licensor hasn't signed off on"
+Stern|still making worse games than they did in 2003.
+What could work|to make a kickstarter do donate money and make steve ritchi make one layout and lawlor make one based on a merge of previous ones, make them spend 3-5 years to get that as good as possible, then get some other dedicated people to write software and improve it for a decade to come.
+LIS|the ultimate "Oh, you hit something?  Have a multiball!"
+just right|better than more or less, because when it is less it's too little and when it's more it's overwelming
+The game|overwhelming, he frowns upon it and walks away.
+TZ instalitz|not counted for high scores though
+But Kevinddr|the man to talk to about that
+The problem|that it's to simple to bother practising 4 hours/day for 3 years to get good at it.
+BBB|in IPDB twice, once for Capcom and once for IP
+body|rusting out though sad enough
+T&C|higher for the luxury
+tidbot|being deliberately coy about FTH
+(what the hell|SJ trying to do?)
+sad how easy it|for them to get all that info
+but June|a long way away, basketball-wise
+fanbase|livid
+maybe.  that|the series restart,  when she appears, or comes,  i don't know.
+Heighway Pinball|very happy to announce that Aurich Lawson has joined the Heighway Pinball team – specifically as Creative Director for their upcoming ‘Alien Pinball’ game. Aurich is an artist, graphic designer and pinball collector from California. When he's not tinkering with pins or designing art packages for them he's the creative director for technology geek site Ars Technica
+My guess|that he's sold about 30 FTHs so far based on pics of parts/people talking on forums
+Wales|pretty screwed when it comes to manufacturing
+My guess|that Aliens announcement put a bit of cash into the company through preorders and investor confidence
+pinballinfo|the UKs version of pinside
+to break things|part of the fun im told
+MST3K|wearing a bit thin.
+super soccer|SO fucking bad
+opening day|like christmas for baseball fans
+Darts|literally all about hand eye coordination, snooker is all about dem 6 hour matches ;-)
+think new price|8K
+if yes there|no problem
+that thing|a stain on pinball history
+The whole *site*|one big copyright nightmare
+and pinball|not a sport, I don't care what you say
+mgc|so blah
+help|out of date
+i like that ramp|a bash toy lol
+Screen tearing|not hitting v-sync properly from what I remember
+!pinZork|born
+flip|wip
+difficulty|hard on that game
+jackpot|pretty hard on Creech
+vid mode|possibly the best one 
+music|also just ace for me
+BSD|Bram Stokers Dracula
+BSD|Better Spend Dollars
+pinside|one massive circle jerk
+TOM|Theatre of Magic
+TOM|Shoot the trunk, shoot the trunk, shoot the trunk
+flipper bat|broken on the whirlwind but im waiting on leds before i continue on it :
+the game|with ramps off etc so im leaving it till i get leds 
+WWF|massively underrated
+Meteor|a great game
+iirc|terrible
+did big one|already reaplaced
+yea cap kit|something i do on every game i get in now
+gi connecter|burned up i unplugged that
+12v|present yes
+board|with me
+Any DE Simpsons|going to have a trashed playfield
+well pinball|all about having fun
+only thing|see is
+gavin|doing it up over there.... every month something bew
+MGC|just a clusterF of machines and people without any real tourneys cept maybe Clock Chaos
+MPE|running now.   MPE 2014 -- last year.    https://youtu.be/zGGJ7USqgjo
+so 7 horus|7%, 5 qualifying games is 20%
+everything|fresh made in s cafe
+the sound|bland, art is the same green-haired chick drawn six times all over, playfield layout is dull, hardware sucks (horseshoe drops) .. there is absolutely no redeeming qualities about laser ball :(
+Wow that|nice
+oz|old now lol
+chris|in the middle -- http://imgur.com/bVLw5m6
+it appears he|setting up a factory to make pins.
+not sure if she|in the season opener, but likely
+Butch Peel|not the greatest orator is he
+where|todddddd
+ here|a real trick -- unlike bly / wms
+The Order:1884|basically 30% cutscenes
+multifunctional|an understatement
+pin up gal stuff|HUGE
+mick|a picture hound and started up his own Concert photo company  NRR
+Where|says "Post #7169", right click, copy link
+   it|nice that some CC companies did just chargeback paypal.   ashame, all won't.
+"Sandking"|the pilot of "The Outer Limits" show and presents a story very similar to "The Fly": an ambitious scientist that makes a mistake with his experiment, being affected and becoming insane with the transformation. The story is disclosed in a low pace, with reasonable special effects for a television show, but the character of Dr. Simon Kress looks like a "crazy scientist" since the 
+photoshop|fun
+509|spokane washington
+congo|not a 1500 game
+note -- WOZ|listed as a 9,015 pin based on 11 sales
+hockey pin|the next one inline for stern 
+buy before build|kinda silly
+circus|being done by "in the fold" folks who have knowledege and access in the industry.
+one lane guide|all the way down and the other has a metal sheetlololol
+ anything|possible,  with time, and money
+orchestrion|right!
+band organ|the proper term
+shit|will have to make a brand new light board
+amsterdam|a place i want to go
+amstee|expensive as fucking hell
+worst|when a ball goes sdtm 
+Hodor|coming to an arcade near YOU!
+waterworld|a lot of hit the middle to load the ship
+if Tradaeu|next I'd agree, but borgie appears to be on
+"cabinet style"|listed as "upright", but I would guess it's a basketball shooting redemption game, similar to the WMS Hot Shots
+waterworld pin|pretty fun for a premier
+small claims|5K limit
+small claims|civil court
+my point|... a detective is a law enforcement officier.
+if the guy|convicted of a legal crime, that slam-dunks the civil suit.
+thing|... that act of advertising is one crime ... taking the money from all the victims, that's another.
+if the detective|smart,  he will kick this up to the federals , real quick.
+and that|apparently what happened
+1)|actually SELLING without the IP license, as well as intent to sell without the IP license
+1)|clearly within intellectual property laws
+2)|clearly theft
+the difference|the victim ...
+the dalek|only in 100 games
+the mini-pf|very complicated for sure
+tz clock|very intricate too, as is gumball machine
+okay here|an example of what i mean
+but there|no way in hell any day of the week that a game like that is better than those 2 
+that game|just such a boat anchor
+he says that he|near 70 years old.   yes, that is a different position.  <litz> Gary's in an enviable position ... his costs are nil, and his prices are sky high
+The main part|working, I just need to add some IRC goodness to it
+Dinklage|currently the funniest man on TV
+cro|eatible
+So buying|working on my pinwars trading game
+hope that|true
+the car|like $5/lb
+woz|like $35!
+Egyptology|totally a theme
+hmm there|only one pic of that Keops pin.. and it is a flyer
+keops|clearly a cleopatra copy/ripoff
+problem|you can legit get so much draw on the line (drives not individually fused)
+whitewater|a great game
+ij|a great game
+Entire lower pf|pointless
+phurba|a superb example of building on existing technology ...
+battlefield|a simple cog-wheel setup
+Everything|pretty scratched up except Monster Bash and Star Trek Premium
+man that|your problem right there
+Or how it|written
+Wow it|written like that :p
+google|ur friend
+lospat|wise
+ur problem|that pins weigh a ton
+problem|that jpop needs u to work for him
+bublle|for slope of PF only
+each line after|1/2
+so if the bubble|all the way at the top, that means steep, yeah
+Stern|busy http://i.imgur.com/yNUSRqB.jpg
+I'd bet that|it
+stargate|a 2 right/ one left machine.  so, yeah.   thanks.
+the art|beutiful
+$35|a years salary in the east
+tebow pretzel|pretty funny too
+Grass|for the bottomfeeding algaeaters (radioactive btw), the classy takes mushrooms or lsd.
+your ass|binded
+our society|becoming more and more barbaric :(
+Profit chasing|like putting a carrot in front of a donkey, it will run forever.
+The clue|in the name "game"
+My money|on Jurassic World
+but|veryt eal
+where pinball|made
+The hatch|they need 500 hours of love to play
+the customer|rich
+My friend|a carpenter but he is the worst carpenter ever. He can't even get in a screw
+freeman: When|next episode of Arya out to be pirated/vikinged
+franchise|0-8 in the playoffs
+whitewater|fun
+I think Borg|backtracked to 2012 or even before now on finishing games
+X-men|the best potential, but they did not fix the software and fine tune it
+X-Men|just a Whirlwind with modes
+broken|split in half 
+and thing|... any box you see on a train, it's almost a 100% chance it's loaded
+reagan national|also pretty neat ... you follow the river directly parallel to the Mall
+Baseball|non existing here up north
+Polo|a team sport played on horseback. The objective is to score goals against an opposing team. Players score by driving a small white plastic or wooden ball into the opposing team's goal using a long-handled mallet. The traditional sport of polo is played at speed on a large grass field up to 300 yards (274 meters) long by 160 yards (146 meters) wide, and each polo team consists of four 
+since he|not Mercian, he can't be good.    his music does not sound unique.  i think he borrowed it.
+that cap|big fucker
+christ tinypic|useless now
+while Steve|'the King', and I have a few games designed by him,  he seems to only tweak his designs.  i'm could be more satified with a recyled Gomez layout
+right orbit|stupid tight
+this one|built from a Stern LED display
+stern|not in the business of making "great" games.
+JJP|in the business of making great games.
+competition|always a good thing
+the jury|split.
+jjp|not a true competition sorry to say
+And spider man|cool MM copy cat since it has a horisontal ramp
+but spidey|a great pin i hear
+tz|a great game 
+blood bros|a good ep
+and your job|done
+my guess|that all their audio and video is in exactly the same format as it was for sam
+the new update|1.9G as I said
+not sure if pro|different
+*once it|on 
+GOT|rumored to be coming
+Harry Potter|a dead license now
+abel game|here now lol
+(that's if JP|a Warner franchise)
+the cycle time|huge
+three modes|grail shit
+I think 3|only possible with battle the p
+Chinese|good. "Mool lice sir?"
+Launch party|in August
+Even richie|just remaking the same thing forever
+All I want|factory fresh s11 machines :p
+Problem|I have no skills at fixing cars¨
+chrome|v nice 
+i think that|reflection
+And Roller King|the only machine with adrenaline
+Taiwan|better, more expensive though
+The USA|so 20 years ago, especially New York
+This area|overdue for another "big one"
+Star trek|nice enough except the rules and modes:p just put on a blindfold
+Ant the layout|copycat Lawlor so no I am not sure
+winner|you
+whirlwind|bags fav game
+the basement|pretty handy too
+scoring strat|really start as many illusions as you can, don't play them
+levitating woman|worth playing, that's the only one really
+ilusion|like 4M
+skill|2 I think
+My guess|that they'll do all the high-end unlicensed WMS/Bally pins first
+licensing|just a small hurdle, for a well run company.
+Price|only a matter if you aren't really interested. If you are interested you will make it happen.
+The problem|the hype and short runs, people don't have the time to settle and raise funds
+170k|alot of pinball machines
+but why?   that|an opportunity costs.
+The government|a shark
+Everything else|a crime.
+Bussines|a ok, but not when everything costs 10x the value
+10% business tax|ok and more than enough, instead we have 25% and 25% on top of that
+freeman: That|just crazy
+freeman: Norway|bankrupt, the next generation will be in debt to the neck
+The secret|that they pretend the economy up here is good buy importing from the east and upping the price 10 folds, the bubble will burst when the new economy move east of sahara.
+Nothing|made here that is worh having.
+ he|building roads and bridges,  around the globe
+but there it|;)
+hence why LOTR|a great game
+where|your god now ...
+  kiss|number 49. 
+"Jody Dankberg"|a pretty rad name
+uhh|it? no one gave me any :P
+Stern|in the business of manufacturing coin operated pinball machines.  Not satisfying pinheads.
+kiss my ass|what i say
+Nah CSI|ok, not really played enough 24 to comment on it
+kiss|a famous band but i cant think of one song of theirs i know
+rolling stones|kinda sad
+mustank|a yawner,  but at least it has drop targets, and the silly ramp
+bsd one|crazy and video mode kinda best 
+party zone|one of them 
+Layout|pretty crap on CFTBL if you ask me.  Everything else is top notch though
+well maybe toy|somnething that interacts with the ball
+ IM|better than many games.
+  it|somewhat fun,   they missed the chance to used more of the Tony Stark humor
+that crane thing|cool
+tom|high priced:(
+3x0.9 million|only 2.7 millions, clear out some more basements already, toss the people out.
+TOM|way overrated for what it is, it's certainly no TOTAN
+at least TOM|a decent layout
+TOTAN|trash all around
+one|flashing if you drop the flashing on the ramp pops up
+pretty sure sr|got
+All I've heard|rumours and nothing concrete
+Or perhaps that|what he should do, but leave out that 3 bank target G-o_T
+steve|got
+Roger Sharpe|gonna be there! gasp
+ DP sure|burning a lot of deposit money on travel, and shows.
+ya that part|wierd
+hmm time line|1980 so that would have thrown me anyway
+fucking kids|fine, slapping a producer is not
+"Caballero|likely to serve a full 15-year sentence because he was in jail on a felony cocaine trafficking charge within the last three years, A"
+yep.  my wallet|safe, from this latest run of Sterns.  <lospat> so stern makes another pin thats a miss with me
+But I guess CPU|cheap now
+Golf farming|fun
+kiss band|lame  but some of the tracks are good (DRC especiall) and I love music games, so actually a bit interested in it.   The freddy-gene thing is a turnoff tho :/
+ like how|tidbot going to choose which pin?  haha     surprised no one caught that.   But Tidbot did in its answer  LOL
+the actual sport|nuts https://www.youtube.com/watch?v=UxBUOEy_4H8
+kabaddi|weird.. :D
+my server|there
+Food|pretty bland
+and that|about it
+HEP|doing something for him
+his employer|making good cars again, he should have lots of cash!
+too bad it GOT|not a JJP pin.
+well well creech|unplugged
+problem|finding places with enough space and thats busy and not having to deal with a full of shit owner or idiots who work there, not always easy
+but fact|they are cheap and dont give much issues
+big minus|and this is a big big minus atleast down here... every place already has one, and if they dont the owner dont see any point for u to put one in cause he can buy one himself cause not much can go wrong
+pool|cool
+The thing|I'm kicking around the idea of writing my own pinball simulator 'cause I *really* don't like Visual Pinball
+spk|not a dynamic executable
+wms afaik|just the waukegan plant
+Goat Simulator|the latest in goat simulation technology. You no longer
+  this|why Vegas will die.   
+just do what jjp|doing
+where the game|for instance maybe put on a timer instead 
+the problem|at the part u uplugged
+My point being|that you jump to conclusions without measuring anything
+the problem|on the board, no need to even wonder
+well here|where i kinda clicked too
+  i know this|'high math',    but adding a diode,  increases the total system resistance,  thereby, lowering the voltage.
+Clay|a pinball god, resistance is futile!
+But this|just beating the dead horse.  Next time, take a multimeter, measure the voltage
+the ultimate|when you have a WPC game and mis-plug the playfield coil/flashlamp power plug ... which puts +50 into the +20 power supply.
+but this|learning , i fuck up i learn and hopefully not repeat
+that thing|beyond fucked 
+That TAF|more than fixable
+The gumball|worth 500
+That Black Rose|definitely fucked though
+if the playfield|fine and most ramps etc look good.. u can save it
+This item|cash only if picking up in person!!!!!!!!!!!!! These machines have parts missing(including boards, displays, translites, etc) and have serious water damage. These are to be considered as parts only. I figure the toppers alone are worth someones time.
+   tidbot|such a buzz kill
+6.8|a "meh" in Japan at this point
+ here|an update from the factory -- http://i.imgur.com/nPmwi.png
+his goal|low attendance, so things don't get crowded.
+now that|fairly 'Murica right there ;)
+WWF|not a turd
+DE|represented
+PB25|DE  yep
+Op|very uinterested but needs to upgrade machines so playable.
+they say 10|to 7, what 7 was to xp ...
+I think WoZ|something like 60-90 seconds
+Seems lospat|too impatient to wait 20 seconds, he wants instant gratification.
+adjument|simple : turn counter clockwise until red light goes on, turn clockwise exactly 1/8th turn past the point where it goes off.
+great to see ART|doing well over seas
+lospat|drunk, again, reversed buttons
+and that|SO EASY on taf
+The skillshot|quite easy as long the spring is right and not sloppy
+house|literally massive
+i feel it|somewhat 
+the one on mine|fuckeeed like u can see it just a tiny bit
+music|nice
+yea that|what i had at this one location i had to cut
+next|game of thrones 
+lazer war|a 2k game? wtf
+lazer war|actually surprisingly fun to play
+Yeah this|the video for the ring monitor, not the DMD
+well the 1st|a fairly big hit.  probably worse than the 1M
+next game|him
+lospat: TZ|a joke, highly overrated, the sound is inferior, the artwork is a patchwork of stuff that doesn't fit together artistically and he didn't even get the logo right, although estes has done what he could the ruleset needs at least a year of tweaking and playtesting, it has no jackpot ramps or other cool stuff, it's just a heavy loaded playfield without something nice. The loop is 
+The price|down and if you take the daily profits and divide it over 5 million heads isolated it would be better off gathering cans and soda flasks and hand em in, although if everyone did that you'd run out of flasks
+Woz|a beutiful creation.  you should select it.
+the artist|Youssi.  it means something to him.     and the largest fraternity on earth.
+pinball|2 minutes of fun hitting a ball around
+It's|a superior legaue to MK
+better|a moving target
+the journey|the reward bags
+The worst|those Konami beaters
+okay here|the thing
+lospat: Clock|ticking, I wanted to make a game or a pin, but now I just want a woman and a baby :p
+all on pinside|a threat about games that have shipped
+well there|no hype for it down here at all 
+t2|maybe one 
+buf|apparneltu out
+babcock|a hreat coach
+Checkpoint|a shit game, even by DE standards
+grav what|ur view on party zone? 
+i think dr dude|better 
+But EATPM|the best out of all that lot
+eatpm|crazy expensive 
+eatpm|just hit ramp ramp ramp ramp
+humor|ok
+sure there|some randomness
+so all|safe 
+anything|possible,  but select things are highly unlikely
+price increase|sad
+Now|the winter of our discontent 
+now|the time if Lawlor pin is to my liking I'd buy a NIB
+a loop|how many time you complete the door panel on a single credit
+less|more
+radical|too rare for me to ever see one bags
+his job|done (Artist), likely got paid so releasing his works, guessing
+well that guy|crazy good
+tidbot|all knowing
+because that|shit
+No idea what it|now, I lose track of the bullshit
+Stern|assaulting my facebook feed
+t2|a good game
+he Licensee|now underway to complete a master prototype Magic Girl™. An announcement will be made as to when this will be, however the goal is to have it ready in time to unveil at an upcoming show. From this point forward, information and progress will be provided by the Licensee as Zidware is no longer in control.
+"This group|currently in the process of negotiating with proven known quality manufacturers to get the games produced."
+The steam train|running near here :) I can hear it from my work
+mind you this|like thursday at papa
+UPS depot here|in roswell, all of 3 miles away
+Sonny_Jim: AMH|a 15k line single file, you tell me.
+The AMH code|a fucking nightmare, and Ben admits to that :) I had to do a LOT of work to get the system stripped down enough to run the Pinball Circus code.
+P-ROC|just too bare in terms of library functions, the AMH hardware is a bit too 'weak'
+IDA|the tits though
+Apparently rc4|still secure enough that even if I know enough of the plaintext it's not going to be feasible to crack it
+WTF|a "jump drive"
+ i feel jpop|incompetent, but did not start out to steal.
+Blowoff|English slang for fart
+Pre-order|dead
+B.  There|no mystery investor
+PPG|Pinside Pitchfork Gang
+jpops problem|this and its simple... why in the heck would u build so many games at the same time
+the chanelist|HUGE
+time|something everyone has the most of
+Time|the one resource that will never run out
+usb flash|slow
+so who|"Pintasia"
+My money|on that it's distributed as a BIN rather than a zip
+the journey|the reward
+bags ur problem|like some people i know
+What good|that when you want a wedding and a baby=
+ur problem|u are never satisified
+tz|a better game im sorry
+Nowadays society|full of distractions, you need to keep focus every day and be really disciplined, a newspaper or a single email is enough to ruin an entire workday
+John|really passive, though.  So when you do cut him off, and you're a resource that he "needs", then he gets apologetic pretty damn quickly.
+Addiction|a bad thing
+If it|too complex to complete in one sitting it is not for you
+Immagine|you had to save a pinball game and continue another day:p
+Fire!|a fun game.
+The RC4 key|basically part of the AES 128 key
+So his idea|to use that to squirt in videos
+"This|my email from the detective. Since then i have been in contact with Agent Kraudelt and it doesnt get any better. Hes basically said that people have been receiving refunds who want them and paypal has been working with us to send our requested refunds.
+that story|still alive heh
+well|the coffin of twd
+err  bloodbath|the coffin 
+head|folded down onto lower cabinet
+yeah smoke|the worst
+stuff like that|why I haven't donated a penny to the place.
+a right to drama|your reward
+dilation|in your future
+my guess|pre-1995ish
+on|joe schober, which makes sense because he worked at aol all his life, and she was there for some years
+seems jen|a writer? perhaps she did work with comptia for some of their pieces
+my guess|it was long enough ago there's no hurt
+SDTM|good for Stern.  Means more coindrop
+TWD|the same
+life|good
+Fred|so cool.  he entertains everyone up and down the halls of expo.
+"Once the game|finished we will all be able to see if its even worth making.."
+"Once the game|finished we will all be able to see if its even worth makin"
+grav there|no way
+"Bottom line|this, the only reason Zidware customers are trying to sue or put Zidware in bankruptcy is because they think there is money to be had."
+15k on met|like 1 switch
+freeman pinball|bad. its like cocaine u buy one but its never enough, before u know it u have a living room full of them
+end player|level 1 of crazy.. when u start to stack them ontop of each other there is no help for u anymore
+xwnon sound|real good
+black hole there|my vote for one . not bally but most likely one of the best
+looks like there|space for a couple in there
+Every shot|lit, then you hit a post and go straight down the middle...
+hockey|great in surround sound anyway
+feeling lazy|something that tells u to get ur ass off the couch
+Tidbot|smart :D
+oh nice pinside|resppnsive html now finally no more zooming on phone tablet!
+pinside|better on every phone other than iphones apparently
+yes there|Lospat, MG disappears
+ST|hit this shot x many times, oh wait after that hit that same shot x many more times.   blah
+my WOZ monitor|getting blurry and wonky
+ZAC|in at 160, LFS is in at 151
+141|the highest possible 8th place finisher (if those people get a 35)
+This math|killing me
+doing 2|even worse
+and the art|an elephant being pushed up the stairs to the attic
+the soldering|not so bad
+well problem|that the legs where short already 
+Jurrasic Park|fun as is.  
+JP|nothing like whirlwind
+JP|the poorman's TAF
+WW|similar to JP is similar to TAF is similar to NGG
+The Machine|also great, nothing quite like it
+SDTM|more money in the coin box
+This guy|hilarious, he is making a home made pinball machine out of the Funhouse ripoff, the machine is already made in late 1990 ffs!
+Dredd|the best super pin and the super pins are the best :p
+JP|far more fun than the DE Time Machine.
+jp|one of DEs best games
+100% that|Paypal forcing the issue
+Apple's system|quite compatible with Apple's ecosystem!
+Idiocracy|turning out to be a documentary rather than fiction
+and apple|virus free :)
+HP|a realm of material to pull from.
+Hp|mind controll, but original themes have them too
+bah since when|that $4k
+thing|will it sell
+problem|everyone wants a i thing 
+My avg|29 per 50 for last year
+percentaging|usually legal
+CJ of course|local here to norcross
+litz: And that|both us and europe
+but the show|a black n white one
+TZ|like the holy grail for color dmd I think
+FT|damned fun
+FT|a fun game
+Pinball|dead, just a few stubborn overgrown kids, after that, nothing
+My LOTR|being operated again, in SF now, I haven't checked in a while but from what I hear it's making a mint
+their music|used everywhere
+ACDC|making a mint also, that's a game I always have to wait to play, somebody's always on it
+What game|it?  <gravitar> http://imgur.com/vOPvkeg  hint
+all this means|skit-b agreed to pay before they were forced to.
+multiball|really good for scoring too though especially because it lights the spinner
+the bottom part|used if you have something like THING
+then he|personally liable O_O
+except pinball|actually superior to modern games
+vinyl|for chumps! besides the big art!
+the PinlIfe gig|way overcrowded to even consider going to
+TZ|not that good, too me it feels like putting together alot of various stuff without adjusting it to fit.
+The art|worst, kind of 3-4 different styles stapled together
+option 1|always popular
+jackbot|WPC
+TPA|great for auditioning games
+the difference|that i burn through credits faster
+Also stuff|harder under pressure than at home
+Chance|you can insta drain 3 balls and lose vs the worst player in the world
+Pinball|a non beatable box designed to take your dollar within 3 minutes on average, noone ever won but a few were amused. Wether you play at home or at a location, your pockets will be emptied.
+Pinball|just a scam like my can of pommegranate cider. It has 0,5% pommegranate juice
+More storage|better when it comes to storing samples I guess
+Jersey Jack|going to push that timed pinball now. "Let everyone on a even playing field."
+Everything else|non essential
+food|one of the best joys in life
+Wheat|the worst, rye is slightly better
+profit|key to survive in business
+bags pinball|a coin operated device... they are made to take money
+unless he|selling for a fortune maybe
+this seller|not gonna do that for me
+but this oak|someone normal not a pinhead
+All I'm saying|that it's highly likely they aren't going to get it ready for shipping properly, unless you tell them
+that game|long gone now thankfully
+but something|up with it
+hmm this|not good news lol
+My impression|that he's simply a rich dude who thinks he can somehow magically make it happen through pouring money into it
+a lot of it|stylized though, so I don't know what they'll do about that if anything
+funnny thing|they changed the disc area due to the disc doing nothing to the ball
+My guess|that the guy showing the MG pin knows very little of the nitty gritty of pinball
+BOM|Bill of Materials
+6 modes|overkill in many machines
+To me pinball|much like progressed music, It has gone too far.
+thing|that alot more games are going to home owners now bags
+My game|best
+spike power|totally different
+But the idea|that it's cheaper to assemble and 'easier' to fault find
+the lawyer in me|raging
+even though it|June and probably 100-billion degrees out
+haha  party bus|a wiinning idea
+well 7|nice cause it's divisable by 4 . . fuck, it's not
+ripple.co.uk|some greek restaurant apparently
+FTH|Full Throttle
+jpop|Jpoop
+tom|a nice game... beautiful to look at... magnets used perfectly. yes its not perfect. the video mode stinks but everything else is good
+The performance|about to begin.
+trying|the same as stating they are not going to
+CV|nice to look at
+The backbox|beutiful too if intact
+value|whatu can sell it for
+picture on it|of the game
+but the pic|one taken from internet
+pizza burger|for the poor
+link|also to Game Room Guys
+Sears website|now a link collector of sorts
+T2 manual|pretty crap and all, doesn't have the colours for the flipper wiring
+Demoman|the best ramp-fest game made
+but the game|just this totally drab, lifeless shit
+#pinball|pretty old, been around since before RGP
+The machine|completed parted at the moment, gotta rebuild the glove its making ALOT of noise.
+jm|cool the video mode is abit iffy
+since no casual|EVER shooting any of the mode start shots
+everything else|the same
+rick|no fool.  he likes money.   sell 15-50 games, and than sell service parts.
+making pinball|hard,   quote the Kulek
+(which|nothing, and almost certainly no money back)
+country music|just shit
+No way|SC worth that much
+some the coil|mounted on the scoop
+"Sounds like he|making arrangements. "
+"No one|going to say where it is at now for safety, obviously. "
+that game|a serious tangible asset.  no doubt it would sell for big $$
+SC token design|two coils ... shuttle pulls from two token tubes.
+anything at SFGE|exhempt, because it's all freeplay (and techincally is a "trade show")
+swipe|the way for sure now
+sms payment|good
+what we need|a way to interface to that.
+that met|nuts. snake randomly throws it in left outlane
+wtf|up with that jp sound
+spinner|one
+unless there|5 then include Targets
+last game listed|Lost In Space
+Tip:  Duck|considered a red meat and many prefer to eat it rare or medium rare.  If you want your duck more well done, cook the duck a bit longer in each step of the stove-top cooking; if it appears to be cooking too fast, just lower the heat so that you can cook it longer without getting the surfaces too dark or leathery. 
+Heighway Pinball|coming to Pintastic New England!!!!!    Pre-order early, pre-order often!!
+USA|a shithole right now.   Blacks think they can protest and commit violence with impunity in the name of racism.
+bro this shit|all over thenews here
+And that|just everage talk, when they are angry or upset you don't wan't to know what they say and it wouldn't be possible to translate it either.
+Twitter|finally removing the 140-character limit in Direct Messages. Starting next month, users can send DMs the that are up to 10,000 characters in length.   Twitterers rejoice!!
+how high|a stern boxed pin on its back (trucking side)
+well your hobbit|delivered to your door right? so that's not so bad :)
+O&E|the pawn stars $5k pin
+t2|surely better than this
+I think Kiss|the first stern without a bash toy/mech
+the question|how much it costs to develop a given table
+what the fuck|this tpa update
+twice a winner|me today.   League and after league tourney champ 
+the board|interesting ... has standard switch/lamp matrix
+Nothing|hard, just some guys taking on to more than they can handle.
+Season 3|out,  Orange in the new Black.
+beating lyman|fun
+The arcade|feeling the pinch, changing pricing yet again
+wow that|big 
+the story|recent.
+ben|not at spooky any longer, new guy doing code for #2
+the PCB|interesting
+but it|on pinside
+blind|important
+copper|copper.
+bags blind test|the must todo
+The sad now|that they just updated their amplifier model too:S
+The price list|updated may 1st 2015 and it says new
+That img|from 2012, getting confused now
+umm ... there|really no such thing as a proprietary connector.  You can always buy a matching plug.
+a cable|WIRE.  and I guarantee you it does not contain a coil, unless it's got a pretty big box attached to it.
+everyone|glued to a mobile device
+unless that wire|wound around itself, there IS NO COIL, and therefore no inductance
+part of that|pricing going up, part of that is just regular inflation
+Going to school|hard:S
+typing|hard
+the catch|you can wear any Florida team apparel inside
+because nfw sony|reupping the old incarnation
+what I heard|comic book art.  that seems to be making it onto pinside now too
+his character|the start of a mode!
+well arnie|the guess but I'm trying to remember them all
+3 table voices|a fun one
+gravitar: This|the "Rescue Edition" version
+Everything else|repro
+crap.  Stern|teasing me.   gravitar> newest pin rumor new SPidey (Stern) will get remade
+my guess|that TZ's is WAY more "programmed" that most DMDs where they are more-or-less movies played
+town square|a huge problem for sure
+all of AP|me though
+Gottlieb|a real bitch from what I hear, the lawyers that hold it are sharks
+Yeah Big Hurt|decent, I like some of the layout on WW
+batman|to much a grind game
+and this ...|why I live in a house.
+All that|missing is the backmounted drums gipsy style
+pinball|evil
+My house|garbage
+learning rules|really helpful at pinburgh
+TZ|so mean
+sorcerer|great
+Although it|interesting to hear that it doesn't have the tip on the coil plunger
+the price|set by supply and demand curves.  you are not marrying the game.  buy one, enjoy it, sell it.  <omarrr> cant believe some of the prices in the US
+i think Michgan|halfway through their Kiss launch parties.  one tonight at M Brew
+present code|very laughable, not even a true representation of a game, pathetic
+NBA|as rare as a unicorn
+gary|shut :D
+if the lawsuit|to be believed, jack grealy enjoys spending other people's money
+pinball|a device that if u compare it to a car its really awfull in design
+all that|a loop
+Commercial music|piss, the average guy never has heard good music, the average dj cannot play good music because they have never heard any of it. They have not even ever been to a party good shits.
+Nowadays music|all focused on the vocals, it doesn't even have a prober bassline, and if it has it is for some short 20 seconds building up to the chorus.
+My album|still Work in progress so perhaps I shouldn't speak too loud until I have delivered.
+This server|doing my head in
+i know i know so|the entire comminity
+Pingolf|great.
+problem|price is not always right
+here soccer|known as soccedr
+thing|im trying to find games that have longer legs
+well a dmd game|proven to me that they pull more money
+Pinbot|a bit early
+but nobody else|prepared todo it
+Hoarders on TV|like a picnic in the park compared to my junk cellars :p
+30 - 100 modes|what keeps people intrested for longer i think
+At least that|what I have on the "drawing board"
+This way|win. A freeloader is a selfish and undeserving user of resources in private and personal spheres, e.g. an uninvited guest's abuse of friends and family's hospitality. (For unpaid overuse of public resources in public sphere, see free rider.)
+problem|its too popular there
+sonnyjim|who you want
+building pins|hard but building a few pins together is impossible aka jpop
+my *railcar*|worth more than my car.
+if the cartoon|your manifesto of the plan to be carried out,   , that's not a 'cartoon',  thats a crime plan 
+if the void|the size of large sized quarry, yes
+ripleys|a nice game
+double flipping|typically EOS switch troubles,  or frayed wires to the coil
+if the machine|TZ, i would inspect, wiggle the wires to the coil, and cut/reflow them if suspect
+Not sure if AMH|running into issues, or if they use different optos rather than WMS opto assemblies.
+i think there|a 'technique' for wpc doors.   sputtering/ dripping
+austin|not that bad a game, actually
+lospat: Pinball|everything...
+AP|better than many of the solid state games made.  
+problem|the ones who have the tafs keep them lol
+lol sof|the worst game i have now if thats what u maen
+also space|an issue
+our president|the worst in this 
+hes house|like a mansion and they just increased hes pay
+if history|any indicator....
+Year|half over, so far participated in 20 pin leagues / tourneys.   Last year participated in 49 all year.   So far so good on NYE resolution to cut back.
+The Rock|in town filming a movie, he should come over and play it
+Howie|a friend.  His wife had to have TOM.   then, they sold it so she could have RFM.  that stayed.  oh, she likes RoadShow too.
+ToM|the most popular game
+toms ruleset|abit weak
+well taf|a deeper game
+250x5 million|1,25 billion points
+At least there|a multiplier cap :p
+ngg|under rated surely
+The issue|that you cannot progress pinball without putting up the production costs
+AFM|probably the last innovative game made.
+and then their|titanic ... which had sales solely off females drooling over dicaprio
+USA|fucking backwards in many respects
+pride|pretty silly, i won't deny that
+AFM|open and uncluttered, not any lawlor.
+problem i have|that some games they dont finish if they dont sell well
+pinball|still abit too basic for me\
+Germany|victorious!
+wooo drone|back
+if there|the slightest buildup of charge, that makes for a very large potential
+a 'charge' | basically 'seeking' ground
+Lightning|a very mysterious thing.  When I had the cablemodem incident, I checked the cable the next day.  The "tree" in the distribution box was connected to rebar driven into the earth.
+so okay there|the start
+bobby there|a solution
+but i guess jjp|doing it right? 
+that game|from 1983
+but the theme|right 
+if the designer|steve... u can take a risk if theme is legit
+metallica|so good i dont like music pins but its one i would want without thinking twice
+terminator 2|one of the best action movies ever made
+Robert Patrick|good in T2, the rest is just average
+predator|ace
+Alot in there|doomed to dail on wear, the scoop frames, the one above skill shot too, the gate below skillshot, the diverter on right ramp
+if it|faster it will either bee too slow or bounce out and then hit the ball on the way down breaking plastics or going a drain
+problem|not that is was on route
+problem|that the guy on route did not take care of it
+Even the dialog|taken
+Avatar|probably a ripoff from Call me Joe
+I know 1/4"|used on the coin door bolts
+HS|sys11 ...
+so|Pinbot
+dunno if this|the case where you are, but there's enough other scrubs at the local bar tournaments that i've been able to win some matches
+this tournament|free to enter with prize money - go get it!
+everything|over priced
+MET|a great game, i have nothing with the theme, but man, that game is fast.
+Remember this|dumbed down
+roadshow|complex
+Krona|weakened again so they will bump stern NiBs again, 5th time in a short time
+Vett|quite good but he does only stern tables
+for instance bsd|hard
+scared stiff|easy
+Well the spiral|fun in TZ, that's about it
+And it|nice to load the gumballs
+One nice thing|that on the first multiball when you start it from the ramp and not the lock
+no machine|perfect
+and Nasty Car|100%
+Perhaps the rod|bent
+the US economy|stronger.
+Chance|that pinball interesst will decay 5 years down the road
+antidote|just 33% of total eclipse and took too much coke in his ibiza years."
+hope tidbot|right.
+redemption|child gambling
+lospat: Seems it|cheaper to buy TZ parts in the USA than from england
+likely|that something will break
+The spring|not a shooter lane
+The new hoard|pinball mods, it's funny how many mods you can squeeze in. There's like 270+ mods for TZ :p
+doing stuff|hard
+but|a European Economic member, if that makes sense
+shit|garbage
+hopefully kiss|a little better
+WWE|very prone to ball hops just like avenger was
+4pmET|Gerry Stellenberg - Multimorphic P3   PIntastic on Jareds stream
+manual|WoZ material
+(our chat|better than theirs)
+also|the playfield wood very thin? compared to williams... i mean i can see it flexing :( that cant be good
+The thing|that Stern Pinball can make good games if they want to.
+ST|fantastic imo, but those missions aren't fun for me:S
+TWD|good but software is dumb
+twd not everyone|impessed with it... great theme , just not on par with what borg can do..
+metallica|gret
+Kiss|ok I think if they fix software
+But the cost|too high for a theme I don't like
+Monopoly|great if you can ignore the music
+metallica|a big name
+The ramp or loop|lit, hit it or miss. Not some dumb have the ball bounce on the jets and randomly lite some lanes.
+thing|i never worked on a light like that 
+multimeter|a powerfull too
+Pintastic|awesome! hope it happens annually
+taxi|just easier to understand for me
+diner|better looking for me surely lol
+Diner|the worst game of 1990 and 1990 is the year with most good games:p
+spooky|on game 2 and they will get it done cause they have done it before so thats good
+lol and that|not the reason why it was the worst
+Pinball 2k|like Doing R&D directly on the customers as doing product testing. It should have been discontinued before production.
+as soon as money|involved people want a cut
+mixing|more important
+but if the song|bad all the mixing and mastering in the world wont make it better
+otherwise there|nothing special about the ballast; it's pretty much the same thing as is in the top of 8-zillion video games.
+aint about what|profitable
+Pat Lawlor|making pinball for pocket change and if he did something else he'd get 100x or 1000x.
+Women|the opposite
+key phrase|"legitimite acquittal"
+design|part of the job
+Even if he|guilty it would be several reasons he should be free
+Layout design|like connecting dots in a book for kids
+being the 1 seed|fun 
+my guess|going to be a battery that failed started the fire.
+ipdb says it|a version of http://www.ipdb.org/machine.cgi?id=968 but it's not really.. because that one didn't have the outhole gate
+ballsaver|lit, or not
+ya  $1|a waste per game
+MB|Monster Bash
+TZ|TWIZZIGLIGHT ZIZZZOOOONNEEE BITCHES
+cab|only good part of the game
+vegas|desperate to bring in the youngins who hate gambling with no skill
+TZ|mean
+look who|back from the dead,  wb  , tidbot
+elizabeth|a hoot
+Then he|like 75
+freeman|the UFO man :o
+gator|a hit miss game
+which ever|easier
+Big goal|to get TIME (red lights on ball ramp (Right)
+bonus|king!!!
+yup ligjting|my real only issue 
+place|paxked
+fucking april|so long
+My TZ|looking very sad at the moment
+All I have|a 1/4" nut driver, couple of screwdrivers and a soldering iron
+latest|End of Sept for hobbit production start.   hrmmm
+Not every clear|the same as not every painting is either, some make art and some make junk
+My best|7,4 and then I had litz 5 times 
+think mine|like 12billion with 6 litz's
+My machine|rough, it goes to the outlane if you don't shake it every time
+twd|a pain
+The ramp|a bit cool, when it's working
+Wind|easy, just shoot scoop until ramp is up and force multiball
+WW|always hard
+yeah that|pretty much necessary (the magnet)
+the Pre tourney|in the system today
+Where|the Terminator Genisys machine? No, they want to make Kiss and WWE and what not. I hope that Ritchie is working on something useful.
+metallica|good
+Metallica|ok
+This JJP|too abiciouse, the playfields are over the top without providing nice gameplay.
+They payment|too low so all will say no.
+Walking dead|barely fun, the rest not so much
+The crossbow|cool, but it has several issues
+Austin Powers|just some earlier rendition of Iron Man.
+Music|not the most important factor, but if it has bad music or sfx I won't be able to play it.
+and MET|across the street
+the arcade|nice
+gas|cheap here
+My new car|tiny
+currently it|a monthly fee in perpetuity
+Jared|a promoter for sure.   Likely over promoted a few Stern things and feeling the backlash.
+PC|being remade by Loftin crew
+haha|this a joke: "Pinbo Metamorphosis where you turn Pinbo into a sexy elephant"
+metallik|playing
+that display|lcd no doubt lol
+i mean music|done, artwork was done, layout done, etc etc
+M'Brew leauge|starting
+ rick|playing good cop (him),  bad cop (Chicago coin)
+how sad|that
+nah there|alot here
+shrek|in excellent shape too and that is a theme anyone knows
+and that|not as good a game as those 3 in my mind
+whirlwind|excellent
+ms Pac|the king of vids
+so your game|over
+My high score|1.78 mil
+portillo's|good
+this channel|old
+the oldest|Chicago Expo
+freeman: Digital|best. Compete online.
+Zen|okay...  I have enjoyed PA more since I bought it though (which was only recently)
+Theater|great
+Silver Slugger|one of the best games. If you think otherways you haven't played it or don't get the skills.
+Scared Stiff|fun, though
+what sucked|that it was my league game
+AFM|great
+Creature|fun
+the multiball|hard. just two balls and no ball save.
+creech mutiball|too hard
+Pinball|very niche now
+fish tales|a bitch 
+well problem|if u get mutiball on fish tales u have to shoot twice into the casters clubs
+the machine|a one shot game sadly
+Gate on mm|broken most of the time :S
+the theme|cool
+TAF and TZ|like 2.3k in scandinavia
+The dollar|way up so the value is way down
+pinbot|a landmark game but its very basic... and will get bored real quick
+laser war|a cheese as u can get, not really amazing.
+centaur artwork|off the chain... its classic ballys 80s..
+but price|key
+but even centaur|as basic as u can get
+Genie|a classic if you like old clunkers
+Genie|a bit old for my taste I think
+bags centaur|beautiful
+Anything|available unless you're in the wrong zone.
+My zone|always right.  It's all others who are wrong
+LotR|cheap unless mint
+Avatar|semi decent
+xenon|too old bags its classic bally but u will bore of it too quick
+Star Gate|better than most WMS
+ripleys|a nice game
+Although nothing|really original. Most is taken from 1976 sesame street pinball
+How likely|it that most people tasted less than 10 units of the national dish in 35 years, a dish heavely marketed on Tv.
+The base|alot larger than the steady numbers because everyone has a higher chance of tasting something new to them
+The factory|running 24/7
+4.6b|"more than 460 million" :)
+so that|about all I know
+JJP|doing a twitter giveaway
+"1 mph|around 1.5 feet per second. So at 15mph you're at 22 ft/sec. Figure the length of the pf at 4 ft, and you can cover the entire length in 0.2 seconds. It feels faster because it's such a small surface."
+fish tales|a superb game
+FT|a lot of fun
+shrek|coolish but i kinda wish there was another ramp 
+demoman|a ramp-fest
+unless that toy|the medieval castle
+medieval|dull for tournament play
+the video mode|abit too much points in afraid 
+football|their thing
+the T2 one|just bizarre
+product|still sold, so not stopped - good to hear
+whitewater|a must own
+and this|aleady oit
+Your 't' key|broken.
+the lever|gone!!!
+the show|declining in popularity quickly too
+guess red matter|now yellow matter  
+the net result|the same: of those 16 players, 8 live, 8 get to come back next year
+viewership|the motivator
+ya time|the constant factor
+talking|up there though...
+winning|impossilbe :D
+PAPA|worth mon off... dunno about flipout, esp since the place is a ghost town after 2p
+If Hobbit|shipping by EXPO then I'll go.   That's the determining factor :)
+if stern|smart,  insert laugh, they'd wait till after LE's have sold
+Pro|best
+what the hell|issac binding? you seem to play that or dawn does
+and free|a great price
+yes that|a great site for that type of vehicle
+and this|how you fix it : http://www.litz.org/pics/2011_06150004_1024.jpg
+Lawlor|a good 3rd or 4th, but he has nothing to stand up to MB or AfM
+legal|a scheme too :p Making something legal doesn't make it legal.
+High scorelist|Jarre
+the link|meaninglrss
+so|the ifpa submission :D
+the details|what wr are reading
+nah once ay pbl|enough lol
+round of 128|still qualifying
+if round of 128|run like NCAA good luck
+I heard Shepard|spear heading that part :)
+matchplay.events|awesome
+sky|sups
+so when|woz comingggg 
+Life|but a game
+My part|done, when next we meet we will be enemies once again.
+Most of the feel|from having proper buttons
+Next|mechanical action and vibrations
+TPA|awful at best.
+Location|nice for testing stuff, for regular play, no way
+The appeal|lost on me
+state|divided up
+OH i believe|Evan Bingham
+KY I think|back to Fugate, I believe the plan is Zanzabar
+If it|out it is leaked
+If it|out its by someone unserious that stole others work and leaked
+Stuzz: My part|done, when next we meet we will be enemies once again.
+Soundtrack|suitably crazy
+Heh.  Mild|good.
+This weekend|biting cold.
+lospat: This|the musical bible. First Goa compilation to be released in 1993. Good year that one :p
+To me this|a religious experience.
+Deadpool|scary :S
+facebook|always up, just manually skip the load balancing on their server
+The Krona|down again
+dead flip|playing got on twitch
+nothing|gonna fix shitty artwork
+the art|bad, but lots of good games have bad art
+stream|dead jim
+Pro|best
+stream|back up
+The music|getting annoying on GoT
+But this|old footage now.
+Dragon|twitching like mad in the stream, having a seisure.
+thing|22 years later and new pins still dont blow them out the water
+freeman|making space for GoT now
+problem|they are too small to produce enough frequency 
+there sure|differnces 
+the side-by-side|amazing
+Hey guys! Time|coming close.  Looking for volunteers again. This year we will have a registration desk so if anyone prefers doing that instead of score keeping let me know.  We are also taking more people in the main division and starting finals on  Saturday morning so may need less overall people and the only score keeping on Saturday will be in Classics.
+i hear encore|3 parts so yea, could use it there some
+problem|with taf is everyone wants it
+MM|supposedly the king of earnings
+look at who|saying that
+woz|far on the horizon cause i need to make big bank to even attempt one
+shrek|a famous brand too
+and the machine|in perfect shape... has color display also... leds the works
+see here|the problem
+lol thing|those people just come to play whatever spor they are and then leave
+the arcade game|the bait
+  that|how you measure your little p
+big buck hunter|not a bad game to play 
+My best so far|17/30 or so...  I'm getting higher each time
+yes|a tough one
+twd pro|paletable
+$15|the going rate though
+Bags|our channel curmudgeon. the only flipping he does is with his middle fingers :-P
+and philly|closer than jfk to jjp whq
+though ewr|closest
+so there|obvious tension 
+EPC|here! Lyman is here! Unfortunately the game is still on 110V/60Hz and we need an update for this, because we are 220V/50Hz. Gary Stern is on the plane to help us resolve this. The stream will be delayed until we have this fixed tomorrow. Sorry for this, but we will keep you updated.
+goal|to eventually line that up
+rarity|the kicker
+stern|the only company that's managing actual mass production though
+spooky|essentially hand assembling one game at a time
+JJP|essentially hand assembling small batches, maybe a dozen, at a time.
+the R&D|the same
+factory labor|going down due to roboticization
+the R&D|around the world, as are the suppliers, and now,  the plants
+JJP|pretty much the only "collect deposits in advance" manufacturer that has actually produced product.
+  this|back, when Jack was the number one distributor,
+WMS brand|still used
+so that|why the share the same trademark script
+sc|safecracker
+Jake|hilarious in everything he does, so I have high hopes
+guessing rob|looking it over in private :)
+Thought|was 84 or 85
+excuse|that it's my birthday weekend, so I might stay where I am and hang around with my mates
+35|half dead
+expo|Pinball event in chicago that all the pinball industry hub knobs attend
+gravitar|I Bo-Lieve!!
+The !tell thing|semi useful but it's not stable enough at the moment
+keefer|not in the tidbit database.  Also something about recursion
+noone|not a word.  It's *No* *One*
+java|so yesteryear
+javascript|Like a bike with the training wheels, except there is no bike, just training wheels
+now that|a unique machine!
+they're goal|selling premium remixed audio for games
+the owner|providing the software (and in essence, the license)
+hobbit|How many coins does it take to play the new "Hobbit" pinball machine?       It doesn't, it takes Tolkiens.
+JJP|an EVIL PINBALL-PATENTING ORGANIZATION
+that work|stolen when another person copies the end product
+well my stance|that IP is garbage, so it all falls under that!
+my POV|the layman's POV
+the tickets|an evolution
+all you do|annoy people
+The thing that|weird, is in manuals for pins going back at least to the 80s.. they mention hooking up redeption stuff to the knocker..
+stern|more than happy to keep producing 6000 lunchboxes because people keep buying them
+but it|giving a custom reward for an achievement... hehe..  
+WWE skillshot|hitting the power switch
+WWE Special|switching it off
+Are|a Swede..
+pinside|PinJETZT
+Wilma|hotter than Betty
+O_o|What's wrong with your faaaaaaace
+ISIS|IS is?  IS!
+br|Black Rose
+br|Banzai Run
+she|a solitary entry in tidbots vast and ever growing database
+All mine does|hangman
+drunk history|https://pinside.com/pinball/forum/topic/roger-sharpe-story-on-drunk-history
+JeremySm: That|stressfull. A good game on LoTR takes like one hour, starts to feel like work. Perhaps I am old and tired, but I prefer 3-5 minutes game like S11.
+The feeder flap|the easiest
+My Whirlwind|malfunctioning. It kicks out the ball when I shoot the lock :/
+My guess|that something in the precompiled curl lib I am using is fucked, but meh
+that design|unique in that it has an UP coil, with a ledge to hold the ramp up, and a knockdown coil, to lower the ramp
+pinball|fun!
+Play|the easy part.  Practicing I don't know how to do
+title|wrong, though ... is an ex-TWA L1011 engine
+(Whitewater|no better)
+My goal|to beat Bowen
+Wppr's|Most corruptive part of pinball
+friday|explosion day so won't be around much to qualify
+Classics|pretty good spread but no where near enough $ considering the entry $'s spent
+European beer|the piss unless its from Belgium or Scotland.
+wtf|mac
+I think tidbot|high
+world|saved!!!
+That game|redicculously hard though.
+O_O|Looking suprised there, you shouldn't be
+O_o|Wonky testicles
+O_o|like an eyebrow raised..  one eye bigger than the other
+(_)__)|wonky testicles
+bhz|the testicles expert
+gauntlet|a great game if you can get a few peoiple playing it
+A friend of mine|pretty dope at it but it doesn't really spark an interest in me
+Then pinball|a better formula. 3 balls per credit, have fun.
+my friend|20 minutes from your home in cape town.  would you DJ his party for free? just 3 hours.  it will be good exposure for you.
+all i need|simple good quality photos close up of a dr who so i can make vectors... 
+(said plow|inch thick steel.  Didn't even scratch the paint)
+My Thinkpad T420|very close to the Optiplex as well. 
+Noise floor|a bit more pronounced too.
+space shuttle|older than pinbot
+Jackbot|weird
+bride of pinbot|my favorite from the pinbot line, although doctor who plays similiarly to the pinbots as well
+Cancer|back :(
+Dr Who|kind of underrated.  Had one for awhile and I liked it
+lock|super annoying
+is|is
+to be|or not to be
+💩|poop
+Summer|better than winter
+no code|bug free :D
+the best|watching people's faces when they first go on a factory tour, or watch a factory tour video ...
+Mine|plankd
+The scoring|laughable at best: say you have Ball 1 2,4 millions for fireballs, switches, modes and whatever, then you drain and baaam 8 million from bonus multiplier x lamp and REPLAY.
+JPop|brilliant for detail artwork and  all that, but he should let some other dude do the layout.
+SFX|missing though.
+and pops|not importat
+drwho|not a pull-slide game
+Dr Who|the latest one I can think of that doesn't have the pull slide 
+biggest problem|the sheer weight of today's playfields
+BBBB|Bugs Bunny's Birthday Bash
+HD|Harley Davidson (Bally)
+DD|Dr Dude
+the prop rod|different, though
+HD|Harley Davidson (Bally)
+bally HD|older
+FS|Future Spa or Flintstones
+your guess|good as ours
+simple design|best 
+CCharlie|Circus Charlie: Video game by Konami
+that angle|shitty
+where|litz when u need him
+where|litz when u need him
+Usually|banners for them at vpforums.org or what they call it.
+Hole placement|off.
+if notching|a foreign word, i could search that for you.  but it will cost you more.
+Inglese|my first language.
+of course bags|an amiga nut
+everyone in here|always here
+gravitar|the killer of all #pinball discussions.
+vidoe|live,  a Sharpe is sighted
+maybe Goosebumps|better.  i have no knowledge of the brand, but sounds like a book.
+ya but this|ridley 
+no game i have|worth not routing there is no high end shit here like medieval madness for instance
+Golden E  |the dog
+The main issue|programing them.
+the "overwrap"|actually a 4 page insert, rather than just the front page
+two data points|obviously a thin amonunt of data ...
+my bet|the same thing as AF447 and AirAsia8501
+stormline|in alabama now
+Apple|much more likely to do that than MS ever will be.
+now THAT|a water hazard
+haha    that|a good one
+Whirlwind|in great shape for its age, so it's a candidate
+custom artwork|uber $$$ ... like 3k minimum order, and several hundred bucks not including the setup fee
+nthsa|the bane of my current position
+that one|just the extracted Fox feed from their mobile app
+This post|1 year old.
+the transfomer|out the game already
+The extra balls|accessible, the player feels rewarded and puts in another coin.
+same here which|crazy for november
+kubota|more known for the small block diesels used in tractors, generators, etc.
+freeman: This|the best Norwegian commercial ever. https://www.youtube.com/watch?v=NE62Uv2ZbYA
+!sql this|a broken statement
+The ipdbot|up and running again as well
+Pioneer|the ODM for most of Ford's audio
+Need|a subjective term
+my truck|standard textbook double-din
+the pioneer|a single, in a frame
+I thought yours|single DIN
+Levinson|a $4k upgrade
+Dragon|quite the show ... this past show was my 20th as a volunteer.
+dragoncon tv|fun
+feedback|easy to get right : you want none.
+ghost busters|a theme alot would want
+pinball|hot right now too, esp. in the 18-49 market
+El Camino|neither a great car, or a good truck
+pinballinfo.com?|that the new pinside or the new rgp
+A lot of it|"How the fuck does his wife allow this?"
+<lospat> why|that i cant find much in terms of dr who shop job photos.
+tidbot|broke, for that
+Drop the ! from|and it'll get picked up
+SQL|(pronounced "ess-que-el") stands for Structured Query Language. SQL is used to communicate with a database. According to ANSI (American National Standards Institute), it is the standard language for relational database management systems
+game|pretty bare
+at leas the pro|compared to earlier models
+The Licensee|now underway to complete a master prototype Magic Girl�. An announcement will be made as to when this will be, however the goal is to have it ready in time to unveil at an upcoming show. From this point forward, information and progress will be provided by the Licensee as Zidware is no longer in control.
+This group|currently in the process of negotiating with proven known quality manufacturers to get the games produced. As soon as this is contracted, purchasers will be notified and given a forecast of the timeline to complete development as well as release dates for final product. As it stands today, the anticipated timeframe until production of MG is approximately 2 years or sooner.
+This plan|for you, the Pinheads that want something that is a true work of art, quality built that can be treasured for years to come. I have now found the right business team that is dedicated to try to get my work to the finish line and into production. Help me to help you get what you came to Zidware for�a pinball machine that you will be very proud of to have in your collection!
+'cause no one|here
+The hotel here|booking 200 I think and they will earn twice their yearly income in 1/4 the time.
+The state|paying and the workers and next generations will pay.
+pinball|an escape from the world 
+The difference|too huge.
+too many pins|not a problem
+being married|such a normal thing most people tend to want
+cause my life|about living it not about spending it with someone else . my dreams are my dreams to make them come true on my own
+This location|new so I don't know if there are pictures.
+the key thing|... don't be afraid if it needs a little work
+that smaug one|dope
+bram stoker's|also in that age range
+as|T2
+FT|a lot of fun
+but the theme|so creepy to me
+Dracula|fun.  It's kinda loud, but fun
+No game|worth 40K.
+that colorDMD|really, truly, OMG looking
+tz gumballs|the only thing I've done on that one
+that thing|insane
+Xenon|a system 35 game.  there are probably 10 other system 35 games I like better.
+Xenon|about as fun as Cypernaut, Fireball II, or Vikings
+Xenon|more about the looks and sounds
+playing pinball|hard :D
+yes there|a cheap-ass version of it
+the best stuff|ground super super super fine, so it mixes very well
+BP|$26ea
+yep.  this|the ime of year, where I am jealous of you.
+rubber|the weak link
+the stuff i use|almost like plastic
+the bounce|still fine
+Georgia|a more humid climate so it probably helps
+that split|too much
+Location|a major factor
+And no game|$15,000 fun.
+rudy|dead
+whole title| "Cosmic Gang the Video"
+door here|steel framed .. you'd had to be pretty damned good to kick it in.
+(door|metal, too)
+didnt slip|the biggie
+CA|bumping it another 12 cents
+the 50% part|Personal injury :(
+The phrase|longer but tidbot was stingy to 30 characters
+The phrase|From the trough to the outhole within sixty seconds
+30 seconds|a falsehood
+AFM|alot nicer than MM
+AFM|just solid action all the way
+MM|a lot of fujn
+The best in AFM|how you lite Stroke of Luck vs Merlin in MM
+TZ|due for new rubbers
+FH|still in pretty good shape
+SC|getting redone onto the proto pf
+Sweeping|awsome
+but clay|legend we know this
+Lee|clearly a genius!
+timeshock|afm-ish
+my ebd backglass|in pretty decent shape http://i.imgur.com/Sbyno2y.jpg
+but george|cool guy 
+pinball|expensive both to buy and maintain
+like this dr who|a project and a half... rust galore
+well here|what i did tonight in terms of collecting
+lospat|an operator
+half the gi|out
+doctor who|turning in a nightmare
+Lospat|NOT a sailor, never been onboard a ship.
+ the storm|coming, return to your homes  http://www.cgmusic.net/archives/whirlwind2.m3u
+bad cats|a really bad game
+the theme|admittedly kinda cute
+yeah the layout|not the problem
+whirlwind|quite fun and earthshaker is pretty good too
+radical|ok
+and high speed|good
+machine|a good looking game
+sc|a novelty game surely
+Dobby|freeee!
+JJP|the best boutique pinball company
+goT LE|at "The Arcade" now       gotta go play it
+GOT|a show about incest, a jester, the mother-of-dragons, and The Needle
+all|fun
+Chicago|one hour back
+funny thing|I hadn't used the card in about a month so was surprised
+No it|usually physical.
+well yeah there|that
+lawlor|lead designer for game #3
+another guy|pretty darn good at the sterns, but struggles on WMS/Bally and old stuff
+GoT  Winter|Coming Mball is HUGE HUGE points.
+refund cashback|teared
+(which|how the railcar gets on and off the trailer)
+|freeman|breaking the Internet.
++i|meaningless
+stern|machine code eventually completed on lyman projects, all others take your chances
+now that|code worthy bhz
+well the worst|probably that not a single one of them can be turned on right now
+but thing|freeman u already have all the top games
+so there|that
+now|the wrong time to buy
+the scared stiff|abit much
+but this|1999. 2k back then was surely alot more than now
+someone|bored, I see
+the one at R1|dead right now too
+My TZ|getting cleaned and re-rubbered this weekend I think
+|freeman|attempting to destroy the Internet as usual.
+that dink|possibly, bouce off target
+This one|an RX-701V
+DRA|probably full on drugs so not sure about him :p
+HP Sauce|pretty good
+and the plains|a whole lot of empty
+vid|around somewhere
+That one|pretty early 94 so perhaps sometimes mid 93.
+my office|like a block away so I'll be dropping in on mail runs at least 
+distance|def a factor
+l257|on my way home, vaguely.  I should be able to spend a couple nights there
+This 3 min part|pretty intense on LSD or mushrooms. https://youtu.be/AcOBDyXRieE?t=1h53m54s
+Bally|Compys bot, you dunderheid
+alabama|like a caterpillar D7 ... not much stands in their way
+lospat|of the strong silent type.
+keef - this|gottlieb software, all bets are off
+and bama|3 and out
+This board|really something...
+NTE2987|also the generic
+the route|on
+ok  here it|in parts.
+- Intention|to put out 3 titles a year, to take advantage of the swappable mechanic of their cabinet. Vast majority of underlying components are modular, so design to production should be pretty swift. Could have as many as 8 titles out by end of 2017. - Seems pretty bullish generally about their prospects, Alien, and thinks Barry Oursler is great & considers him a legend** Pleasant guy to talk to. Would have asked far more, 
+of course always|at this time
+DM|a ramp fast, and the claw sucks up pf space
+|freeman: TZ|pretty open
+80% of pf|not occupied
+80%|open
+Ön TAF only 20%|open
+PLayfield|not % of occupied space, it is the % of angle you can shoot lone balls without blockage
+TZ|completely open except approx 15% on left side and 5% on right side
+This PF|closed. http://mirror2.ipdb.org/images/20/Playfield.jpg  Everything is closed except a 30 degree gap to the right.
+TZ|not entirely open, you can hardly shoot the left spiral from the left flipper.
+TAF|also not a widebody
+Buy in game|ST:TNG and RaTRS
+(or|that 120)
+My brain|too small to read and understand spreadsheets.
+My point|that the current market is buoyed by the fact that 8-18yr old guys are now 30+ with disposable income
+farfalla|beautiful, easily one of the more desirable Zaccs
+Farfalla|best looking.
+The soccer one|fucking dire
+Scoccer|best 6 player game , possibily ever made
+image search|interesting
+i'd say that|a good guess
+my collection|50% classics (if you count Hoops as a classic) :)
+the rest|debatable
+The display|cool. Layout looks like one of those lesser quality 90s software pins.
+The game theme|rather bad for anyone but his family.   
+the old one|almost 100% still good; it just has a blown diode
+  there|a stretch in Canada, just over the border, along 401.
+Todd|right,  while I could do 5 mph,  the dolts behind me will be rushing up on me
+No.  100MA|1/10A
+Monday|always super busy at work, but I'll do my best to get those all in today
+no one|"""confirmed""" till game day.
+saving face|important at that age.
+yes|Tr
+I think this|celeb #4 or #5 in the past two weeks
+pinball|whacky
+This receiver|still in good health.  Probably will be due for a re-cap in the next few years though
+pinball land|the one you really, really really want to visit.
+The shit|worth 249 at most and just short in supply.
+i've heard that|a good decision
+looking like MPE|a no go, still no updates
+the area|hilly, and seems low.
+SFGE|at honest-to-god class A exhibit hall space
+Galleria|the #2 space in the city, behind the GWCC
+the inside|air conditioned.  outside, it most definitely is not.
+east coast|getting it back in spades though
+ice|bad anywhere
+Indy|a special game since the pf is open and everything else needs a clear hit.
+Seems there|no story to be told, just money milking.
+Star Wars|quite cool, but Lucas messed it up from the start making it a 6 hour story and putting the end from episode 6 in episode 4 and blowing up the Death Star twice.
+re using brands|easy and lasy
+what he|doing is neat.  but IFPA has done way more to draw in more peeps to play pinball
+detroit|almost dead east  lol
+Forbidden Planet|looking Purdy now!
+and one of them|a Mr & Mrs PacMan (yuckkkk)
+ game three| poo-poo-kittee
+my Ford|in the shop, and then rental's a Chevy! THE HORROR
+layout if leaked|true looks interesting at least
+ Freddy|a god among singers, but I'm just not into a lit poster of him
+supposedly|carrying loads of lumber and construction equipment
+how big|a pinball again
+(the answer|it's very complicated and costs a couple million bucks)
+my guess|power lines go back to that pole, then over to the outbuilding.
+lightning|dangerous stuff
+The storm|coming...
+free money|nice, but that shit ain't cool
+no pinball|to far to play
+doh papa|april
+make sure magnet|lit first :)
+and I'm sure one|starting up in Mbrew in a couple weeks
+also weather|supposed to be ass tomorrow night
+Your connection|not private  Attackers might be trying to steal your information from www.ifpapinball.com (for example, passwords, messages, or credit cards). NET::ERR_CERT_COMMON_NAME_INVALID
+stupid chrome|saying all sorts of ssl certs aren't valid
+john pederson|having another get together for anyone interested
+Where|it!
+I hear everyone|updating the dll, but it's not to be found.
+generally gorgar|like between 10-20K for spinner
+right fliper|dead now :/
+What machine|this anyway
+GB|Ghostbusters, idiot
+GB|Gameboy aka the 6" plastic thing that you used to play with on the toilet
+That link|dead already
+pzyw: There|apparently a Total Recall proto hidden away in a colletion somwhere
+unless a picture|literally illegal
+rgp2|DEAD!!!!
+rgp3|kickin though
+I think there|one in CA also
+one coil|original, the old one (which is working fine) doesn't have a diode
+cross wiring|the #1 thing to avoid for sure
+scott - this|universal
+something|binding
+2-3|prolly ok.. lower than 2 might stress transistor
+someone|wrong
+if the coil|getting hot and is deforming the coil and sleeve, that needs to be fixed or the new sleeve will get damaged.
+then when it all|cleaned, it starts sticking again
+yea that art|poor
+I'm thinking it|still in delayed status
+Twitter|plumetting
+Brazil|called corruptland now
+#HOCKEY|back!!
+The Lizard Man|cool, especially the accent.
+and my seen code|shonky as fuck
+our rule|that if you miss finals, you move below the finishing position of the people that showed up for finals
+Pinball|too random. Make it less random and 1 ball per game.
+Top 5|Grand Champion + 1-4
+<Lawlor> Pinball|too random. Make it less random and 1 ball per game.
+that Sj guy|ok too.
+money shot|the gumball machine w/the colored balls in it
+talking tina|colored well
+Think it|when you enable multiball
+that video|going to skew colors, since it's a CMOS sensor camera shooting a LCD panel display
+"BALL"|an AMBER lamp insert
+machine|20 years old, c'mon. It have to have some scratches and problems. To me it makes it more challenging ;)
+well this|channel #2 I've seen complaining about pinside being down, so I'd say you're in the right place ;)
+Papa B|mini "A" now
+my sos|in a strip mall
+wow ... this|how close it was for Anthem of the Seas ... they burned out all 4 clutches on the left-hand propulsion motor while fighting the storm.
+this one|as big and as tall as they come, and it apparently just survived not only a cat-5 hurricane, but if they had a cat-6, it would have measured that, too.
+that fix|still in the game today.
+that process|'logically' simple, but is difficult, and requires great care.
+but that|another story all together.. lets just say surface mount sux
+thing|i need to learn how to fix these things
+but my view|this and it will always be this
+nobody|born knowing how these things work... 
+freeman there|no big marker het for pins
+SF2|just meeeeeeeeeeeh
+90|great
+tosh|so awesome
+and this|going to be for 2-3 *years*
+my vote|tdk
+chris hardwick|doing talking dead w/a tie his SO gave him ... with brains on it.
+my problem|logic related
+my notepad|overloading
+Pinball|more popular there.
+Gaming|so expensive now.
+Freeman|all about humor
+rbion|a great layout
+estesno doubt|up to snuff now with how the system works
+lospat|batman :p
+batman|lospat
+lock|lit mon
+special|lit!
+so clearly there|a problemo
+see the thing|what most guys do and what im willing todo is not the same
+well this one|low on this one pin...on the other semi working board the signal is high and low with pulsing
+the volcano shot|still there,  hungy-hungry hippos is on the left side
+cause most of it|just resistors and diodes
+Music|like candy, you throw the rappers away
+the guy surely|not just a normal design guy
+luck|, being here in the US, and a 5 hour trip to Expo.
+well the board|now showing text atleast
+ this|Borg,  http://imgur.com/xGQBOHp  
+Now there|not*
+tidbot|like the fortune teller on that TZ episode.  if i dont follow his commands, bad things happen
+Nordman|not the king of flow.
+i hope this|it for this board
+something|off
+smartdmd|something that works and is cheap
+POTC|a terrific machine, I had one of the best examples.  i just wanted the space, and the money to fund GOT
+the layout|just well meh
+Goal|12 machines back to back, about what i can fit in my home.
+Coimputer|still broke, still writing from server :p
+any ic that|connected to the ram should have a question mark on it... some people say hey its the ram, but its not always the case. i heard a story that if the ram goes it also can take out one of the ics. 
+That game|waporware.
+(which|why cash strapped ski resorts build them)
+yea but rubbre|terrible
+cause rubber|not the best matrial to use for such things
+ lospat|brave.  he will remove surface mounts with a heat gun
+now this|what u do
+if a display|out gassed
+not the same|replacing a surface mount chip
+also this|to sell some pins hence my dilema
+our currency|so fucked that its not even something to laugh about
+where pinball|far and wide
+me bet|haunted house theme
+the risk|now transferred to pre-paid customers
+that industry|idle
+and as|usual, they don't report the millenials in their parents' basements who've given up on finding a job, either.
+when everyone|selling, and no one is buying,    zoink.
+question|... is that selling to buy new toys like new pins ... 
+thanks that|all
+trifurcon|a perm fix
+Cold front|coming, line of severe stuff getting organized ahead of it
+lospat: RGB-LED|win
+man that|one ginormous chunk of orange and red radar return
+wow|that even safe
+freeman this|the next level of bs
+my friend|getting a t2 tom
+weather pattern|crazy.  it's like a circle
+Since the screen|exposed you need a strong cout outside. Kind of impractical to have to make a plexicage to surround it.
+this ice/slush|dangerous
+AC|pretty much the norm now for locomotives ...
+but AC|so much more effecient.  It just took 50+ years for them to manage to actually make it work.
+no idea what|easy, bet I have less than 50plays on it
+Stern|doing some live facebook thing
+now the cpu|giving shit as in giving garbage
+ time|money,   money is time
+seems pinball|doing good there
+damn why|every board on this game have to have a issue
+my assumption|that stern will not let us in there
+Stannis theme|quite good too
+dude|genius
+dude|smart
+not sure why it|titles sound too
+as in there|a small tump when u turn it on
+then the logic|probably fine
+yea this|party zone
+well problem|i need to hook it up to the bench but i dont have ac voltages
+you know the amp|good
+RAM|not a logic chip.  It's storage.
+analog circuity|completely different from digital.
+audio board|new to me
+because there|no replacement.
+see if the CPU|stuck or if it's running.
+     there|no honor among thieves   .
+ Marvins|a lifetime of evolutin
+ Ten Strike|ok.  gets repetitive too quick.
+<freeman> here|a head-to-head shooter -- https://goo.gl/CeK2HJ
+2nd one|much more forst person then the 1st pic
+contact bowler|best 
+  Flotilla|so big, you step inside to repair it.  http://imgur.com/IocnvVb
+the basement|full of wonders
+never|lospat
+My Earthshaker|having sound issues but I think I have narrowed it to cold solder joints
+scott - this|system11 ... no IDC
+sounds like it|not the header.  
+FIRQ|exactly that, FIRQ.  It's a signal.
+dmd board|purely a reactive logic state machine.
+(cmos|12vdc logic, ttl is 5vdc logic)
+this shit|being a major major pain now
+if nothing|actually communicating to that chip, there will be no data on FIRQ
+pin 2|high with low pulses...
+pin 2|high and low with pulses
+pulse led|also moving alot faster on the none working board
+and why|that
+okay here|the diff im seeing
+oscillator|not affected by any inputs 
+DMD controller|a logic state machine.  This is a full blown microprocessor CPU.  Apples vs Oranges.
+tough.  This|how you learn.
+dude.  That|WHAT GOOGLE IS FUCKING USED FOR.
+but this|something you *have to do* ... you gotta learn this stuff to move forward.
+sonny anything|easy once u know how
+yea but there|so much info that it kinda gets to u
+(shrug) ... this|complicated stuff.
+but this|another ball game
+yea that|what i ve seen with the probe
+the one side|low othe rhigh
+my mind|melting
+this tool|kinda cool 
+the tube|REALLY nice so i want to fix it though, we'll see
+Unless ARTMAN|being held hostage with no keyboard and his only method of communication is pulling out the ethernet plug and putting it back in
+JD|OK at best
+And my google|heavily pinball slanted
+FS|ok
+So my guess|that they are working on a separate 'display computer', a bit like the old days
+I see Gerry|taking his P3 stuff out for show again
+TBL|the commercial machine Gerry was referring to I think
+BTW UK £|something like 1.8$ ATM
+tearing|independent
+ball race track|a large version of a getaway supercharger ...
+iron|a bit big for tha board... not smd equipment
+both|you count the EM
+Old Tech|best.
+New tech|for farters.
+This internet|really no good
+god slimer|ugly
+huh.. |very green isn't it
+But it|the last 12 hours
+today's money|2x inflated from 2013? you might need some better investments
+....which|what
+For LE it|even worse
+TZ|fine if it's fixed up right
+yeah my TZ|rock solid, even if I ignore it for a month
+TZ|like bicycling. You never forget. If the machine is working properly they are ez.
+which to me|just plain O.O
+The clear|aftermarket
+mine|still the same clock assy that was on the game at the namco store.
+I wonder if this|the avg production quality or just poor example. https://www.youtube.com/watch?v=vaMNzU_xm54&list=PLAssdv2pYixDV6EowuuO-0CNPY99bCiDq
+what gets me|how stuff like that can get out the door ... there's absolutely not way a game got playtested on the line w/a lot of these mistakes
+kr9: He|unboxing and fixing a machine for some customer.
+If this|a business
+my game|clean 
+the gate|shown in the link
+  Pro|the cost reduced model.
+So the ball|just going to roll around, unhittable for a couple of seconds
+actually radical|the only one I'm aware of that's actually done that
+the other switch|at Staypuffs feet
+My prediction|that the 'ghost slings' are going to be a pile of shit
+that artwork|great and makes the pf seem like it has way more on it than it actually does
+  there|no kicker
+WoZ|pretty unique as the shots are all different than normal and the rules are plentiful.
+renegade|too small for me
+cherokee|nice
+cherokee|damned capable, but it's too carlike by comparison
+renegade|a slam dunk, though ... it's THE perfect teeny car for millenials
+5B|a destroyed score 
+jackbot|one of those games where you get in a groove you can just rack up ridicululous scores
+jackbot|an all time favorite of mine
+jackbot|more of the same
+this proto PF|a pain ... turns out WMS simply assembled it and then never touched it.
+litz yea socket|a no brainer.. any chip i replace i socket
+pinball|bad 
+my bet|the drop the whole things and swap 'em out.
+fish tales|almost all music and some basic sound calls
+iphone 4|not really something u can really say is high end
+(and this|presuming you are NOT using fast blo fuses)
+Russo|still alive and kicking hes got a spot in one of the malls down here now, all fancy.. with his $3500 SSTs and $2200 multicades
+one in t2|ok i guess
+worst|cv and tom ... but the cv one takes the cake
+FT|on my want list.
+The FT one|much more entertaining
+My guess|the Feds laid down the "shut down and inspect or we'll shut you down" boom.
+grav this|how the average pinball player plays surely
+topper|siren setup like police force
+ghostbusters|the second coming of christ
+football|ridiculous
+if anyone|curious, i'm 'staying the course'.  GOT for me.
+GOT pro|the best flowing, but I wanted the upper pf
+the prem artwork|pretty sweet
+fan|siren, haha
+burned GI pins|the #2 fix behind game resets
+trifurcon|pretty much the bulletproof fix
+nah this|for one thats going to be sold
+I beleive this|what you want : http://www.molex.com/molex/products/listview.jsp?query=6838&path=cHome%23%23-1%23%23-1~~ncCRIMPTERMINALS%23%230%23%236&offset=0&autoNav=1&sType=s&filter=&fs=&channel=Products
+this thing|reading like 5.9
+BR2|easy ... you take the heat sink off, then just cut the legs
+this cheapie|cheap i mean real cheap
++12 digital|derived from +18 for lamps
+nah meter|all kinds of screwed up
+yeah my RS meter|around that age too
+NAMCO|as well, but they're a shadow of what they used to be ... they have some street route locations, and a new barcade concept type store in chicago
+but sc|a kepper
+Whirlwind|a lot of fun to play
+taxi|on the want list
+tz|the better game
+TZ|like bad taf lospats
+whitewater|a beter design for me if u compare it to say no fear in terms of how its layed out
+and there|always one up the right side from the left flipper
+Mine|a good machine.  It 'feels right'
+getaway|spec'd for 629s too
+The ramp|slightly damaged behind them
+Entropy|owned by Happ, but apparently the 2-slot pinball doors are still made
+I suspect this|old news, but I just tripper over it - https://missionpinball.com
+pinball|a physical sport, have to be able to move the game to do well.
+That's what|going to keep pinball alive when we are all pissing our pants in a nursing home
+GB|the second coming
+acdc pro|SHIT!!
+the pro|simpler,  less complex
+GB artwork|fantastic
+1 great game|worth more than 20 bad ones
+gary|a front man.  the Venture Capalist get the profits.  follow the money.
+lol bags|python 2
+how hard|it to just google it?  https://www.google.com/search?q=system+80+pinball+test+rom
+marcos one|better cause it tests more things
+I believe that|how Nucore got approved (payment to both Gene and Wayne)
+the "EM" part|because the controlling logic is electro mechanical
+Consensus|that the MOSFET *should* be able to handle it, but it may be that Stern boughtload of chinese knockoffs
+Another theory|that they stuffed up the FPGA code and it doesn't PWM properly
+met|a sam game not a spike game
+Anything else|just a game
+The consensus|that he just want sometime to take over day to day stuff
+oh there it|... 
+Wow.. SkitB|super-screwed
+SkitB|super-dee-dooper screwed
+The hoover|speeding! It's a hooverchase... (Actuall pinball mode from 1994)
+all|bad for sure
+Me and lospat|going to start a project. "Pinball for Africa". They might die from starvation, but at least they had pinball.
+The whole thing|written poorly
+The sound|clearer, anything else is subpar old systems
+lospat: This|even better, especially the first half minute. https://www.youtube.com/watch?v=WFrJXqPMVpE&list=RDNzDqoaGyB_8
+But the bass|generic so it is not fun until the breakdown and the riff
+Whole shit|generic :S
+Tim|getting old.  he cant keep up the maintenance on the machines.
+*when* it|gone, it will be gone.
+momocon|separate from dragon cobn
+Dragon con|still very much on, and very much still growing
+Elton John|referred to a PJS for example
+harlem|a great game
+Orbitor 1|a good spin.  The rest, meh
+but one thing|pretty clear : when you have *business* investors ... and those investments pay off your *personal* loans, income taxes, and pay for your housing .... the feds are gonna notice.
+my buddy Don|addicted to ps4 game 'the division'
+Oh|it like an electric shock game (Never Say Never Again)
+ball|slowed down, not stopped
+My guess|both those switches are a paralelled
+that demo|so so sweet
+Hobbit|fun - look forward to seeing more software features
+Because software|free
+Game|fun although it's hard to really know what to do
+TZ|like two copies of TAF running in parallel = two light-mode shots, two start-mode holes
+rumor|they had a new programmer at that time pzy
+road show layout|also similar
+TSPP|a good pick for deepness
+grand prix|good
+"TA"|cocktail table videogame
+"D"|upright video game
+"KR"|kiddie ride
+"F"|flipper (pinball)
+"B"|billiards (pool table)
+Jersey Jack|a Pinball Wizard
+well real|prefered of course
+That really|Andy talk
+Heighway|a pyramid scheme waiting to fall.
+The guy|a furry, so unsurprising it's about people being turned into animals :-p
+His TOPCast|hilarious
+1st round|the best
+freeman: There|no week players in pinball
+Whirlwind too|good, move the storm, lock ball, win
+Here everyone|like Olsen, Pettersen, Svensen, Thomassen, Jensen
+TZ|too  much, too many returns from scoop.
+Also there|Freeman Fly
+winter|coming,    sooon
+Half|5, half is 6
+Problems|for season 7
+The movie|great, the effects are bad.
+sci-fi|best for series episodes 22 or 45 minutes.
+Last 2 hours|a 5 minute story
+weird|whoah bodyform.... bodyform for youuuu 
+My work here|done
+Bullying|good. it is some dumbwitts only feedback to adjust their behaviour.
+Then bullying|has no purpose.
+but white water|a awesome game
+fish tales|great
+under rated|Bad Cats :D
+freeman creature|abit over rated
+creature|at 11? 
+the shadow|much beter game
+ipdb ratings|Bullshit and no way indictative of what a game is like.
+no rating system|foolproof
+yes metallica|shit 
+ToM|#2 for christ sake
+i think tz|the beter game in terms of a pinball persons view
+Abrams|the new Jonathan Mostov
+T3|damaged in the first minute. They are off by 3 years
+StarWars|so 1970and late
+Soylent Green|a great movie, I hope they don't ruin it's legacy.
+TWD|still on location, all the others are goners
+lex|a power hungry man
+The bass|superb due to the internal filter
+LSD|a light drug, just stay low on the micrograms
+very early code|a euphemism for "oh shit these things actually do suck"
+Democracy|dead
+also jpop|still appealing his monitor-under-the-glass patent
+that one|probably app # 13734151
+BK|cited in one of the rejection notes
+The future|having the best designs public domain for every to make in the cheapest and least resource demanding way.
+china|crazy 
+but so|bags
+bad cats|one of the worst system11
+Dracula|Bad Cats 2.0
+TPA|sucks because you can cheat, like most other games
+The Machine|good for arcades. Nice light show in a dark bar.
+the music|gone
+yea viewing data|pointless
+The crux of it|"What, making games is an ART!  So what if you get burned out.  So what if your pay is ridiculously low, you should be doing it because of a passion"
+DSP|the display board (obvs(
+Filesize|64k
+the board|jumpered for 512
+Yeah Stargate|fun
+the worst part|now each time u have to erase the roms again
+Pat|a one trick pony, hell of a good trick though.
+Cheap pinball|ugly and faulty. Low cost shite parts in every corner.
+Perhaps if there|heavy lifting :p
+Sonny_Jim: That|alot.
+And there|a reason why they don't use them everywhere
+the sling itself|static
+(this|where you do math)
+party zone file|a 256k file and in the manual it says u need a 2mb chip
+lospat: 19 yo|such fertile ground for sowing your seeds.
+40+|no go zone
+1mbit imagine|=128k? right
+1mbit|a 27C010, which is a 128kbit image size.
+what i need|a m27c512
+apparently there|much aingst over ghostbusters flipper strength
+Now your life|finaly fullfilled...
+THIS ....|cool ...
+unless there|something else too, but yes
+I'd bet there|one
+OH|a fun one too
+And my morale|"Everything goes unless there is a plque with bold letters telling otherwise.
+Domestics|different
+3) Dutch Pinball|shipping 3 new games,  but no one is doing cartwheels
+ that|what Clay wrote.  wrong court.   start game again.
+thing|... circus was DESIGNED for that hardware.
+game and pf|fine, but the cabinet is a mess
+My only regret|not buying whirlwind and bad cats
+But it|a nice piece in a collection.
+water|excellent at disipating heat
+WAF|Wife Acceptance Factor
