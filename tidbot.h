@@ -1,5 +1,5 @@
 #define DEFAULT_CFG_FILE  	"/.tidbot.cfg"
-#define DEFAULT_IRC_SERVER  	"irc.efnet.org"
+#define DEFAULT_IRC_SERVER  	"irc.choopa.net"
 #define DEFAULT_IRC_PORT	"6667"
 #define DEFAULT_IRC_CHANNEL  	"#pinball"
 #define DEFAULT_IRC_NICK	"tidbot"
@@ -50,8 +50,8 @@
 
 #define MAX_TIDBIT_LENGTH 16
 
-#include "libircclient/libircclient.h"
-#include "libircclient/libirc_rfcnumeric.h"
+#include <libircclient.h>
+#include <libirc_rfcnumeric.h>
 #include <stdio.h>
 #include <unistd.h>
 //for strcasestr

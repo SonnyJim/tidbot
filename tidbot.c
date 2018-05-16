@@ -93,7 +93,7 @@ void event_connect (irc_session_t *session, const char *event, const char *origi
 
 	send_channel_connect_msg ();
 }
-
+/*
 void whereis_user (const char *target, const char *hostname)
 {
     int error;
@@ -119,6 +119,7 @@ void whereis_user (const char *target, const char *hostname)
     strcat (whereis_reply, location);
     irc_cmd_msg (session, irc_cfg.channel, whereis_reply);
 }
+*/
 
 void event_join (irc_session_t * session, const char * event, const char * origin, const char ** params, unsigned int count)
 {
@@ -127,13 +128,14 @@ void event_join (irc_session_t * session, const char * event, const char * origi
 
 void event_numeric (irc_session_t *session, unsigned int event, const char *origin, const char **params, unsigned int count)
 {
+	/*
     if (event == LIBIRC_RFC_RPL_WHOISUSER)
     {
         //params[1] == nick associated with WHOIS
         //params[3] == hostname returned from WHOIS
         whereis_user (params[1], params[3]);
     }
-
+*/
 	if (!verbose)
 		return;
 
